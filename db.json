@@ -1,0 +1,1899 @@
+{
+	"income_categories": ["용돈", "월급", "주식", "이자"],
+	"expense_categories": [
+		"식비",
+		"생활비",
+		"의류",
+		"교통비",
+		"저축",
+		"의료비",
+		"정기결제",
+		"미용",
+		"교육"
+	],
+	"users": [
+		{
+			"email": "user1@example.com",
+			"password": "pass1234",
+			"name": "김민지",
+			"birth": "1995-03-15",
+			"gender": "여성",
+			"budget": 840000
+		},
+		{
+			"email": "user2@example.com",
+			"password": "qwer5678",
+			"name": "이준호",
+			"birth": "1990-07-21",
+			"gender": "남성",
+			"budget": 560000
+		},
+		{
+			"email": "user3@example.com",
+			"password": "test2024",
+			"name": "박지영",
+			"birth": "1988-12-09",
+			"gender": "여성",
+			"budget": 950000
+		},
+		{
+			"email": "user4@example.com",
+			"password": "hello7890",
+			"name": "최현우",
+			"birth": "1992-04-30",
+			"gender": "남성",
+			"budget": 700000
+		},
+		{
+			"email": "user5@example.com",
+			"password": "pwabc123",
+			"name": "정수빈",
+			"birth": "1997-01-18",
+			"gender": "여성",
+			"budget": 610000
+		},
+		{
+			"email": "user6@example.com",
+			"password": "mypw321",
+			"name": "한지훈",
+			"birth": "1985-11-25",
+			"gender": "남성",
+			"budget": 750000
+		},
+		{
+			"email": "user7@example.com",
+			"password": "secret789",
+			"name": "윤하영",
+			"birth": "1993-06-11",
+			"gender": "여성",
+			"budget": 990000
+		},
+		{
+			"email": "user8@example.com",
+			"password": "testuser1",
+			"name": "조현성",
+			"birth": "1989-02-05",
+			"gender": "남성",
+			"budget": 530000
+		},
+		{
+			"email": "user9@example.com",
+			"password": "asdfgh12",
+			"name": "서은지",
+			"birth": "1996-09-27",
+			"gender": "여성",
+			"budget": 870000
+		},
+		{
+			"email": "user10@example.com",
+			"password": "pass5678",
+			"name": "강도윤",
+			"birth": "1991-08-13",
+			"gender": "남성",
+			"budget": 920000
+		}
+	],
+
+	"periodicData": [
+		{
+			"amount": 10400,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-01"
+		},
+		{
+			"amount": 20500,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-03"
+		},
+		{
+			"amount": 8400,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-24"
+		},
+		{
+			"amount": 47000,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-01-31"
+		},
+		{
+			"amount": 39300,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-04-02"
+		},
+		{
+			"amount": 23800,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-04-03"
+		},
+		{
+			"amount": 10400,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-01-10"
+		},
+		{
+			"amount": 32500,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-28"
+		},
+		{
+			"amount": 37600,
+			"type": -1,
+			"category": "식비",
+			"description": "점심식사",
+			"memo": "점심식사에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-22"
+		},
+		{
+			"amount": 24300,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-01-07"
+		},
+		{
+			"amount": 5900,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-28"
+		},
+		{
+			"amount": 45200,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-04-07"
+		},
+		{
+			"amount": 15500,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-01-30"
+		},
+		{
+			"amount": 3800,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-05"
+		},
+		{
+			"amount": 32900,
+			"type": -1,
+			"category": "식비",
+			"description": "점심식사",
+			"memo": "점심식사에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-10"
+		},
+		{
+			"amount": 14200,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-30"
+		},
+		{
+			"amount": 46500,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-13"
+		},
+		{
+			"amount": 18100,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-15"
+		},
+		{
+			"amount": 20000,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-02-11"
+		},
+		{
+			"amount": 44900,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user1@example.com",
+			"date": "2025-03-03"
+		},
+		{
+			"amount": 4900,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-04-03"
+		},
+		{
+			"amount": 16400,
+			"type": -1,
+			"category": "의류",
+			"description": "신발 구입",
+			"memo": "신발 구입에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-02"
+		},
+		{
+			"amount": 10800,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-05"
+		},
+		{
+			"amount": 4500,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-04-02"
+		},
+		{
+			"amount": 32300,
+			"type": -1,
+			"category": "의류",
+			"description": "상의 구입",
+			"memo": "상의 구입에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-09"
+		},
+		{
+			"amount": 5200,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-02"
+		},
+		{
+			"amount": 14400,
+			"type": -1,
+			"category": "저축",
+			"description": "예금 계좌 이체",
+			"memo": "예금 계좌 이체에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-08"
+		},
+		{
+			"amount": 18300,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-26"
+		},
+		{
+			"amount": 16200,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-22"
+		},
+		{
+			"amount": 32500,
+			"type": -1,
+			"category": "의류",
+			"description": "외투 구매",
+			"memo": "외투 구매에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-01-17"
+		},
+		{
+			"amount": 30700,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-28"
+		},
+		{
+			"amount": 5200,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-25"
+		},
+		{
+			"amount": 9900,
+			"type": -1,
+			"category": "생활비",
+			"description": "세제 구입",
+			"memo": "세제 구입에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-01-15"
+		},
+		{
+			"amount": 37100,
+			"type": -1,
+			"category": "교통비",
+			"description": "버스 요금",
+			"memo": "버스 요금에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-18"
+		},
+		{
+			"amount": 25200,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-18"
+		},
+		{
+			"amount": 11900,
+			"type": -1,
+			"category": "생활비",
+			"description": "전기세",
+			"memo": "전기세에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-01-20"
+		},
+		{
+			"amount": 8900,
+			"type": -1,
+			"category": "생활비",
+			"description": "세제 구입",
+			"memo": "세제 구입에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-01-11"
+		},
+		{
+			"amount": 500,
+			"type": 1,
+			"category": "주식",
+			"description": "배당금 수익",
+			"memo": "배당금 수익에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-01-13"
+		},
+		{
+			"amount": 15300,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 23900,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user2@example.com",
+			"date": "2025-02-12"
+		},
+		{
+			"amount": 3500,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-01-17"
+		},
+		{
+			"amount": 18400,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-01-30"
+		},
+		{
+			"amount": 46500,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-18"
+		},
+		{
+			"amount": 55700,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-01"
+		},
+		{
+			"amount": 36200,
+			"type": -1,
+			"category": "식비",
+			"description": "저녁식사",
+			"memo": "저녁식사에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-11"
+		},
+		{
+			"amount": 29800,
+			"type": -1,
+			"category": "교통비",
+			"description": "지하철 요금",
+			"memo": "지하철 요금에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-14"
+		},
+		{
+			"amount": 20000,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-07"
+		},
+		{
+			"amount": 7300,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-27"
+		},
+		{
+			"amount": 55300,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-01-22"
+		},
+		{
+			"amount": 2800,
+			"type": -1,
+			"category": "교통비",
+			"description": "지하철 요금",
+			"memo": "지하철 요금에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-21"
+		},
+		{
+			"amount": 8000,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-19"
+		},
+		{
+			"amount": 31200,
+			"type": -1,
+			"category": "식비",
+			"description": "점심식사",
+			"memo": "점심식사에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-01-26"
+		},
+		{
+			"amount": 45900,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-16"
+		},
+		{
+			"amount": 18900,
+			"type": 1,
+			"category": "주식",
+			"description": "배당금 수익",
+			"memo": "배당금 수익에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-29"
+		},
+		{
+			"amount": 30800,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-17"
+		},
+		{
+			"amount": 49300,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-13"
+		},
+		{
+			"amount": 23100,
+			"type": -1,
+			"category": "의류",
+			"description": "신발 구입",
+			"memo": "신발 구입에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-01-21"
+		},
+		{
+			"amount": 33000,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 5200,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-03-04"
+		},
+		{
+			"amount": 38600,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user3@example.com",
+			"date": "2025-02-08"
+		},
+		{
+			"amount": 15200,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-07"
+		},
+		{
+			"amount": 4800,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-05"
+		},
+		{
+			"amount": 18400,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-07"
+		},
+		{
+			"amount": 36400,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-07"
+		},
+		{
+			"amount": 10700,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-23"
+		},
+		{
+			"amount": 22600,
+			"type": -1,
+			"category": "저축",
+			"description": "예금 계좌 이체",
+			"memo": "예금 계좌 이체에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-04-04"
+		},
+		{
+			"amount": 39200,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-14"
+		},
+		{
+			"amount": 6400,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-04-01"
+		},
+		{
+			"amount": 5800,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-08"
+		},
+		{
+			"amount": 2500,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-03"
+		},
+		{
+			"amount": 21300,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-21"
+		},
+		{
+			"amount": 36500,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-02-28"
+		},
+		{
+			"amount": 28200,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-17"
+		},
+		{
+			"amount": 23600,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-06"
+		},
+		{
+			"amount": 3900,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-05"
+		},
+		{
+			"amount": 1200,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-02-04"
+		},
+		{
+			"amount": 39300,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-03-09"
+		},
+		{
+			"amount": 31500,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-01-18"
+		},
+		{
+			"amount": 2800,
+			"type": -1,
+			"category": "생활비",
+			"description": "세제 구입",
+			"memo": "세제 구입에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-02-14"
+		},
+		{
+			"amount": 37100,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user4@example.com",
+			"date": "2025-02-28"
+		},
+		{
+			"amount": 18000,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-04-02"
+		},
+		{
+			"amount": 32800,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-30"
+		},
+		{
+			"amount": 27600,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-20"
+		},
+		{
+			"amount": 28400,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-14"
+		},
+		{
+			"amount": 9000,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-20"
+		},
+		{
+			"amount": 25400,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-19"
+		},
+		{
+			"amount": 26000,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-04-04"
+		},
+		{
+			"amount": 25900,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-06"
+		},
+		{
+			"amount": 13600,
+			"type": -1,
+			"category": "의류",
+			"description": "외투 구매",
+			"memo": "외투 구매에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-30"
+		},
+		{
+			"amount": 20600,
+			"type": 1,
+			"category": "주식",
+			"description": "배당금 수익",
+			"memo": "배당금 수익에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-18"
+		},
+		{
+			"amount": 7200,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-15"
+		},
+		{
+			"amount": 29700,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-06"
+		},
+		{
+			"amount": 8300,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-03"
+		},
+		{
+			"amount": 40400,
+			"type": -1,
+			"category": "의류",
+			"description": "외투 구매",
+			"memo": "외투 구매에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-06"
+		},
+		{
+			"amount": 18700,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-02-23"
+		},
+		{
+			"amount": 28100,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-13"
+		},
+		{
+			"amount": 32900,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-03-26"
+		},
+		{
+			"amount": 3900,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-17"
+		},
+		{
+			"amount": 29200,
+			"type": -1,
+			"category": "교통비",
+			"description": "버스 요금",
+			"memo": "버스 요금에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-11"
+		},
+		{
+			"amount": 4400,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user5@example.com",
+			"date": "2025-01-18"
+		},
+		{
+			"amount": 13300,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-28"
+		},
+		{
+			"amount": 31100,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-14"
+		},
+		{
+			"amount": 47400,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-17"
+		},
+		{
+			"amount": 46100,
+			"type": -1,
+			"category": "의류",
+			"description": "신발 구입",
+			"memo": "신발 구입에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-03-13"
+		},
+		{
+			"amount": 39600,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-22"
+		},
+		{
+			"amount": 12400,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-03-15"
+		},
+		{
+			"amount": 38800,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-09"
+		},
+		{
+			"amount": 25800,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-25"
+		},
+		{
+			"amount": 19700,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-11"
+		},
+		{
+			"amount": 9800,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-01"
+		},
+		{
+			"amount": 16700,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-16"
+		},
+		{
+			"amount": 32000,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-02"
+		},
+		{
+			"amount": 43800,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-27"
+		},
+		{
+			"amount": 3400,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-04-02"
+		},
+		{
+			"amount": 2000,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-03-15"
+		},
+		{
+			"amount": 36000,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-12"
+		},
+		{
+			"amount": 29800,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-03-15"
+		},
+		{
+			"amount": 47300,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-02-01"
+		},
+		{
+			"amount": 43200,
+			"type": -1,
+			"category": "의류",
+			"description": "신발 구입",
+			"memo": "신발 구입에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-08"
+		},
+		{
+			"amount": 43900,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user6@example.com",
+			"date": "2025-01-10"
+		},
+		{
+			"amount": 16000,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-01-13"
+		},
+		{
+			"amount": 50600,
+			"type": -1,
+			"category": "생활비",
+			"description": "전기세",
+			"memo": "전기세에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 43400,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-02-05"
+		},
+		{
+			"amount": 45100,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-01-24"
+		},
+		{
+			"amount": 27300,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-01-12"
+		},
+		{
+			"amount": 11500,
+			"type": 1,
+			"category": "주식",
+			"description": "배당금 수익",
+			"memo": "배당금 수익에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-01"
+		},
+		{
+			"amount": 34600,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-01-08"
+		},
+		{
+			"amount": 24900,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-02-05"
+		},
+		{
+			"amount": 14000,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-14"
+		},
+		{
+			"amount": 28500,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-08"
+		},
+		{
+			"amount": 11400,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-07"
+		},
+		{
+			"amount": 17000,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-02-05"
+		},
+		{
+			"amount": 29000,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-30"
+		},
+		{
+			"amount": 16900,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-28"
+		},
+		{
+			"amount": 3800,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-18"
+		},
+		{
+			"amount": 4800,
+			"type": -1,
+			"category": "의류",
+			"description": "상의 구입",
+			"memo": "상의 구입에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-04"
+		},
+		{
+			"amount": 45700,
+			"type": -1,
+			"category": "생활비",
+			"description": "휴지 구매",
+			"memo": "휴지 구매에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-06"
+		},
+		{
+			"amount": 45700,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-02-04"
+		},
+		{
+			"amount": 14600,
+			"type": -1,
+			"category": "교통비",
+			"description": "지하철 요금",
+			"memo": "지하철 요금에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-03"
+		},
+		{
+			"amount": 14100,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user7@example.com",
+			"date": "2025-03-07"
+		},
+		{
+			"amount": 6700,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-23"
+		},
+		{
+			"amount": 19000,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-23"
+		},
+		{
+			"amount": 8700,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-01"
+		},
+		{
+			"amount": 3800,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-09"
+		},
+		{
+			"amount": 15900,
+			"type": -1,
+			"category": "교통비",
+			"description": "버스 요금",
+			"memo": "버스 요금에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-12"
+		},
+		{
+			"amount": 3400,
+			"type": -1,
+			"category": "생활비",
+			"description": "휴지 구매",
+			"memo": "휴지 구매에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-29"
+		},
+		{
+			"amount": 32800,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-05"
+		},
+		{
+			"amount": 27100,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-27"
+		},
+		{
+			"amount": 24900,
+			"type": -1,
+			"category": "의류",
+			"description": "상의 구입",
+			"memo": "상의 구입에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 25700,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-03"
+		},
+		{
+			"amount": 30000,
+			"type": -1,
+			"category": "식비",
+			"description": "점심식사",
+			"memo": "점심식사에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-26"
+		},
+		{
+			"amount": 25600,
+			"type": 1,
+			"category": "주식",
+			"description": "주식 매도 차익",
+			"memo": "주식 매도 차익에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-08"
+		},
+		{
+			"amount": 21700,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-18"
+		},
+		{
+			"amount": 17800,
+			"type": -1,
+			"category": "식비",
+			"description": "저녁식사",
+			"memo": "저녁식사에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-30"
+		},
+		{
+			"amount": 30000,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-27"
+		},
+		{
+			"amount": 12000,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-19"
+		},
+		{
+			"amount": 26600,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-02-24"
+		},
+		{
+			"amount": 18700,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-12"
+		},
+		{
+			"amount": 11000,
+			"type": 1,
+			"category": "용돈",
+			"description": "부모님 용돈",
+			"memo": "부모님 용돈에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-01-25"
+		},
+		{
+			"amount": 14500,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user8@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 18600,
+			"type": -1,
+			"category": "교육",
+			"description": "학원비",
+			"memo": "학원비에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-26"
+		},
+		{
+			"amount": 45700,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-18"
+		},
+		{
+			"amount": 18300,
+			"type": 1,
+			"category": "월급",
+			"description": "프리랜서 월급",
+			"memo": "프리랜서 월급에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-02-16"
+		},
+		{
+			"amount": 47800,
+			"type": -1,
+			"category": "교통비",
+			"description": "지하철 요금",
+			"memo": "지하철 요금에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-02-16"
+		},
+		{
+			"amount": 44100,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-13"
+		},
+		{
+			"amount": 50500,
+			"type": -1,
+			"category": "의료비",
+			"description": "약값",
+			"memo": "약값에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-02-22"
+		},
+		{
+			"amount": 43100,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-22"
+		},
+		{
+			"amount": 43400,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-28"
+		},
+		{
+			"amount": 16600,
+			"type": 1,
+			"category": "주식",
+			"description": "배당금 수익",
+			"memo": "배당금 수익에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-02-14"
+		},
+		{
+			"amount": 900,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-22"
+		},
+		{
+			"amount": 45800,
+			"type": 1,
+			"category": "이자",
+			"description": "적금 이자",
+			"memo": "적금 이자에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-31"
+		},
+		{
+			"amount": 31900,
+			"type": -1,
+			"category": "의류",
+			"description": "외투 구매",
+			"memo": "외투 구매에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-15"
+		},
+		{
+			"amount": 47500,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-22"
+		},
+		{
+			"amount": 43700,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-23"
+		},
+		{
+			"amount": 52900,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-24"
+		},
+		{
+			"amount": 24600,
+			"type": 1,
+			"category": "용돈",
+			"description": "지인에게 받은 현금",
+			"memo": "지인에게 받은 현금에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-01"
+		},
+		{
+			"amount": 28000,
+			"type": -1,
+			"category": "생활비",
+			"description": "전기세",
+			"memo": "전기세에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-14"
+		},
+		{
+			"amount": 41700,
+			"type": -1,
+			"category": "교통비",
+			"description": "버스 요금",
+			"memo": "버스 요금에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-24"
+		},
+		{
+			"amount": 19000,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-01-09"
+		},
+		{
+			"amount": 40200,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user9@example.com",
+			"date": "2025-03-22"
+		},
+		{
+			"amount": 15100,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-13"
+		},
+		{
+			"amount": 53600,
+			"type": -1,
+			"category": "생활비",
+			"description": "전기세",
+			"memo": "전기세에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-01-15"
+		},
+		{
+			"amount": 41200,
+			"type": -1,
+			"category": "교통비",
+			"description": "택시비",
+			"memo": "택시비에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-01-29"
+		},
+		{
+			"amount": 30000,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-13"
+		},
+		{
+			"amount": 35100,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-08"
+		},
+		{
+			"amount": 2500,
+			"type": -1,
+			"category": "생활비",
+			"description": "전기세",
+			"memo": "전기세에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-04-01"
+		},
+		{
+			"amount": 46600,
+			"type": -1,
+			"category": "의료비",
+			"description": "병원 진료비",
+			"memo": "병원 진료비에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-24"
+		},
+		{
+			"amount": 16900,
+			"type": -1,
+			"category": "교육",
+			"description": "온라인 강의",
+			"memo": "온라인 강의에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-01-24"
+		},
+		{
+			"amount": 9100,
+			"type": 1,
+			"category": "이자",
+			"description": "예금 이자",
+			"memo": "예금 이자에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-01-11"
+		},
+		{
+			"amount": 18300,
+			"type": -1,
+			"category": "교통비",
+			"description": "지하철 요금",
+			"memo": "지하철 요금에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-04"
+		},
+		{
+			"amount": 46400,
+			"type": 1,
+			"category": "월급",
+			"description": "회사 급여",
+			"memo": "회사 급여에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-12"
+		},
+		{
+			"amount": 53300,
+			"type": -1,
+			"category": "식비",
+			"description": "저녁식사",
+			"memo": "저녁식사에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-16"
+		},
+		{
+			"amount": 22000,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-17"
+		},
+		{
+			"amount": 43800,
+			"type": -1,
+			"category": "식비",
+			"description": "카페",
+			"memo": "카페에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-09"
+		},
+		{
+			"amount": 9400,
+			"type": -1,
+			"category": "정기결제",
+			"description": "넷플릭스",
+			"memo": "넷플릭스에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-29"
+		},
+		{
+			"amount": 41000,
+			"type": -1,
+			"category": "미용",
+			"description": "헤어컷",
+			"memo": "헤어컷에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-01-10"
+		},
+		{
+			"amount": 10600,
+			"type": -1,
+			"category": "미용",
+			"description": "네일샵",
+			"memo": "네일샵에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-12"
+		},
+		{
+			"amount": 34000,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-02-25"
+		},
+		{
+			"amount": 13900,
+			"type": -1,
+			"category": "저축",
+			"description": "적금 이체",
+			"memo": "적금 이체에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-06"
+		},
+		{
+			"amount": 39800,
+			"type": -1,
+			"category": "정기결제",
+			"description": "유튜브 프리미엄",
+			"memo": "유튜브 프리미엄에 대한 메모입니다.",
+			"user": "user10@example.com",
+			"date": "2025-03-17"
+		}
+	]
+}
