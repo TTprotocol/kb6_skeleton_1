@@ -18,7 +18,8 @@
 			"name": "김민지",
 			"birth": "1995-03-15",
 			"gender": "여성",
-			"budget": 840000
+			"budget": 840000,
+			"login": false
 		},
 		{
 			"email": "user2@example.com",
@@ -26,7 +27,8 @@
 			"name": "이준호",
 			"birth": "1990-07-21",
 			"gender": "남성",
-			"budget": 560000
+			"budget": 560000,
+			"login": false
 		},
 		{
 			"email": "user3@example.com",
@@ -34,7 +36,8 @@
 			"name": "박지영",
 			"birth": "1988-12-09",
 			"gender": "여성",
-			"budget": 950000
+			"budget": 950000,
+			"login": false
 		},
 		{
 			"email": "user4@example.com",
@@ -42,7 +45,8 @@
 			"name": "최현우",
 			"birth": "1992-04-30",
 			"gender": "남성",
-			"budget": 700000
+			"budget": 700000,
+			"login": false
 		},
 		{
 			"email": "user5@example.com",
@@ -50,7 +54,8 @@
 			"name": "정수빈",
 			"birth": "1997-01-18",
 			"gender": "여성",
-			"budget": 610000
+			"budget": 610000,
+			"login": false
 		},
 		{
 			"email": "user6@example.com",
@@ -58,7 +63,8 @@
 			"name": "한지훈",
 			"birth": "1985-11-25",
 			"gender": "남성",
-			"budget": 750000
+			"budget": 750000,
+			"login": false
 		},
 		{
 			"email": "user7@example.com",
@@ -66,7 +72,8 @@
 			"name": "윤하영",
 			"birth": "1993-06-11",
 			"gender": "여성",
-			"budget": 990000
+			"budget": 990000,
+			"login": false
 		},
 		{
 			"email": "user8@example.com",
@@ -74,7 +81,8 @@
 			"name": "조현성",
 			"birth": "1989-02-05",
 			"gender": "남성",
-			"budget": 530000
+			"budget": 530000,
+			"login": false
 		},
 		{
 			"email": "user9@example.com",
@@ -82,7 +90,8 @@
 			"name": "서은지",
 			"birth": "1996-09-27",
 			"gender": "여성",
-			"budget": 870000
+			"budget": 870000,
+			"login": false
 		},
 		{
 			"email": "user10@example.com",
@@ -90,7 +99,8 @@
 			"name": "강도윤",
 			"birth": "1991-08-13",
 			"gender": "남성",
-			"budget": 920000
+			"budget": 920000,
+			"login": false
 		}
 	],
 
