@@ -1,16 +1,18 @@
 {
-	"income_categories": ["용돈", "월급", "주식", "이자"],
-	"expense_categories": [
-		"식비",
-		"생활비",
-		"의류",
-		"교통비",
-		"저축",
-		"의료비",
-		"정기결제",
-		"미용",
-		"교육"
-	],
+	"income_categories": { "income": ["용돈", "월급", "주식", "이자"] },
+	"expense_categories": {
+		"expense": [
+			"식비",
+			"생활비",
+			"의류",
+			"교통비",
+			"저축",
+			"의료비",
+			"정기결제",
+			"미용",
+			"교육"
+		]
+	},
 	"users": [
 		{
 			"email": "user1@example.com",
