@@ -4,13 +4,17 @@
       <header>
         <h1>정보를 설정해주세요.</h1>
       </header>
-      <form>
+      <form @submit.prevent>
         <main>
           <article>
             <div style="height: 64px"></div>
             <div id="signup__form">
               <p>아이디</p>
-              <input type="text" placeholder="아이디를 입력해주세요." />
+              <input
+                type="text"
+                v-model="id"
+                placeholder="아이디를 입력해주세요."
+              />
               <div id="idbox"></div>
               <button id="checkid">중복 확인</button>
               <p>비밀번호</p>
@@ -61,13 +65,19 @@
               </select>
             </div>
             <div id="terms">
-              <input type="checkbox" value="term1" /> 약관 1 <br /><br />
-              <input type="checkbox" value="term2" /> 약관 2
+              <input type="checkbox" value="term1" v-model="terms" /> 약관 1
+              <br /><br />
+              <input type="checkbox" value="term2" v-model="terms" /> 약관 2
             </div>
           </article>
         </main>
         <section>
-          <input type="submit" value="회원가입" id="submit-btn" />
+          <input
+            type="submit"
+            value="회원가입"
+            id="submit-btn"
+            :disabled="!isValid"
+          />
         </section>
       </form>
     </div>
@@ -75,7 +85,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 const password = ref('');
 const checkpassword = ref('');
@@ -86,6 +96,8 @@ const gender = ref('여성');
 const years = ref([]);
 const months = ref([]);
 const days = ref([]);
+const id = ref('');
+const terms = ref([]);
 
 onMounted(() => {
   const nowYear = new Date().getFullYear();
@@ -99,6 +111,20 @@ onMounted(() => {
   for (let i = 1; i < 32; i++) {
     days.value.push(i);
   }
+});
+
+const isValid = computed(() => {
+  return (
+    id.value.trim() != '' &&
+    password.value.trim() != '' &&
+    checkpassword.value.trim() != '' &&
+    password.value === checkpassword.value &&
+    year.value !== '년' &&
+    month.value !== '월' &&
+    day.value !== '일' &&
+    gender.value !== '' &&
+    terms.value.length === 2
+  );
 });
 </script>
 
@@ -190,6 +216,11 @@ main article {
   color: white;
   font-weight: 700;
   text-decoration: none;
+}
+
+#submit-btn:disabled {
+  background-color: #cdcdcd;
+  cursor: not-allowed;
 }
 
 #terms {
