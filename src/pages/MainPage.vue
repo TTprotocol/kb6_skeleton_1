@@ -2,18 +2,8 @@
 	<div id="app">
 		<main id="main">
 			<section class="section">
-				<article>
-					<h2>섹션1</h2>
-				</article>
-			</section>
-			<section class="section">
-				<article>
-					<h2>섹션1</h2>
-				</article>
-			</section>
-			<section class="section">
-				<article>
-					<h2>섹션1</h2>
+				<article class="article">
+					<h2>거래 내역</h2>
 				</article>
 			</section>
 		</main>
@@ -21,7 +11,7 @@
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import Calendar from "../component/Calendar.vue";
 </script>
 
 <style scoped>
@@ -34,13 +24,19 @@ import { RouterLink, RouterView } from "vue-router";
 	display: flex;
 	justify-content: space-between;
 	border: 1px solid blue;
-	height: 70vh;
+	height: 75vh;
 	margin: 10px;
 	padding: 10px;
 	box-sizing: border-box;
 }
 .section {
-	width: 80%;
+	width: 100%;
+	height: 100%;
 	border: 1px solid red;
+}
+
+.article {
+	margin: 10px;
+	padding: 10px;
 }
 </style>

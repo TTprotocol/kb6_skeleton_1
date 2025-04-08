@@ -6,8 +6,7 @@
 
 <style scoped>
 #header {
-	width: 100%;
-	height: 100px;
+	height: 70px;
 	margin: 10px;
 	padding: 10px;
 	box-sizing: border-box;
