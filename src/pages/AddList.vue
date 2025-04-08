@@ -34,7 +34,7 @@ import { RouterLink, RouterView } from "vue-router";
 	display: flex;
 	justify-content: space-between;
 	border: 1px solid blue;
-	height: 70vh;
+	height: 75vh;
 	margin: 10px;
 	padding: 10px;
 	box-sizing: border-box;

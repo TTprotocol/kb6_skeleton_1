@@ -6,7 +6,7 @@
 
 <style scoped>
 #footer {
-	height: 100px;
+	height: 50px;
 	margin: 10px;
 	padding: 10px;
 	box-sizing: border-box;
