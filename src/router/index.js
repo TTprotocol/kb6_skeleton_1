@@ -5,6 +5,7 @@ import AccountList from '@/pages/AccountList.vue';
 import AddList from '@/pages/AddList.vue';
 import SignupPage from '@/pages/SignupPage.vue';
 import Setting from '@/pages/SettingPage.vue';
+import LoginId from '@/pages/LoginId.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -38,6 +39,11 @@ const router = createRouter({
       path: '/setting',
       name: 'setting',
       component: Setting,
+    },
+    {
+      path: '/loginid',
+      name: 'loginid',
+      component: LoginId,
     },
   ],
 });

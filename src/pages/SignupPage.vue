@@ -48,6 +48,13 @@
         </article>
         <article>
           <div style="height: 64px"></div>
+          <div id="signup__form">
+            <p>성별</p>
+            <select v-model="gender">
+              <option>여성</option>
+              <option>남성</option>
+            </select>
+          </div>
           <div id="terms">
             <input type="checkbox" value="term1" /> 약관 1 <br /><br />
             <input type="checkbox" value="term2" /> 약관 2
@@ -55,7 +62,7 @@
         </article>
       </main>
       <section>
-        <input type="submit" value="회원가입" id="submit-btn">회원가입</input>
+        <input type="submit" value="회원가입" id="submit-btn"></input>
       </section>
     </form>
 
@@ -71,6 +78,7 @@ const checkpassword = ref('');
 const year = ref('년');
 const month = ref('월');
 const day = ref('일');
+const gender=ref('여성');
 </script>
 
 <style scoped>
@@ -161,5 +169,10 @@ main article {
   color: white;
   font-weight: 700;
   text-decoration: none;
+}
+
+#terms {
+  padding-left: 32px;
+  margin: 16px 0;
 }
 </style>

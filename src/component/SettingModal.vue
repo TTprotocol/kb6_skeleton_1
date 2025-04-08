@@ -1,39 +1,39 @@
 <template>
   <div class="modal">
     <div class="box">
-      <div class="top">
-        <h1>정보 수정</h1>
-        <i
-          class="fa-solid fa-x"
-          @click="closeModal"
-          style="cursor: pointer"
-        ></i>
-      </div>
-      <br />
+      <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
+      <h1>정보 수정</h1>
       <p>비밀번호 확인</p>
       <input
-        type="text"
+        type="password"
         v-model="originalpassword"
         placeholder="현재 비밀번호를 입력해주세요."
       />
       <p>새로운 비밀번호 입력</p>
       <input
-        type="text"
+        type="password"
         v-model="newpassword"
-        placeholder="현재 비밀번호를 입력해주세요."
+        placeholder="새로운 비밀번호를 입력해주세요."
       />
       <p>생년월일</p>
-      <select>
-        <option disabled>년</option>
-        <option>2020</option>
-      </select>
-      <select>
-        <option disabled>월</option>
-        <option>1</option>
-      </select>
-      <select>
-        <option disabled>일</option>
-        <option>1</option>
+      <div class="birth">
+        <select v-model="year">
+          <option disabled>년</option>
+          <option>2020</option>
+        </select>
+        <select v-model="month">
+          <option disabled>월</option>
+          <option>1</option>
+        </select>
+        <select v-model="day">
+          <option disabled>일</option>
+          <option>1</option>
+        </select>
+      </div>
+      <p>성별</p>
+      <select v-model="gender">
+        <option>여성</option>
+        <option>남성</option>
       </select>
       <button>수정</button>
     </div>
@@ -46,6 +46,10 @@ import { defineEmits, ref } from 'vue';
 const emit = defineEmits(['close']);
 const originalpassword = ref('');
 const newpassword = ref('');
+const year = ref('년');
+const month = ref('월');
+const day = ref('일');
+const gender = ref('여성');
 
 const closeModal = () => {
   emit('close');
@@ -86,7 +90,30 @@ const closeModal = () => {
   font-weight: 700;
 }
 
-.top {
-  display: flex;
+i {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  background-color: #cdcdcd;
+  color: white;
+  padding: 4px;
+  width: 100px;
+  margin: 8px;
+}
+
+p {
+  margin: 4px;
+}
+input {
+  margin: 4px;
+  width: 230px;
+}
+select {
+  margin: 4px;
 }
 </style>
