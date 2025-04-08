@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import LoginPage from "@/pages/LoginPage.vue";
 import MainPage from "@/pages/MainPage.vue";
 import AccountList from "@/pages/AccountList.vue";
-import AddList from "@/pages/AddList.vue";
+import AddEditItem from "@/pages/AddEditItem.vue";
 
 const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,7 +25,7 @@ const router = createRouter({
 		{
 			path: "/account/:id",
 			name: "account/id",
-			component: AddList,
+			component: AddEditItem,
 		},
 	],
 });
