@@ -137,7 +137,11 @@ import { reactive } from "vue";
 
 const currentRoute = useRoute();
 const store = getAccountListStore();
-store.fetchAllList();
+
+const { fetchAllList, fetchCategory, createData, updateData, deleteData } =
+	store;
+
+fetchAllList();
 
 let item = reactive({
 	amount: 0,
@@ -153,6 +157,7 @@ const listId = currentRoute.params.id;
 
 const findItem = async () => {
 	await store.fetchAllList();
+	console.log("store.allList : ", store.allList);
 	const temp = store.allList.filter((item) => item.id === listId)[0];
 	temp.amount = temp.amount.toLocaleString();
 	if (temp) {

@@ -1,6 +1,6 @@
 {
-	"income_categories": { "income": ["용돈", "월급", "주식", "이자"] },
-	"expense_categories": {
+	"categories": {
+		"income": ["용돈", "월급", "주식", "이자"],
 		"expense": [
 			"식비",
 			"생활비",

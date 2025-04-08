@@ -4,9 +4,11 @@ import axios from "axios";
 
 export const getAccountListStore = defineStore("list", () => {
 	const BASEURI = "/api/periodicData";
+	const CATEGORYURI = "/api/categories";
 	const state = reactive({
 		allList: [],
 		pageList: [],
+		category: {},
 		userEmail: "user1@example.com",
 		currentPage: 1,
 	});
@@ -21,6 +23,19 @@ export const getAccountListStore = defineStore("list", () => {
 			}
 		} catch (e) {
 			console.log("데이터 조회 에러 발생");
+		}
+	};
+
+	const fetchCategory = async () => {
+		try {
+			const response = await axios.get(CATEGORYURI);
+			if (response.status === 200) {
+				state.category = response.data;
+			} else {
+				console.log("카테고리 데이터 조회 실패");
+			}
+		} catch (e) {
+			console.log("카테고리 데이터 조회 에러 발생");
 		}
 	};
 
@@ -48,6 +63,77 @@ export const getAccountListStore = defineStore("list", () => {
 		state.userEmail = email;
 	};
 
+	const createData = async (
+		{ amount, type, category, description, memo, user, date },
+		successCallback
+	) => {
+		try {
+			const payload = {
+				amount,
+				type,
+				category,
+				description,
+				memo,
+				user,
+				date,
+			};
+			const response = await axios.post(BASEURI, payload);
+
+			if (response.status === 201) {
+				await fetchAllList();
+				successCallback();
+			} else {
+				alert("추가 실패!");
+			}
+		} catch (e) {
+			alert("에러 발생 : ", e);
+		}
+	};
+
+	const updateData = async (
+		{ amount, type, category, description, memo, user, date, id },
+		successCallback
+	) => {
+		try {
+			const payload = {
+				id,
+				amount,
+				type,
+				category,
+				description,
+				memo,
+				user,
+				date,
+			};
+			const response = await axios.put(BASEURI + `/${id}`, payload);
+
+			if (response.status === 200) {
+				let index = state.allList.findIndex((item) => item.id === id);
+				state.allList[index] = payload;
+				successCallback();
+			} else {
+				alert("수정 실패!");
+			}
+		} catch (e) {
+			alert("에러 발생 : ", e);
+		}
+	};
+
+	const deleteData = async (id) => {
+		try {
+			const response = await axios.delete(BASEURI + `/${id}`);
+
+			if (response.status === 200) {
+				let index = state.allList.findIndex((item) => item.id === id);
+				state.allList.splice(index, 1);
+			} else {
+				alert("삭제 실패!");
+			}
+		} catch (e) {
+			alert("에러 발생 : ", e);
+		}
+	};
+
 	const nextPage = async () => {
 		if (state.currentPage * 10 < state.allList.length) {
 			state.currentPage += 1;
@@ -64,17 +150,23 @@ export const getAccountListStore = defineStore("list", () => {
 
 	const allList = computed(() => state.allList);
 	const pageList = computed(() => state.pageList);
+	const category = computed(() => state.category);
 	const userEmail = computed(() => state.userEmail);
 	const currentPage = computed(() => state.currentPage);
 
 	return {
 		allList,
 		pageList,
+		category,
 		userEmail,
 		currentPage,
 		fetchAllList,
+		fetchCategory,
 		fetchPageList,
 		setUser,
+		createData,
+		updateData,
+		deleteData,
 		nextPage,
 		prevPage,
 	};
