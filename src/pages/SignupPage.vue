@@ -5,80 +5,101 @@
         <h1>정보를 설정해주세요.</h1>
       </header>
       <form>
-
-      <main>
-        <article>
-          <div style="height: 64px"></div>
-          <div id="signup__form">
-            <p>아이디</p>
-            <input type="text" placeholder="아이디를 입력해주세요." />
-            <div id="idbox"></div>
-            <button id="checkid">중복 확인</button>
-            <p>비밀번호</p>
-            <input
-              type="password"
-              v-model="password"
-              placeholder="비밀번호를 입력해주세요."
-            />
-            <p>비밀번호 확인</p>
-            <input
-              type="password"
-              v-model="checkpassword"
-              placeholder="비밀번호를 확인해주세요."
-            />
-            <p v-if="password !== checkpassword" style="color: #ff738f">
-              비밀번호가 다릅니다.
-            </p>
-            <p>생년월일</p>
-            <select v-model="year">
-              <option disabled>년</option>
-              <option>2020</option>
-            </select>
-            &nbsp;
-            <select v-model="month">
-              <option disabled>월</option>
-              <option>1</option>
-            </select>
-            &nbsp;
-            <select v-model="day">
-              <option disabled>일</option>
-              <option>1</option>
-            </select>
-          </div>
-        </article>
-        <article>
-          <div style="height: 64px"></div>
-          <div id="signup__form">
-            <p>성별</p>
-            <select v-model="gender">
-              <option>여성</option>
-              <option>남성</option>
-            </select>
-          </div>
-          <div id="terms">
-            <input type="checkbox" value="term1" /> 약관 1 <br /><br />
-            <input type="checkbox" value="term2" /> 약관 2
-          </div>
-        </article>
-      </main>
-      <section>
-        <input type="submit" value="회원가입" id="submit-btn"></input>
-      </section>
-    </form>
-
+        <main>
+          <article>
+            <div style="height: 64px"></div>
+            <div id="signup__form">
+              <p>아이디</p>
+              <input type="text" placeholder="아이디를 입력해주세요." />
+              <div id="idbox"></div>
+              <button id="checkid">중복 확인</button>
+              <p>비밀번호</p>
+              <input
+                type="password"
+                v-model="password"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <p>비밀번호 확인</p>
+              <input
+                type="password"
+                v-model="checkpassword"
+                placeholder="비밀번호를 확인해주세요."
+              />
+              <p v-if="password !== checkpassword" style="color: #ff738f">
+                비밀번호가 다릅니다.
+              </p>
+              <p>생년월일</p>
+              <select v-model="year">
+                <option disabled>년</option>
+                <option v-for="item in years" :key="item" :value="item">
+                  {{ item }}
+                </option>
+              </select>
+              &nbsp;
+              <select v-model="month">
+                <option disabled>월</option>
+                <option v-for="item in months" :key="item" :value="item">
+                  {{ item }}
+                </option>
+              </select>
+              &nbsp;
+              <select v-model="day">
+                <option disabled>일</option>
+                <option v-for="item in days" :key="item" :value="item">
+                  {{ item }}
+                </option>
+              </select>
+            </div>
+          </article>
+          <article>
+            <div style="height: 64px"></div>
+            <div id="signup__form">
+              <p>성별</p>
+              <select v-model="gender">
+                <option>여성</option>
+                <option>남성</option>
+              </select>
+            </div>
+            <div id="terms">
+              <input type="checkbox" value="term1" /> 약관 1 <br /><br />
+              <input type="checkbox" value="term2" /> 약관 2
+            </div>
+          </article>
+        </main>
+        <section>
+          <input type="submit" value="회원가입" id="submit-btn" />
+        </section>
+      </form>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 
 const password = ref('');
 const checkpassword = ref('');
 const year = ref('년');
 const month = ref('월');
 const day = ref('일');
-const gender=ref('여성');
+const gender = ref('여성');
+const years = ref([]);
+const months = ref([]);
+const days = ref([]);
+
+onMounted(() => {
+  const nowYear = new Date().getFullYear();
+  for (let i = 0; i < 100; i++) {
+    let date = nowYear - i;
+    years.value.push(date);
+  }
+  for (let i = 1; i < 13; i++) {
+    months.value.push(i);
+  }
+  for (let i = 1; i < 32; i++) {
+    days.value.push(i);
+  }
+});
 </script>
 
 <style scoped>

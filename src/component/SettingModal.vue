@@ -19,15 +19,21 @@
       <div class="birth">
         <select v-model="year">
           <option disabled>년</option>
-          <option>2020</option>
+          <option v-for="item in years" :key="item" :value="item">
+            {{ item }}
+          </option>
         </select>
         <select v-model="month">
           <option disabled>월</option>
-          <option>1</option>
+          <option v-for="item in months" :key="item" :value="item">
+            {{ item }}
+          </option>
         </select>
         <select v-model="day">
           <option disabled>일</option>
-          <option>1</option>
+          <option v-for="item in days" :key="item" :value="item">
+            {{ item }}
+          </option>
         </select>
       </div>
       <p>성별</p>
@@ -41,7 +47,7 @@
 </template>
 
 <script setup>
-import { defineEmits, ref } from 'vue';
+import { defineEmits, ref, onMounted } from 'vue';
 
 const emit = defineEmits(['close']);
 const originalpassword = ref('');
@@ -50,10 +56,27 @@ const year = ref('년');
 const month = ref('월');
 const day = ref('일');
 const gender = ref('여성');
+const years = ref([]);
+const months = ref([]);
+const days = ref([]);
 
 const closeModal = () => {
   emit('close');
 };
+
+onMounted(() => {
+  const nowYear = new Date().getFullYear();
+  for (let i = 0; i < 100; i++) {
+    let date = nowYear - i;
+    years.value.push(date);
+  }
+  for (let i = 1; i < 13; i++) {
+    months.value.push(i);
+  }
+  for (let i = 1; i < 32; i++) {
+    days.value.push(i);
+  }
+});
 </script>
 
 <style scoped>
