@@ -26,7 +26,7 @@
         <br /><br />
         <div id="text__button">
           <p>아직 회원이 아닌가요?&nbsp;&nbsp;</p>
-          <router-link id="text__link">회원가입하기</router-link>
+          <router-link id="text__link" to="/signup">회원가입하기</router-link>
         </div>
       </div>
     </div>

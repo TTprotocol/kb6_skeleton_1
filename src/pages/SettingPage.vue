@@ -20,11 +20,11 @@
               </div>
               <i
                 class="fa-solid fa-gear"
-                style="color: #cdcdcd; font-size: 40px"
+                style="color: #cdcdcd; font-size: 40px; cursor: pointer"
                 @click="changeModal"
               ></i>
               <teleport to="#modal">
-                <SettingModal v-if="isModal" />
+                <SettingModal v-if="isModal" @close="isModal = false" />
               </teleport>
             </div>
             <div id="print__user">

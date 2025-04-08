@@ -4,10 +4,12 @@
       <header>
         <h1>정보를 설정해주세요.</h1>
       </header>
+      <form>
+
       <main>
         <article>
           <div style="height: 64px"></div>
-          <form id="signup__form">
+          <div id="signup__form">
             <p>아이디</p>
             <input type="text" placeholder="아이디를 입력해주세요." />
             <div id="idbox"></div>
@@ -42,7 +44,7 @@
               <option disabled>일</option>
               <option>1</option>
             </select>
-          </form>
+          </div>
         </article>
         <article>
           <div style="height: 64px"></div>
@@ -53,8 +55,10 @@
         </article>
       </main>
       <section>
-        <button id="submit-btn">회원가입</button>
+        <input type="submit" value="회원가입" id="submit-btn">회원가입</input>
       </section>
+    </form>
+
     </div>
   </div>
 </template>
@@ -156,5 +160,6 @@ main article {
   background-color: rgba(128, 155, 255, 0.75);
   color: white;
   font-weight: 700;
+  text-decoration: none;
 }
 </style>
