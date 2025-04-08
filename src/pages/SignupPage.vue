@@ -1,57 +1,60 @@
 <template>
   <div id="app">
     <div id="signup">
+      <header>
+        <h1>정보를 설정해주세요.</h1>
+      </header>
+      <main>
+        <article>
+          <div style="height: 64px"></div>
+          <form id="signup__form">
+            <p>아이디</p>
+            <input type="text" placeholder="아이디를 입력해주세요." />
+            <div id="idbox"></div>
+            <button id="checkid">중복 확인</button>
+            <p>비밀번호</p>
+            <input
+              type="password"
+              v-model="password"
+              placeholder="비밀번호를 입력해주세요."
+            />
+            <p>비밀번호 확인</p>
+            <input
+              type="password"
+              v-model="checkpassword"
+              placeholder="비밀번호를 확인해주세요."
+            />
+            <p v-if="password !== checkpassword" style="color: #ff738f">
+              비밀번호가 다릅니다.
+            </p>
+            <p>생년월일</p>
+            <select v-model="year">
+              <option disabled>년</option>
+              <option>2020</option>
+            </select>
+            &nbsp;
+            <select v-model="month">
+              <option disabled>월</option>
+              <option>1</option>
+            </select>
+            &nbsp;
+            <select v-model="day">
+              <option disabled>일</option>
+              <option>1</option>
+            </select>
+          </form>
+        </article>
+        <article>
+          <div style="height: 64px"></div>
+          <div id="terms">
+            <input type="checkbox" value="term1" /> 약관 1 <br /><br />
+            <input type="checkbox" value="term2" /> 약관 2
+          </div>
+        </article>
+      </main>
       <section>
-        <div id="signup__header">
-          <h1>정보를 설정해주세요.</h1>
-        </div>
-        <div style="height: 64px"></div>
-        <div id="signup__form">
-          <p>아이디</p>
-          <input type="text" placeholder="아이디를 입력해주세요." />
-          <div id="idbox"></div>
-          <button id="checkid">중복 확인</button>
-          <p>비밀번호</p>
-          <input
-            type="password"
-            v-model="password"
-            placeholder="비밀번호를 입력해주세요."
-          />
-          <p>비밀번호 확인</p>
-          <input
-            type="password"
-            v-model="checkpassword"
-            placeholder="비밀번호를 확인해주세요."
-          />
-          <p v-if="password !== checkpassword" style="color: #ff738f">
-            비밀번호가 다릅니다.
-          </p>
-          <p>생년월일</p>
-          <select v-model="year">
-            <option disabled>년</option>
-            <option>2020</option>
-          </select>
-          &nbsp;
-          <select v-model="month">
-            <option disabled>월</option>
-            <option>1</option>
-          </select>
-          &nbsp;
-          <select v-model="day">
-            <option disabled>일</option>
-            <option>1</option>
-          </select>
-        </div>
+        <button id="submit-btn">회원가입</button>
       </section>
-      <section>
-        <div style="height: 104px"></div>
-        <div id="terms">
-          <input type="checkbox" /> 약관 1
-          <br />
-          <input type="checkbox" /> 약관 2
-        </div>
-      </section>
-      <button id="submit-btn">회원가입</button>
     </div>
   </div>
 </template>
@@ -87,13 +90,11 @@ const day = ref('일');
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   background-color: #fcfcfc;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-#signup > section {
-  flex: 1;
-}
-
-#signup__header h1 {
+header h1 {
   display: inline;
   font-size: 32px;
   font-style: normal;
@@ -133,9 +134,19 @@ select {
   margin: 8px 0;
 }
 
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+main article {
+  flex: 1;
+}
+
 #submit-btn {
   position: absolute;
-  bottom: 80px;
+  bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
   border: none;

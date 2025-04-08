@@ -4,7 +4,7 @@ import MainPage from '@/pages/MainPage.vue';
 import AccountList from '@/pages/AccountList.vue';
 import AddList from '@/pages/AddList.vue';
 import SignupPage from '@/pages/SignupPage.vue';
-import Mypage from '@/pages/Mypage.vue';
+import Setting from '@/pages/SettingPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,9 +35,9 @@ const router = createRouter({
       component: AddList,
     },
     {
-      path: '/mypage',
-      name: 'mypage',
-      component: Mypage,
+      path: '/setting',
+      name: 'setting',
+      component: Setting,
     },
   ],
 });
