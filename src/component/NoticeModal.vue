@@ -21,7 +21,7 @@ const closeModal = () => {
 </script>
 
 <style scoped>
-.term_modal {
+.notice_modal {
   display: block;
   position: fixed;
   z-index: 1;

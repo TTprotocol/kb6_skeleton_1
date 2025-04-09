@@ -6,7 +6,7 @@
       <div id="users">
         <p id="user__name">은서</p>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <p id="user__info">20대 여성</p>
+        <p id="user__info">{{ calAge }}대 여성</p>
       </div>
     </div>
     <i
@@ -21,13 +21,21 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import SettingModal from '@/component/SettingModal.vue';
 
 const isModal = ref(false);
 const changeModal = () => {
   isModal.value = true;
 };
+
+const year = 2000;
+
+const calAge = computed(() => {
+  const nowyear = new Date().getFullYear();
+  const agearea = nowyear - year + 1;
+  return Math.floor(agearea / 10) * 10;
+});
 </script>
 
 <style scoped>

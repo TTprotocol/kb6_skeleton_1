@@ -5,13 +5,14 @@
     <teleport to="#notice_modal">
       <NoticeModal v-if="isModal" @close="isModal = false" />
     </teleport>
-    <button id="menus__btn">음</button>
-    <button id="menus__btn">정보</button>
-    <button id="menus__btn" @click="changeModal4">문의하기</button>
+    <button id="menus__btn" @click="changeModal2">문의하기</button>
     <teleport to="#question_modal">
-      <QuestionModal v-if="isModal4" @close="isModal4 = false" />
+      <QuestionModal v-if="isModal2" @close="isModal2 = false" />
     </teleport>
     <button id="menus__btn">설정</button>
+    <button id="menus__btn" @click="">로그아웃</button>
+
+    <button id="menus__btn">계정 삭제</button>
   </div>
 </template>
 
@@ -21,14 +22,14 @@ import NoticeModal from './NoticeModal.vue';
 import QuestionModal from './QuestionModal.vue';
 
 const isModal = ref(false);
-const isModal4 = ref(false);
+const isModal2 = ref(false);
 
 const changeModal = () => {
   isModal.value = true;
 };
 
-const changeModal4 = () => {
-  isModal4.value = true;
+const changeModal2 = () => {
+  isModal2.value = true;
 };
 </script>
 
