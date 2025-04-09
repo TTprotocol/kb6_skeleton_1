@@ -1,7 +1,7 @@
 <template>
-	<div id="app" class="transaction-page container py-4">
+	<div id="app" class="transaction-page container">
 		<div
-			class="d-flex align-items-center justify-content-between mb-3 gap-2 flex-wrap"
+			class="d-flex align-items-center justify-content-between gap-2 flex-wrap"
 		>
 			<TransactionTabs v-model="currentTab" class="mb-3" />
 			<DateRangePicker
@@ -28,15 +28,12 @@
 			</div>
 		</div>
 
-		<div class="d-flex justify-content-between align-items-center mt-3">
-			<TransactionFooter
-				:total="totalAmount"
-				:checkedTotal="checkedTotalAmount"
-				:checkedItems="checkedItems"
-				@add="goToAddTransaction"
-				class="fixed-bottom bg-white py-3 px-4 border-top shadow-sm"
-			/>
-		</div>
+		<TransactionFooter
+			:total="totalAmount"
+			:checkedTotal="checkedTotalAmount"
+			:checkedItems="checkedItems"
+			@add="goToAddTransaction"
+		/>
 	</div>
 </template>
 
@@ -132,8 +129,9 @@ console.log("allData:", allData);
 
 <style scoped>
 #app {
+	height: 100%;
 	margin-top: 50px;
-	padding-bottom: 80px;
-	box-sizing: border-box;
+	padding-bottom: 50px;
+	/* border: 1px solid red; */
 }
 </style>

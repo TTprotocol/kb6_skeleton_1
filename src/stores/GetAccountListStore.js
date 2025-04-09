@@ -56,15 +56,16 @@ export const getAccountListStore = defineStore("list", () => {
 			const response = await axios.get(BASEURI, {
 				params: {
 					user: state.userEmail,
-					_page: state.currentPage,
+					_page: page,
 					_limit: 10,
+					_sort: "date", // 정렬 필드
+					_order: "desc", // 정렬 순서
 				},
 			});
 
+			console.log("response.data : ", response.data);
 			if (response.status === 200) {
-				state.pageList = response.data.sort((a, b) =>
-					a.date > b.date ? -1 : 1
-				);
+				state.pageList = response.data;
 			} else {
 				console.log("페이지 조회 실패");
 			}
@@ -151,14 +152,14 @@ export const getAccountListStore = defineStore("list", () => {
 	const nextPage = async () => {
 		if (state.currentPage * 10 < state.allList.length) {
 			state.currentPage += 1;
-			await fetchPageList(state.currentPage + 1);
+			await fetchPageList(state.currentPage);
 		}
 	};
 
 	const prevPage = async () => {
 		if (state.currentPage > 1) {
 			state.currentPage -= 1;
-			await fetchPageList(state.currentPage - 1);
+			await fetchPageList(state.currentPage);
 		}
 	};
 
