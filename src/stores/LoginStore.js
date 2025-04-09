@@ -29,8 +29,13 @@ export const loginStore = defineStore('login', () => {
           state.gender = matchUser.gender;
           state.budget = matchUser.budget;
           state.login = true;
+          console.log(matchUser);
+          await axios.put(`${BASEURI}/${matchUser.id}`, {
+            ...matchUser,
+            login: true,
+          });
+
           console.log('로그인 성공');
-          matchUser.login = true;
           return true;
         } else {
           state.login = false;
@@ -101,6 +106,26 @@ export const loginStore = defineStore('login', () => {
       console.log('데이터 조회 에러 발생');
     }
   };
+
+  const checkId = async ({ id }) => {
+    try {
+      const response = await axios.get(BASEURI);
+      if (response.status === 200) {
+        const userList = response.data;
+        const matchUser = userList.find((user) => user.email === id);
+        if (matchUser) {
+          return false;
+        } else {
+          return true;
+        }
+      } else {
+        console.log('데이터 조회 실패');
+      }
+    } catch (e) {
+      console.log('데이터 조회 에러 발생');
+    }
+  };
+
   const myEmail = computed(() => state.email);
   const myName = computed(() => state.name);
   const myBirth = computed(() => state.birth);
@@ -112,6 +137,7 @@ export const loginStore = defineStore('login', () => {
     getData,
     settingUser,
     getMine,
+    checkId,
     myEmail,
     myName,
     myBirth,

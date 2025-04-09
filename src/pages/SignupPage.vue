@@ -16,7 +16,7 @@
                 placeholder="아이디를 입력해주세요."
               />
               <div id="idbox"></div>
-              <button id="checkid">중복 확인</button>
+              <button id="checkid" @click="checkIdHandler">중복 확인</button>
               <!-- @click="findIdHandler" -->
               <p>비밀번호</p>
               <input
@@ -98,7 +98,9 @@ import { ref, onMounted, computed } from 'vue';
 // import axios from 'axios';
 import Term1Modal from '@/component/Term1Modal.vue';
 import Term2Modal from '@/component/Term2Modal.vue';
+import { loginStore } from '@/stores/LoginStore';
 
+const store = loginStore();
 const password = ref('');
 const checkpassword = ref('');
 const year = ref('년');
@@ -147,9 +149,16 @@ const isValid = computed(() => {
   );
 });
 
-// const findIdHandler = async (id) => {
-//   let response = await axios.get()
-// };
+const checkIdHandler = async (id) => {
+  try {
+    const response = await store.checkId(id);
+    if (response) {
+    } else {
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
 </script>
 
 <style scoped>
