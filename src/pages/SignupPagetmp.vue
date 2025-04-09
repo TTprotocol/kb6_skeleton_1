@@ -7,64 +7,15 @@
       <form @submit.prevent>
         <main>
           <article>
-            <div style="height: 64px"></div>
-            <div id="signup__form">
-              <p>아이디</p>
-              <input
-                type="text"
-                v-model="id"
-                placeholder="아이디를 입력해주세요."
-              />
-              <div id="idbox"></div>
-              <button id="checkid">중복 확인</button>
-              <!-- @click="findIdHandler" -->
-              <p>비밀번호</p>
-              <input
-                type="password"
-                v-model="password"
-                placeholder="비밀번호를 입력해주세요."
-              />
-              <p>비밀번호 확인</p>
-              <input
-                type="password"
-                v-model="checkpassword"
-                placeholder="비밀번호를 확인해주세요."
-              />
-              <p v-if="password !== checkpassword" style="color: #ff738f">
-                비밀번호가 다릅니다.
-              </p>
-              <p>생년월일</p>
-              <select v-model="year">
-                <option disabled>년</option>
-                <option v-for="item in years" :key="item" :value="item">
-                  {{ item }}
-                </option>
-              </select>
-              &nbsp;
-              <select v-model="month">
-                <option disabled>월</option>
-                <option v-for="item in months" :key="item" :value="item">
-                  {{ item }}
-                </option>
-              </select>
-              &nbsp;
-              <select v-model="day">
-                <option disabled>일</option>
-                <option v-for="item in days" :key="item" :value="item">
-                  {{ item }}
-                </option>
-              </select>
-            </div>
+            <SignupInput
+              :id="id"
+              :password="password"
+              :checkpassword="checkpassword"
+            />
+            <SignupBirth :years="years" :months="months" :days="days" />
           </article>
           <article>
-            <div style="height: 64px"></div>
-            <div id="signup__form">
-              <p>성별</p>
-              <select v-model="gender">
-                <option>여성</option>
-                <option>남성</option>
-              </select>
-            </div>
+            <SignupGender :gender="gender" />
             <div id="terms">
               <input type="checkbox" value="term1" v-model="terms" />
               <button id="text__button1" @click="changeModal">약관 1</button>
@@ -96,28 +47,26 @@
 <script setup>
 import { ref, onMounted, computed } from 'vue';
 // import axios from 'axios';
+// import Signup from '@/component/Signup.vue';
+// import Term1Modal from '@/component/Term1Modal.vue';
+import SignupInput from '@/component/SignupInput.vue';
+import SignupBirth from '@/component/SignupBirth.vue';
+import SignupGender from '@/component/SignupGender.vue';
 import Term1Modal from '@/component/Term1Modal.vue';
 import Term2Modal from '@/component/Term2Modal.vue';
-
-const password = ref('');
-const checkpassword = ref('');
+const gender = ref('여성');
 const year = ref('년');
 const month = ref('월');
 const day = ref('일');
-const gender = ref('여성');
 const years = ref([]);
 const months = ref([]);
 const days = ref([]);
 const id = ref('');
+const password = ref('');
+const checkpassword = ref('');
 const terms = ref([]);
 const isModal = ref(false);
 const isModal2 = ref(false);
-const changeModal = () => {
-  isModal.value = true;
-};
-const changeModal2 = () => {
-  isModal2.value = true;
-};
 
 onMounted(() => {
   const nowYear = new Date().getFullYear();
@@ -184,54 +133,15 @@ header h1 {
   font-weight: 700;
 }
 
-#idbox {
-  width: 16px;
-  display: inline-block;
-}
-
-#signup__form {
-  margin: 0 32px;
-}
-
-#signup__form p {
-  font-weight: 700;
-  margin: 8px 0;
-}
-
-input {
-  margin: 8px 0;
-  border: none;
-  text-decoration: underline rgb(216, 216, 216);
-  background-color: #fcfcfc;
-}
-
-#checkid {
-  border-radius: 10px;
-  padding: 16px;
-  border: none;
-  background-color: rgba(128, 155, 255, 0.75);
-  color: white;
-}
-
-select {
-  margin: 8px 0;
-}
-
 main {
   display: flex;
   flex-direction: row;
   gap: 32px;
-  justify-content: space-between;
 }
 
-article {
-  width: 400px;
-  justify-content: start;
-}
-
-/* main article {
+main article {
   flex: 1;
-} */
+}
 
 #submit-btn {
   position: absolute;
@@ -245,7 +155,6 @@ article {
   background-color: rgba(128, 155, 255, 0.75);
   color: white;
   font-weight: 700;
-  text-decoration: none;
 }
 
 #submit-btn:disabled {

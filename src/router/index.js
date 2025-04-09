@@ -5,7 +5,7 @@ import AccountList from "@/pages/AccountList.vue";
 import AddEditItem from "@/pages/AddEditItem.vue";
 import SignupPage from '@/pages/SignupPage.vue';
 import Setting from '@/pages/SettingPage.vue';
-import LoginId from '@/pages/LoginId.vue';
+import LoginId from '@/pages/LoginIdPage.vue';
 
 
 const router = createRouter({

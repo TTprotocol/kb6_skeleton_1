@@ -4,24 +4,24 @@
       <header>
         <h1>로그인해주세요.</h1>
       </header>
-      <form>
+      <form @submit.prevent="submitLogin">
         <main>
           <article>
-            <!-- <div style="height: 64px"></div> -->
-            <div id="login__form">
-              <p>아이디</p>
-              <input type="text" placeholder="아이디를 입력해주세요." />
-              <p>비밀번호</p>
-              <input
-                type="password"
-                v-model="password"
-                placeholder="비밀번호를 입력해주세요."
-              />
-            </div>
+            <LoginId
+              :userId="userId"
+              :password="password"
+              @id-change="handleIdChange"
+              @password-change="handlePasswordChange"
+            />
           </article>
         </main>
         <section>
-          <input type="submit" value="로그인" id="submit-btn" />
+          <input
+            type="submit"
+            value="로그인"
+            id="submit-btn"
+            @click="submitLogin"
+          />
         </section>
       </form>
     </div>
@@ -30,16 +30,25 @@
 
 <script setup>
 import { ref } from 'vue';
+import LoginId from '@/component/LoginId.vue';
 
+const userId = ref('');
 const password = ref('');
-const checkpassword = ref('');
-const year = ref('년');
-const month = ref('월');
-const day = ref('일');
-const gender = ref('여성');
+
+const handleIdChange = (val) => {
+  userId.value = val;
+};
+
+const handlePasswordChange = (val) => {
+  password.value = val;
+};
+
+const submitLogin = () => {
+  console.log('로그인 시도:', userId.value, password.value);
+};
 </script>
 
-<style scoped>
+<style>
 #app {
   width: 100%;
   height: 100vh;
@@ -72,35 +81,6 @@ header h1 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
-}
-
-#idbox {
-  width: 16px;
-  display: inline-block;
-}
-
-#login__form {
-  margin: 0 32px;
-}
-
-#login__form p {
-  font-weight: 700;
-  margin: 8px 0;
-}
-
-input {
-  margin: 8px 0;
-  border: none;
-  text-decoration: underline rgb(216, 216, 216);
-  background-color: #fcfcfc;
-}
-
-#checkid {
-  border-radius: 10px;
-  padding: 16px;
-  border: none;
-  background-color: #cdcdcd;
-  color: white;
 }
 
 #submit-btn {
