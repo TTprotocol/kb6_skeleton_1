@@ -25,6 +25,7 @@
 import UserProfile from '@/component/UserProfile.vue';
 import UserInfo from '@/component/UserInfo.vue';
 import SettingList from '@/component/SettingList.vue';
+
 </script>
 
 <style scoped>

@@ -30,6 +30,7 @@ export const loginStore = defineStore('login', () => {
           state.budget = matchUser.budget;
           state.login = true;
           console.log('로그인 성공');
+          matchUser.login = true;
           return true;
         } else {
           state.login = false;
@@ -74,15 +75,46 @@ export const loginStore = defineStore('login', () => {
     }
   };
 
-  //   const allList = computed(() => state.allList);
-  //   const pageList = computed(() => state.pageList);
-  //   const categoryList = computed(() => state.categoryList);
+  const getMine = async () => {
+    try {
+      const response = await axios.get(BASEURI);
+      if (response.status === 200) {
+        const userList = response.data;
+        const matchUser = userList.find((user) => user.login === true);
+        console.log(matchUser);
+        if (matchUser) {
+          console.log('사용자 찾기 성공');
+          state.email = matchUser.email;
+          state.name = matchUser.name;
+          state.birth = matchUser.birth;
+          state.gender = matchUser.gender;
+          state.budget = matchUser.budget;
+          return true;
+        } else {
+          console.log('사용자를 찾을 수 없습니다.');
+          return false;
+        }
+      } else {
+        console.log('데이터 조회 실패');
+      }
+    } catch (e) {
+      console.log('데이터 조회 에러 발생');
+    }
+  };
+  const myEmail = computed(() => state.email);
+  const myName = computed(() => state.name);
+  const myBirth = computed(() => state.birth);
+  const myGender = computed(() => state.gender);
   //   const userEmail = computed(() => state.userEmail);
   //   const currentPage = computed(() => state.currentPage);
 
   return {
     getData,
     settingUser,
-    state,
+    getMine,
+    myEmail,
+    myName,
+    myBirth,
+    myGender,
   };
 });
