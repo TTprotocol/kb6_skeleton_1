@@ -22,7 +22,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import SettingModal from '../component/SettingModal.vue';
+import SettingModal from '@/component/SettingModal.vue';
 
 const isModal = ref(false);
 const changeModal = () => {
@@ -57,5 +57,12 @@ const changeModal = () => {
   font-size: 20px;
   font-weight: 700;
   color: #ff738f;
+}
+
+img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 </style>
