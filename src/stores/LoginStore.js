@@ -107,15 +107,18 @@ export const loginStore = defineStore('login', () => {
     }
   };
 
-  const checkId = async ({ id }) => {
+  const checkId = async (id) => {
     try {
       const response = await axios.get(BASEURI);
       if (response.status === 200) {
         const userList = response.data;
         const matchUser = userList.find((user) => user.email === id);
+        console.log(matchUser);
         if (matchUser) {
+          console.log('이미 존재하는 아이디입니다.');
           return false;
         } else {
+          console.log('가입 가능한 아이디입니다.');
           return true;
         }
       } else {

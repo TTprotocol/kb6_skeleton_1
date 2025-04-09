@@ -9,14 +9,28 @@
           <article>
             <div style="height: 64px"></div>
             <div id="signup__form">
-              <p>아이디</p>
+              <div id="idcheck">
+                <p>아이디(이메일)</p>
+                <p
+                  id="idcheckmessage"
+                  v-if="message"
+                  :class="{
+                    accept: message === '가입 가능한 아이디입니다.',
+                    reject: message === '이미 존재하는 아이디입니다.',
+                  }"
+                >
+                  &nbsp; &nbsp;&nbsp;{{ message }}
+                </p>
+              </div>
               <input
                 type="text"
                 v-model="id"
                 placeholder="아이디를 입력해주세요."
               />
               <div id="idbox"></div>
-              <button id="checkid" @click="checkIdHandler">중복 확인</button>
+              <button id="checkid" @click="checkIdHandler(id)">
+                중복 확인
+              </button>
               <!-- @click="findIdHandler" -->
               <p>비밀번호</p>
               <input
@@ -69,24 +83,29 @@
               <input type="checkbox" value="term1" v-model="terms" />
               <button id="text__button1" @click="changeModal">약관 1</button>
               <teleport to="#term_modal">
-                <Term1Modal v-if="isModal" @close="isModal = false" />
+                <Term1Modal
+                  v-if="isModal"
+                  @close="isModal = false"
+                  @agree-term="agreeTerm1"
+                />
               </teleport>
               <br /><br />
               <input type="checkbox" value="term2" v-model="terms" />
               <button id="text__button2" @click="changeModal2">약관 2</button>
               <teleport to="#term_modal">
-                <Term2Modal v-if="isModal2" @close="isModal2 = false" />
+                <Term2Modal
+                  v-if="isModal2"
+                  @close="isModal2 = false"
+                  @agree-term="agreeTerm2"
+                />
               </teleport>
             </div>
           </article>
         </main>
         <section>
-          <input
-            type="submit"
-            value="회원가입"
-            id="submit-btn"
-            :disabled="!isValid"
-          />
+          <button type="submit" id="submit-btn" :disabled="!isValid">
+            회원가입
+          </button>
         </section>
       </form>
     </div>
@@ -114,12 +133,7 @@ const id = ref('');
 const terms = ref([]);
 const isModal = ref(false);
 const isModal2 = ref(false);
-const changeModal = () => {
-  isModal.value = true;
-};
-const changeModal2 = () => {
-  isModal2.value = true;
-};
+const message = ref('');
 
 onMounted(() => {
   const nowYear = new Date().getFullYear();
@@ -135,6 +149,21 @@ onMounted(() => {
   }
 });
 
+const changeModal = () => {
+  isModal.value = true;
+};
+const changeModal2 = () => {
+  isModal2.value = true;
+};
+
+const agreeTerm1 = () => {
+  if (!terms.value.includes('term1')) terms.value.push('term1');
+};
+
+const agreeTerm2 = () => {
+  if (!terms.value.includes('term2')) terms.value.push('term2');
+};
+
 const isValid = computed(() => {
   return (
     id.value.trim() != '' &&
@@ -145,15 +174,21 @@ const isValid = computed(() => {
     month.value !== '월' &&
     day.value !== '일' &&
     gender.value !== '' &&
-    terms.value.length === 2
+    terms.value.length === 2 &&
+    message.value === '가입 가능한 아이디입니다.'
   );
 });
 
 const checkIdHandler = async (id) => {
   try {
     const response = await store.checkId(id);
+    console.log(response);
     if (response) {
+      console.log('가입 가능!');
+      message.value = '가입 가능한 아이디입니다.';
     } else {
+      console.log('가입 불가능!');
+      message.value = '이미 존재하는 아이디입니다.';
     }
   } catch (e) {
     console.log(e);
@@ -212,6 +247,10 @@ input {
   border: none;
   text-decoration: underline rgb(216, 216, 216);
   background-color: #fcfcfc;
+}
+
+#idcheck {
+  display: flex;
 }
 
 #checkid {
@@ -279,5 +318,20 @@ article {
   background-color: #fcfcfc;
   text-decoration: underline;
   font-weight: 700;
+}
+
+#idcheckmessage {
+  display: flex;
+  align-items: flex-end;
+}
+
+#idcheckmessage.accept {
+  font-size: 14px;
+  color: rgb(56, 56, 255);
+}
+
+#idcheckmessage.reject {
+  font-size: 14px;
+  color: rgb(254, 110, 110);
 }
 </style>

@@ -17,7 +17,7 @@
         </main>
         <p class="error-msg" :class="{ hidden: !isWrong }">
           {{
-            isWrong
+            isWrong && userId.length > 0
               ? '비밀번호가 일치하지 않거나 가입되지 않은 아이디입니다. '
               : ' '
           }}
