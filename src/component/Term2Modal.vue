@@ -4,7 +4,7 @@
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
       <h1>약관2</h1>
       <p>내용내용내용</p>
-      <button>동의</button>
+      <button @click="agreeTerm">동의</button>
     </div>
   </div>
 </template>
@@ -15,6 +15,11 @@ import { defineEmits, ref } from 'vue';
 const emit = defineEmits(['close']);
 
 const closeModal = () => {
+  emit('close');
+};
+
+const agreeTerm = () => {
+  emit('agree-term', true);
   emit('close');
 };
 </script>
@@ -62,7 +67,7 @@ i {
 button {
   border: none;
   border-radius: 10px;
-  background-color: #cdcdcd;
+  background-color: rgba(128, 155, 255, 0.75);
   color: white;
   padding: 4px;
   width: 100px;
