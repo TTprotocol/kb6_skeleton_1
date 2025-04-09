@@ -8,7 +8,8 @@
           <budgetBarChart
             v-if="loginUser && state.periodicData.length > 0"
             :budget="loginUser.budget"
-            :usedAmount="totalExpense"
+            :transactions="state.periodicData"
+            :userEmail="loginUser.email"
           />
         </div>
 
@@ -25,7 +26,13 @@
             />
           </div>
           <div class="card half-width">
-            <h2>ㅇㅇㅇ님의 소비 트렌드</h2>
+            <!-- <h2>ㅇㅇㅇ님의 소비 트렌드</h2> -->
+            <ExpenseTrend
+              v-if="loginUser && state.periodicData.length > 0"
+              :userName="loginUser.name"
+              :userEmail="loginUser.email"
+              :transactions="state.periodicData"
+            />
             <!-- <p>오른쪽 카드입니다.</p> -->
           </div>
         </div>
@@ -40,6 +47,7 @@ import { reactive, computed, provide, onMounted, watchEffect } from 'vue';
 import axios from 'axios';
 import TransactionList from '@/component/TransactionList.vue';
 import budgetBarChart from '@/component/budgetBarChart.vue';
+import ExpenseTrend from '@/component/ExpenseTrend.vue';
 
 const state = reactive({
   income: [],
@@ -52,20 +60,20 @@ const loginUser = computed(() => state.users.find((u) => u.login === true));
 watchEffect(() => {
   if (loginUser.value) {
     console.log('로그인 유저:', loginUser.value.name);
-    console.log('전체 소비 금액:', totalExpense.value);
+    // console.log('전체 소비 금액:', totalExpense.value);
   }
 });
 
-const totalExpense = computed(() => {
-  if (!loginUser.value) return 0;
-  return state.periodicData
-    .filter(
-      (item) => item.user === loginUser.value.email && item.type === -1 // 지출
-    )
-    .reduce((sum, item) => sum + item.amount, 0);
-});
+// const totalExpense = computed(() => {
+//   if (!loginUser.value) return 0;
+//   return state.periodicData
+//     .filter(
+//       (item) => item.user === loginUser.value.email && item.type === -1 // 지출
+//     )
+//     .reduce((sum, item) => sum + item.amount, 0);
+// });
 
-console.log(`전체 소비 금액 : ${totalExpense.value}`);
+// console.log(`전체 소비 금액 : ${totalExpense.value}`);
 
 onMounted(async () => {
   try {
@@ -115,7 +123,7 @@ onMounted(async () => {
   width: 80%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 10px;
   /* border: 1px solid red; */
   box-sizing: border-box;
 }
@@ -144,5 +152,6 @@ onMounted(async () => {
 .half-width {
   flex: 1;
   min-width: 300px; /* 반응형 대응 */
+  height: 400px;
 }
 </style>
