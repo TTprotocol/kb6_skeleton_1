@@ -2,7 +2,9 @@
   <div>
     <h4>{{ userName }}님의 최근 거래 내역</h4>
     <div class="button-row">
-      <button class="open-modal-btn" @click="showModal = true">+ 추가</button>
+      <button class="open-modal-btn" @click="showModal = true">
+        + 내역 추가
+      </button>
     </div>
 
     <table v-if="recentTransactions.length > 0" class="transaction-table">

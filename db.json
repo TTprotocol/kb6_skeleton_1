@@ -2430,6 +2430,16 @@
       "memo": "ㅈㅂㅂ",
       "user": "user1@example.com",
       "date": "2025-04-30"
+    },
+    {
+      "id": "ea71",
+      "amount": 12323,
+      "type": -1,
+      "category": "ㄴㅇ",
+      "description": "ㅂㅈㄷ",
+      "memo": "ㅁㅇㅀㅁㄴㅇ",
+      "user": "user1@example.com",
+      "date": "2025-04-23"
     }
   ]
 }
