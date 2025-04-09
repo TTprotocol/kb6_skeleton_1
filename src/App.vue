@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Header v-if="currentRoute === '/'" />
+		<Header v-if="isRootPage"></Header>
 		<router-view></router-view>
 		<!-- <Footer v-if="currentRoute === '/'" /> -->
 	</div>
@@ -8,6 +8,7 @@
 
 <script setup>
 import { RouterLink, RouterView, useRoute } from "vue-router";
+import { computed } from "vue";
 import Header from "./component/Header.vue";
 import Footer from "./component/Footer.vue";
 
@@ -15,8 +16,7 @@ import { getAccountListStore } from "./stores/GetAccountListStore";
 
 const currentRoute = useRoute();
 
-console.log("currentRoute : ", currentRoute);
-console.log("currentRoute : ", currentRoute.fullPath);
+const isRootPage = computed(() => currentRoute.path !== "/");
 
 const listStore = getAccountListStore();
 const { fetchAllList } = listStore;
