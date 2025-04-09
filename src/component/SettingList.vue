@@ -12,7 +12,10 @@
     <button id="menus__btn">설정</button>
     <button id="menus__btn" @click="">로그아웃</button>
 
-    <button id="menus__btn">계정 삭제</button>
+    <button id="menus__btn" @click="changeModal5">탈퇴하기</button>
+    <teleport to="#delete_account_modal">
+      <DeleteAccountModal v-if="isModal5" @close="isModal5 = false" />
+    </teleport>
   </div>
 </template>
 
@@ -20,9 +23,11 @@
 import { ref } from 'vue';
 import NoticeModal from './NoticeModal.vue';
 import QuestionModal from './QuestionModal.vue';
+import DeleteAccountModal from './DeleteAccountModal.vue';
 
 const isModal = ref(false);
 const isModal2 = ref(false);
+const isModal5 = ref(false);
 
 const changeModal = () => {
   isModal.value = true;
@@ -30,6 +35,10 @@ const changeModal = () => {
 
 const changeModal2 = () => {
   isModal2.value = true;
+};
+
+const changeModal5 = () => {
+  isModal5.value = true;
 };
 </script>
 
