@@ -55,6 +55,7 @@ header h1 {
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 main {
