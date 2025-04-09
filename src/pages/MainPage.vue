@@ -23,6 +23,7 @@
               :userEmail="loginUser.email"
               :userName="loginUser.name"
               :transactions="state.periodicData"
+              @refresh="fetchDataAgain"
             />
           </div>
           <div class="card half-width">
