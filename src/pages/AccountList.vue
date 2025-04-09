@@ -1,93 +1,90 @@
 <template>
-	<div id="app">
-		<main id="main">
-			<section id="graph" class="section">
-				<article>
-					<h2>섹션1</h2>
-				</article>
-			</section>
-			<section id="list" class="section">
-				<h2 id="list__title">거래 내역 목록</h2>
-				<article id="list__article">
-					<table class="table">
-						<thead>
-							<tr>
-								<th scope="col">ㅁ</th>
-								<th scope="col">날짜</th>
-								<th scope="col">카테고리</th>
-								<th scope="col">사용내역</th>
-								<th scope="col">금액</th>
-								<th scope="col">메모</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr
-								v-for="item in sortedList"
-								:key="item.id"
-								@click="router.push(`/account/${item.id}`)"
-							>
-								<td>ㅁ</td>
-								<td>{{ item.date }}</td>
-								<td>{{ item.category }}</td>
-								<td>{{ item.description }}</td>
-								<td>{{ item.amount }}</td>
-								<td>{{ item.memo }}</td>
-							</tr>
-						</tbody>
-					</table>
-				</article>
-			</section>
-		</main>
+	<div class="transaction-page p-4">
+		<TransactionTabs v-model="currentTab" />
+		<DateRangePicker v-model:start="startDate" v-model:end="endDate" />
+
+		<TransactionChart :data="filteredData" :tab="currentTab" />
+
+		<TransactionTable
+			:data="filteredData"
+			v-model:checkedItems="checkedItems"
+			:currentTab="currentTab"
+		/>
+
+		<TransactionFooter
+			:total="totalAmount"
+			:checkedTotal="checkedTotalAmount"
+			:checkedItems="checkedItems"
+			@add="goToAddTransaction"
+		/>
 	</div>
 </template>
 
 <script setup>
-import { onMounted, ref, computed, reactive, watchEffect, watch } from "vue";
-import { getAccountListStore } from "@/stores/GetAccountListStore.js";
+import { ref, computed, watch } from "vue";
 import { useRouter } from "vue-router";
+import dayjs from "@/utils/dayjs";
+import TransactionTabs from "@/component/TransactionTabs.vue";
+import DateRangePicker from "@/component/DateRangePicker.vue";
+import TransactionTable from "@/component/TransactionTable.vue";
+import rawData from "/db.json"; // 예시 데이터
+import TransactionFooter from "@/component/TransactionFooter.vue";
+import TransactionChart from "@/component/TransactionChart.vue";
 
-const router = useRouter();
-const store = getAccountListStore();
+const currentTab = ref("지출");
+const startDate = ref("2025-04-01");
+const endDate = ref("2025-04-30");
+const checkedItems = ref([]);
 
-const { fetchPageList, nextPage, prevPage } = store;
-fetchPageList();
+// 거래내역 데이터
+const allData = rawData.periodicData || rawData; // 상황에 따라 key 확인
 
-const sortedList = computed(() => {
-	console.log(store.pageList);
-	return [...store.pageList].sort((a, b) => (a.date > b.date ? -1 : 1));
+const filteredData = computed(() => {
+	return allData.filter((item) => {
+		const date = dayjs(item.date);
+		const typeMatch =
+			currentTab.value === "전체"
+				? true
+				: currentTab.value === "수입"
+				? item.type === 1
+				: item.type === -1;
+
+		return (
+			typeMatch &&
+			date.isSameOrAfter(startDate.value) &&
+			date.isSameOrBefore(endDate.value)
+		);
+	});
 });
 
-// // 정렬 기준 및 순서
-// const sortKey = ref("date"); // 정렬 기준 필드 (예: date, amount, category)
-// const sortOrder = ref("desc"); // desc 또는 asc
+const totalAmount = computed(() => {
+	return filteredData.value.reduce((sum, item) => {
+		if (currentTab.value === "전체") {
+			return sum + item.amount * item.type;
+		} else {
+			return sum + item.amount;
+		}
+	}, 0);
+});
 
-// // 정렬된 리스트 반환
-// const sortedList = computed(() => {
-// 	return [...store.pageList].sort((a, b) => {
-// 		const valA = a[sortKey.value];
-// 		const valB = b[sortKey.value];
+const checkedTotalAmount = computed(() =>
+	checkedItems.value.reduce((sum, item) => {
+		if (currentTab.value === "전체") {
+			return sum + item.amount * item.type;
+		} else {
+			return sum + item.amount;
+		}
+	}, 0)
+);
 
-// 		// 문자열과 숫자에 모두 대응
-// 		if (valA === valB) return 0;
+watch([currentTab, startDate, endDate], () => {
+	checkedItems.value = [];
+});
 
-// 		if (sortOrder.value === "desc") {
-// 			return valA > valB ? -1 : 1;
-// 		} else {
-// 			return valA < valB ? -1 : 1;
-// 		}
-// 	});
-// });
-
-// // 정렬 기준 변경 함수
-// function changeSort(key) {
-// 	if (sortKey.value === key) {
-// 		// 동일 키 클릭 시 오름/내림 순 토글
-// 		sortOrder.value = sortOrder.value === "asc" ? "desc" : "asc";
-// 	} else {
-// 		sortKey.value = key;
-// 		sortOrder.value = "desc"; // 새로운 키 선택 시 기본은 내림차순
-// 	}
-// }
+const router = useRouter();
+const goToAddTransaction = () => {
+	router.push("/account/:id"); // 이 경로는 내가 설정한 페이지로 수정 가능
+};
 </script>
 
 <style scoped>
@@ -97,29 +94,19 @@ const sortedList = computed(() => {
 	box-sizing: border-box;
 }
 #main {
-	/* display: flex;
-	justify-content: space-between; */
+	display: flex;
+	justify-content: space-between;
 	border: 1px solid blue;
-	height: 75vh;
+	height: 70vh;
 	margin: 10px;
 	padding: 10px;
 	box-sizing: border-box;
 }
 .section {
-	width: 100%;
-	height: 50%;
+	width: 80%;
 	border: 1px solid red;
 }
-
-#list {
-	height: 50%;
-}
-#list__title {
-	display: inline-block;
-	height: 10%;
-}
-#list__article {
-	height: 90%;
-	overflow: scroll;
+.transction-page {
+	padding-bottom: 80px;
 }
 </style>
