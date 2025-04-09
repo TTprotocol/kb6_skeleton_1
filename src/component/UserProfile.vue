@@ -6,7 +6,12 @@
       <div id="users">
         <p id="user__name">{{ my.name }}</p>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        <p id="user__info">{{ calAge }}대 {{ my.gender }}</p>
+        <p
+          id="user__info"
+          :class="{ female: my.gender === '여성', male: my.gender === '남성' }"
+        >
+          {{ calAge }}대 {{ my.gender }}
+        </p>
       </div>
     </div>
     <i
@@ -86,10 +91,16 @@ const calAge = computed(() => {
   font-weight: 700;
 }
 
-#user__info {
+#user__info.female {
   font-size: 20px;
   font-weight: 700;
   color: #ff738f;
+}
+
+#user__info.male {
+  font-size: 20px;
+  font-weight: 700;
+  color: #73ccff;
 }
 
 img {
