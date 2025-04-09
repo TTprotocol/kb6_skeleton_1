@@ -4,7 +4,12 @@
       <section class="section">
         <!-- 꽉 찬 카드 -->
         <div class="card full-width">
-          <h2>ㅇㅇㅇ님의 4월 소비 달성률</h2>
+          <!-- <h2>ㅇㅇㅇ님의 4월 소비 달성률</h2> -->
+          <budgetBarChart
+            v-if="loginUser && state.periodicData.length > 0"
+            :budget="loginUser.budget"
+            :usedAmount="totalExpense"
+          />
         </div>
 
         <!-- 절반 너비 카드 두 개 -->
@@ -13,7 +18,7 @@
             <!-- <h2>ㅇㅇㅇ님의 최근 거래 내역</h2> -->
             <!-- <p>왼쪽 카드입니다.</p> -->
             <TransactionList
-              v-if="loginUser"
+              v-if="loginUser && state.periodicData.length > 0"
               :userEmail="loginUser.email"
               :userName="loginUser.name"
               :transactions="state.periodicData"
@@ -31,9 +36,10 @@
 
 <script setup>
 import { RouterLink, RouterView } from 'vue-router';
-import { reactive, computed, provide, onMounted } from 'vue';
+import { reactive, computed, provide, onMounted, watchEffect } from 'vue';
 import axios from 'axios';
 import TransactionList from '@/component/TransactionList.vue';
+import budgetBarChart from '@/component/budgetBarChart.vue';
 
 const state = reactive({
   income: [],
@@ -43,6 +49,23 @@ const state = reactive({
 });
 
 const loginUser = computed(() => state.users.find((u) => u.login === true));
+watchEffect(() => {
+  if (loginUser.value) {
+    console.log('로그인 유저:', loginUser.value.name);
+    console.log('전체 소비 금액:', totalExpense.value);
+  }
+});
+
+const totalExpense = computed(() => {
+  if (!loginUser.value) return 0;
+  return state.periodicData
+    .filter(
+      (item) => item.user === loginUser.value.email && item.type === -1 // 지출
+    )
+    .reduce((sum, item) => sum + item.amount, 0);
+});
+
+console.log(`전체 소비 금액 : ${totalExpense.value}`);
 
 onMounted(async () => {
   try {
@@ -62,6 +85,7 @@ onMounted(async () => {
     const userRes = await axios.get('http://localhost:3000/users');
     state.users = userRes.data;
     console.log(`유저 목록 : ${state.users}`);
+    // console.log(state.users);
 
     // 정기 데이터
     const periodicRes = await axios.get('http://localhost:3000/periodicData');
@@ -81,7 +105,7 @@ onMounted(async () => {
 #main {
   display: flex;
   justify-content: space-between;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   height: 70vh;
   margin: 10px;
   padding: 10px;
@@ -89,12 +113,12 @@ onMounted(async () => {
 }
 .section {
   width: 80%;
-  border: 1px solid red;
-}
-.section {
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
 }
-
 .card {
   background-color: #f5f5f5;
   border: 1px solid #ddd;

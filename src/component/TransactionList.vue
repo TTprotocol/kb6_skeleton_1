@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h3>{{ userName }}님의 최근 거래 내역</h3>
+    <h4>{{ userName }}님의 최근 거래 내역</h4>
+    <br />
 
-    <table v-if="pagedTransactions.length > 0" class="transaction-table">
+    <table v-if="recentTransactions.length > 0" class="transaction-table">
       <thead>
         <tr>
           <th>날짜</th>
@@ -12,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in pagedTransactions" :key="index">
+        <tr v-for="(item, index) in recentTransactions" :key="index">
           <td>{{ item.date }}</td>
           <td>{{ item.category }}</td>
           <td>{{ item.amount.toLocaleString() }}원</td>
@@ -22,20 +23,11 @@
     </table>
 
     <p v-else>거래 내역이 없습니다.</p>
-
-    <!-- 페이지네이션 -->
-    <div v-if="totalPages > 1" class="pagination">
-      <button @click="prevPage" :disabled="currentPage === 1">이전</button>
-      <span>{{ currentPage }} / {{ totalPages }}</span>
-      <button @click="nextPage" :disabled="currentPage === totalPages">
-        다음
-      </button>
-    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
   userEmail: String,
@@ -43,31 +35,13 @@ const props = defineProps({
   transactions: Array,
 });
 
-// 전체 필터링된 거래
-const userTransactions = computed(() =>
-  (props.transactions || []).filter((t) => t.user === props.userEmail)
+// 거래 내역 정렬 후 상위 5개만 추출
+const recentTransactions = computed(() =>
+  (props.transactions || [])
+    .filter((t) => t.user === props.userEmail)
+    .sort((a, b) => new Date(b.date) - new Date(a.date)) // 최신순
+    .slice(0, 5)
 );
-
-// 페이지네이션
-const itemsPerPage = 5;
-const currentPage = ref(1);
-
-const totalPages = computed(() =>
-  Math.ceil(userTransactions.value.length / itemsPerPage)
-);
-
-const pagedTransactions = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage;
-  return userTransactions.value.slice(start, start + itemsPerPage);
-});
-
-const prevPage = () => {
-  if (currentPage.value > 1) currentPage.value--;
-};
-
-const nextPage = () => {
-  if (currentPage.value < totalPages.value) currentPage.value++;
-};
 </script>
 
 <style scoped>
@@ -85,19 +59,6 @@ const nextPage = () => {
 }
 
 .transaction-table th {
-  background-color: #f2f2f2;
-}
-
-.pagination {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.pagination button {
-  padding: 5px 10px;
-  cursor: pointer;
+  background-color: rgb(255, 193, 7);
 }
 </style>
