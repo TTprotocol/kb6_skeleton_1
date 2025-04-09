@@ -78,15 +78,14 @@ watchEffect(() => {
 onMounted(async () => {
   try {
     // 수입 카테고리
-    const incomeRes = await axios.get(
-      'http://localhost:3000/income_categories'
-    );
+    const incomeRes = await axios.get('http://localhost:3000/categories');
+    console.log(`incomeRes.data.income : ${incomeRes.data.income}`);
+    // console.log(`incomeRes.data : ${incomeRes.data}`);
     state.income = incomeRes.data.income;
 
     // 지출 카테고리
-    const expenseRes = await axios.get(
-      'http://localhost:3000/expense_categories'
-    );
+    const expenseRes = await axios.get('http://localhost:3000/categories');
+    console.log(`expenseRes.data.expense : ${expenseRes.data.expense}`);
     state.expense = expenseRes.data.expense;
 
     // 사용자 목록
