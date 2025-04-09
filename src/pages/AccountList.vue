@@ -111,9 +111,6 @@ const sortedList = computed(() => {
 	border: 1px solid red;
 }
 
-#graph {
-}
-
 #list {
 	height: 50%;
 }

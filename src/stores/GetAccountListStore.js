@@ -8,7 +8,7 @@ export const getAccountListStore = defineStore("list", () => {
 	const state = reactive({
 		allList: [],
 		pageList: [],
-		category: {},
+		categoryList: {},
 		userEmail: "user1@example.com",
 		currentPage: 1,
 	});
@@ -18,6 +18,7 @@ export const getAccountListStore = defineStore("list", () => {
 			const response = await axios.get(BASEURI);
 			if (response.status === 200) {
 				state.allList = response.data;
+				await fetchCategory();
 			} else {
 				console.log("데이터 조회 실패");
 			}
@@ -30,7 +31,7 @@ export const getAccountListStore = defineStore("list", () => {
 		try {
 			const response = await axios.get(CATEGORYURI);
 			if (response.status === 200) {
-				state.category = response.data;
+				state.categoryList = response.data;
 			} else {
 				console.log("카테고리 데이터 조회 실패");
 			}
@@ -150,14 +151,14 @@ export const getAccountListStore = defineStore("list", () => {
 
 	const allList = computed(() => state.allList);
 	const pageList = computed(() => state.pageList);
-	const category = computed(() => state.category);
+	const categoryList = computed(() => state.categoryList);
 	const userEmail = computed(() => state.userEmail);
 	const currentPage = computed(() => state.currentPage);
 
 	return {
 		allList,
 		pageList,
-		category,
+		categoryList,
 		userEmail,
 		currentPage,
 		fetchAllList,
