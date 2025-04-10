@@ -261,7 +261,7 @@ const save = () => {
 			{
 				amount: item.amount,
 				type: item.type,
-				category: item.selectedCategory,
+				category: item.selectedCategory, 
 				description: item.description,
 				memo: item.memo,
 				date: item.date,
