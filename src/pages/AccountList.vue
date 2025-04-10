@@ -3,7 +3,12 @@
 		<div
 			class="d-flex align-items-center justify-content-between gap-2 flex-wrap"
 		>
-			<TransactionTabs v-model="currentTab" class="mb-3" />
+			<!-- <TransactionTabs v-model="currentTab" class="mb-3" /> -->
+			<TransactionTabs
+				v-model="currentTab"
+				@changeTab="handleTabChange"
+				class="mb-3"
+			/>
 			<DateRangePicker
 				v-model:start="startDate"
 				v-model:end="endDate"
@@ -59,15 +64,27 @@ const allData = ref([]);
 
 onMounted(async () => {
 	try {
-		const res = await axios.get("/api/periodicData");
-		allData.value = res.data;
+		// allData.value = res.data;
+		// allData.value = store.pageList.value;
+		await store.fetchPageList({
+			type: currentTab.value,
+			// key: "amount",
+			// order: "asc",
+		});
+		allData.value = store.pageList.value;
 	} catch (err) {
 		console.error("데이터 불러오기 실패:", err);
 	}
 });
 
+const handleTabChange = async (tab) => {
+	currentTab.value = tab;
+	await store.fetchPageList({ type: tab });
+	allData.value = store.pageList;
+};
+
 const filteredData = computed(() => {
-	return allData.value.filter((item) => {
+	return store.pageList.filter((item) => {
 		const date = dayjs(item.date);
 		const typeMatch =
 			currentTab.value === "전체"
@@ -107,7 +124,7 @@ const checkedTotalAmount = computed(() =>
 const chartData = computed(() => {
 	if (currentTab.value === "전체") {
 		const sixMonthsAgo = dayjs().subtract(5, "month").startOf("month");
-		return allData.value.filter((item) =>
+		return store.pageList.filter((item) =>
 			dayjs(item.date).isSameOrAfter(sixMonthsAgo)
 		);
 	} else {
@@ -130,7 +147,7 @@ console.log("allData:", allData);
 <style scoped>
 #app {
 	height: 100%;
-	margin-top: 100px;
+	margin-top: 60px;
 	padding-bottom: 50px;
 	/* border: 1px solid red; */
 }

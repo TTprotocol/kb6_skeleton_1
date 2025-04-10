@@ -1,7 +1,7 @@
 <!-- src/components/FilterTabs.vue -->
 <template>
-  <div class="btn-group mb-4">
-    <button
+	<div class="btn-group mb-4">
+		<!-- <button
       v-for="tab in tabs"
       :key="tab"
       :class="[
@@ -9,31 +9,41 @@
         tab === modelValue ? 'btn-primary' : 'btn-outline-primary',
       ]"
       @click="$emit('update:modelValue', tab)"
-    >
-      {{ tab }}
-    </button>
-  </div>
+    > -->
+		<button
+			v-for="tab in tabs"
+			:key="tab"
+			:class="[
+				'btn',
+				tab === modelValue ? 'btn-primary' : 'btn-outline-primary',
+			]"
+			@click="$emit('changeTab', tab)"
+		>
+			{{ tab }}
+		</button>
+	</div>
 </template>
 
 <script setup>
 defineProps({
-  modelValue: String,
+	modelValue: String,
 });
-defineEmits(['update:modelValue']);
+// defineEmits(["update:modelValue"]);
+defineEmits(["changeTab"]);
 
-const tabs = ['지출', '수익', '전체'];
+const tabs = ["지출", "수익", "전체"];
 </script>
 
 <style scoped>
 .tab {
-  padding: 8px 16px;
-  margin-right: 8px;
-  border: 1px solid #ddd;
-  background: white;
-  cursor: pointer;
+	padding: 8px 16px;
+	margin-right: 8px;
+	border: 1px solid #ddd;
+	background: white;
+	cursor: pointer;
 }
 .tab.active {
-  background: #ddd;
-  font-weight: bold;
+	background: #ddd;
+	font-weight: bold;
 }
 </style>
