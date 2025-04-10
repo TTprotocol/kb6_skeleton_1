@@ -64,13 +64,7 @@ const allData = ref([]);
 
 onMounted(async () => {
 	try {
-		// allData.value = res.data;
-		// allData.value = store.pageList.value;
-		await store.fetchPageList({
-			type: currentTab.value,
-			// key: "amount",
-			// order: "asc",
-		});
+		await store.fetchPageList({ type: currentTab.value });
 		allData.value = store.pageList.value;
 	} catch (err) {
 		console.error("데이터 불러오기 실패:", err);
