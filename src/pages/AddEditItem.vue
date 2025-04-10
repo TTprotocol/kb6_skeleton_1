@@ -1,9 +1,9 @@
 <template>
 	<div id="app">
 		<main id="main" class="container my-4">
-			<section class="section row border p-4">
+			<section class="section card row border p-4">
 				<article id="article__header" class="article col-12 mb-3">
-					<h2>섹션1</h2>
+					<h2>거래내역 {{ listId === "0000" ? "추가" : "수정" }}</h2>
 				</article>
 				<article
 					id="article__formContainer"
@@ -261,7 +261,7 @@ const save = () => {
 			{
 				amount: item.amount,
 				type: item.type,
-				selectedCategory: item.selectedCategory,
+				category: item.selectedCategory,
 				description: item.description,
 				memo: item.memo,
 				date: item.date,
@@ -275,7 +275,7 @@ const save = () => {
 			{
 				amount: item.amount,
 				type: item.type,
-				selectedCategory: item.selectedCategory,
+				category: item.selectedCategory,
 				description: item.description,
 				memo: item.memo,
 				date: item.date,
@@ -291,7 +291,11 @@ const save = () => {
 
 <style scoped>
 #app {
-	margin-top: 80px;
+	margin-top: 100px;
+	height: 80%;
+}
+#article__form {
+	flex-direction: row;
 }
 .warnimage {
 	width: 18px;
