@@ -1,48 +1,36 @@
 <template>
-  <div class="delete_account_modal">
+  <div class="budget_modal">
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
-      <h1>탈퇴하기</h1>
-      <p>삭제된 계정은 복구할 수 없습니다.</p>
+      <h1>예산 설정하기</h1>
       <input
-        type="password"
-        v-model="password"
-        placeholder="사용중인 비밀번호를 입력해주세요."
+        type="text"
+        v-model.number="newbudget"
+        placeholder="새로운 예산을 설정해주세요."
       />
-      <button @click="deleteAccount">탈퇴하기</button>
+      <button @click="changeBudget">예산 설정하기</button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineEmits, ref } from 'vue';
-import { loginStore } from '@/stores/LoginStore';
-import { useRouter } from 'vue-router';
-const emit = defineEmits(['close']);
-const store = loginStore();
-const password = ref('');
-const route = useRouter();
+
+const newbudget = ref(0);
+const emit = defineEmits(['close', 'setting-budget']);
 
 const closeModal = () => {
   emit('close');
 };
 
-const deleteAccount = async () => {
-  try {
-    const response = await store.deleteData(password.value);
-    if (response) {
-      console.log('탈퇴 성공');
-      emit('close');
-      route.push('/');
-    }
-  } catch (e) {
-    console.log(e);
-  }
+const changeBudget = () => {
+  emit('setting-budget', newbudget.value);
+  emit('close');
 };
 </script>
 
 <style scoped>
-.delete_account_modal {
+.budget_modal {
   display: block;
   position: fixed;
   z-index: 1;

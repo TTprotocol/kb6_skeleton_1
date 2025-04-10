@@ -2,8 +2,12 @@
   <div class="term_modal">
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
-      <h1>약관1</h1>
-      <p>내용내용내용</p>
+      <h1>이용약관</h1>
+      <p>
+        본 어플은 개인의 자산 관리를 목적으로 제공됩니다. 기록된 데이터는 본인의
+        장부 용도로만 사용되며, 해당 정보를 외부에 제공하지 않습니다. 사용자의
+        요청 시 언제든지 탈퇴 및 데이터 삭제가 가능합니다.
+      </p>
       <button @click="agreeTerm">동의</button>
     </div>
   </div>
@@ -76,6 +80,7 @@ button {
 
 p {
   margin: 4px;
+  padding: 4px;
 }
 input {
   margin: 4px;
