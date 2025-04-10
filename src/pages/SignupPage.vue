@@ -194,6 +194,12 @@ const checkIdHandler = async (id) => {
     console.log(e);
   }
 };
+
+const signupHandler = async (email, password, birth, gender) => {
+  try {
+    const response = await store.addData({ email, password, birth, gender });
+  } catch (e) {}
+};
 </script>
 
 <style scoped>

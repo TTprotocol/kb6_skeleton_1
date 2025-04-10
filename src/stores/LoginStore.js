@@ -129,6 +129,24 @@ export const loginStore = defineStore('login', () => {
     }
   };
 
+  const createData = async (
+    { email, password, birth, gender },
+    successCallback
+  ) => {
+    try {
+      const payload = { email, password, birth, gender };
+      const response = await axios.post(BASEURI, payload);
+      if (response.status === 200) {
+        successCallback();
+      } else {
+        alert('회원가입 실패!');
+      }
+    } catch (e) {
+      console.log(e);
+      alert('에러 발생: ', e);
+    }
+  };
+
   const myEmail = computed(() => state.email);
   const myName = computed(() => state.name);
   const myBirth = computed(() => state.birth);
@@ -141,6 +159,7 @@ export const loginStore = defineStore('login', () => {
     settingUser,
     getMine,
     checkId,
+    createData,
     myEmail,
     myName,
     myBirth,
