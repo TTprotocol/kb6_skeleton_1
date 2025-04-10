@@ -174,8 +174,7 @@ import "@vuepic/vue-datepicker/dist/main.css";
 const router = useRouter();
 const currentRoute = useRoute();
 const store = getAccountListStore();
-const { fetchAllList, fetchCategory, createData, updateData, deleteData } =
-	store;
+const { fetchAllList, fetchCategory, createData, updateData } = store;
 fetchCategory();
 
 let item = reactive({
@@ -197,7 +196,7 @@ const listId = currentRoute.params.id;
 // 목록에서 가져온 id로 해당 항목 데이터 조회
 const findItem = async () => {
 	await fetchAllList();
-	if (listId !== undefined || listId !== "0000") {
+	if (listId !== "0000") {
 		const allList = store.allList.filter((item) => item.id === listId)[0];
 		const categoryList = store.categoryList;
 
@@ -215,7 +214,6 @@ const findItem = async () => {
 		}
 	} else {
 		const categoryList = store.categoryList;
-		console.log("categoryList : ", categoryList);
 
 		item.categoryList = categoryList;
 		item.categoryType = categoryList.income;
@@ -232,7 +230,6 @@ const amountFormatter = (e) => {
 	const regex = /^[0-9]*$/g;
 
 	if (regex.test(amount)) {
-		console.log("Number(amount) : ", amount);
 		item.amount = amount;
 		item.amountFormat = amount.toLocaleString();
 	} else {
@@ -259,10 +256,43 @@ const format = (date) => {
 // 저장 로직
 const save = () => {
 	console.log("item : ", item);
+	if (listId === "0000") {
+		createData(
+			{
+				amount: item.amount,
+				type: item.type,
+				selectedCategory: item.selectedCategory,
+				description: item.description,
+				memo: item.memo,
+				date: item.date,
+			},
+			() => {
+				router.push("/account");
+			}
+		);
+	} else {
+		updateData(
+			{
+				amount: item.amount,
+				type: item.type,
+				selectedCategory: item.selectedCategory,
+				description: item.description,
+				memo: item.memo,
+				date: item.date,
+				id: listId,
+			},
+			() => {
+				router.push("/account");
+			}
+		);
+	}
 };
 </script>
 
 <style scoped>
+#app {
+	margin-top: 80px;
+}
 .warnimage {
 	width: 18px;
 	height: 18px;
