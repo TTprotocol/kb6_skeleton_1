@@ -1,7 +1,3 @@
-@import "./base.css";
-@import "tailwindcss/preflight"; /* reset/base */
-@import "tailwindcss/utilities";
-
 #app {
 	max-width: 1280px;
 	margin: 0 auto;
