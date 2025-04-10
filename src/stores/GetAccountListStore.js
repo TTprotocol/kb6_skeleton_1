@@ -59,10 +59,9 @@ export const getAccountListStore = defineStore("list", () => {
 		key = "date",
 		order = "desc",
 	} = {}) => {
-		console.log(page, type, key, order);
 		const nowType = type === "전체" ? 0 : type === "지출" ? -1 : 1;
 		try {
-			await fetchAllList();
+			state.allList && (await fetchAllList());
 			const startIndex = (page - 1) * 10;
 			const endIndex = startIndex + 10;
 			const list = [...state.allList]
@@ -88,7 +87,10 @@ export const getAccountListStore = defineStore("list", () => {
 							: String(valB).localeCompare(String(valA));
 					}
 				});
-			console.log("list : ", list);
+			console.log(
+				"list.slice(startIndex, endIndex) : ",
+				list.slice(startIndex, endIndex)
+			);
 			state.allPageList = list;
 			state.pageList = list.slice(startIndex, endIndex);
 		} catch (e) {
@@ -196,6 +198,7 @@ export const getAccountListStore = defineStore("list", () => {
 	};
 
 	const allList = computed(() => state.allList);
+	const allPageList = computed(() => state.allPageList);
 	const pageList = computed(() => state.pageList);
 	const pageCount = computed(() => state.pageCount);
 	const categoryList = computed(() => state.categoryList);
@@ -204,6 +207,7 @@ export const getAccountListStore = defineStore("list", () => {
 
 	return {
 		allList,
+		allPageList,
 		pageList,
 		pageCount,
 		categoryList,

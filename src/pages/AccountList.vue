@@ -3,7 +3,6 @@
 		<div
 			class="d-flex align-items-center justify-content-between gap-2 flex-wrap"
 		>
-			<!-- <TransactionTabs v-model="currentTab" class="mb-3" /> -->
 			<TransactionTabs
 				v-model="currentTab"
 				@changeTab="handleTabChange"
@@ -29,6 +28,7 @@
 					v-model:checkedItems="checkedItems"
 					:currentTab="currentTab"
 					class="mb-4"
+					@open-filter="setFilterModal"
 				/>
 			</div>
 		</div>
@@ -38,6 +38,15 @@
 			:checkedTotal="checkedTotalAmount"
 			:checkedItems="checkedItems"
 			@add="goToAddTransaction"
+		/>
+		<ModalFilter
+			v-if="isFilterModalOpen"
+			:categories="filteredCategories"
+			:selected="selectedCategories"
+			:sort="selectedSort"
+			@update:selected="selectedCategories = $event"
+			@update:sort="selectedSort = $event"
+			@close="setFilterModal"
 		/>
 	</div>
 </template>
@@ -53,19 +62,28 @@ import TransactionTable from "@/component/TransactionTable.vue";
 import TransactionFooter from "@/component/TransactionFooter.vue";
 import TotalChart from "@/component/TotalChart.vue";
 import { getAccountListStore } from "@/stores/GetAccountListStore.js";
+import ModalFilter from "@/component/ModalFilter.vue";
 
 const store = getAccountListStore();
 const currentTab = ref("지출");
 const startDate = ref(dayjs().startOf("month").format("YYYY-MM-DD"));
 const endDate = ref(dayjs().endOf("month").format("YYYY-MM-DD"));
 const checkedItems = ref([]);
+const isFilterModalOpen = ref(false);
+
+// 정렬 기본값: 최신순
+const selectedCategories = ref([]);
+const selectedSort = ref({
+	date: "date-desc",
+	amount: "",
+});
 //데이터
 const allData = ref([]);
 
 onMounted(async () => {
 	try {
 		await store.fetchPageList({ type: currentTab.value });
-		allData.value = store.pageList.value;
+		allData.value = store.pageList;
 	} catch (err) {
 		console.error("데이터 불러오기 실패:", err);
 	}
@@ -78,7 +96,8 @@ const handleTabChange = async (tab) => {
 };
 
 const filteredData = computed(() => {
-	return store.pageList.filter((item) => {
+	// let data = allData.value.filter((item) => {
+	let data = store.pageList.filter((item) => {
 		const date = dayjs(item.date);
 		const typeMatch =
 			currentTab.value === "전체"
@@ -87,12 +106,40 @@ const filteredData = computed(() => {
 				? item.type === 1
 				: item.type === -1;
 
+		const categoryMatch =
+			selectedCategories.value.length === 0 ||
+			selectedCategories.value.includes(item.category);
+
 		return (
 			typeMatch &&
+			categoryMatch &&
 			date.isSameOrAfter(startDate.value) &&
 			date.isSameOrBefore(endDate.value)
 		);
 	});
+	// 정렬 추가
+	// 정렬: 날짜
+	switch (selectedSort.value.date) {
+		case "date-asc":
+			data.sort((a, b) => dayjs(a.date).valueOf() - dayjs(b.date).valueOf());
+			break;
+		case "date-desc":
+		default:
+			data.sort((a, b) => dayjs(b.date).valueOf() - dayjs(a.date).valueOf());
+	}
+
+	// 금액 정렬 (선택한 경우만)
+	if (selectedSort.value.amount) {
+		switch (selectedSort.value.amount) {
+			case "amount-asc":
+				data.sort((a, b) => a.amount - b.amount);
+				break;
+			case "amount-desc":
+				data.sort((a, b) => b.amount - a.amount);
+				break;
+		}
+	}
+	return data;
 });
 
 const totalAmount = computed(() => {
@@ -118,7 +165,7 @@ const checkedTotalAmount = computed(() =>
 const chartData = computed(() => {
 	if (currentTab.value === "전체") {
 		const sixMonthsAgo = dayjs().subtract(5, "month").startOf("month");
-		return store.pageList.filter((item) =>
+		return store.allPageList.filter((item) =>
 			dayjs(item.date).isSameOrAfter(sixMonthsAgo)
 		);
 	} else {
@@ -126,8 +173,16 @@ const chartData = computed(() => {
 	}
 });
 
-watch([currentTab, startDate, endDate], () => {
+watch([currentTab], () => {
 	checkedItems.value = [];
+});
+
+watch([startDate, endDate], () => {
+	selectedCategories.value = [];
+	selectedSort.value = {
+		date: "date-desc",
+		amount: "",
+	};
 });
 
 const router = useRouter();
@@ -135,7 +190,33 @@ const goToAddTransaction = () => {
 	router.push("/account/0000"); // 이 경로는 내가 설정한 페이지로 수정 가능
 };
 
-console.log("allData:", allData);
+const availableCategories = computed(() => {
+	const income = new Set();
+	const expense = new Set();
+
+	store.pageList.forEach((item) => {
+		if (item.type === 1) income.add(item.category);
+		else if (item.type === -1) expense.add(item.category);
+	});
+	return {
+		income: Array.from(income),
+		expense: Array.from(expense),
+	};
+});
+
+const filteredCategories = computed(() => {
+	if (currentTab.value === "수익") {
+		return { income: availableCategories.value.income, expense: [] };
+	} else if (currentTab.value === "지출") {
+		return { income: [], expense: availableCategories.value.expense };
+	} else {
+		return availableCategories.value;
+	}
+});
+
+const setFilterModal = () => {
+	isFilterModalOpen.value = !isFilterModalOpen.value;
+};
 </script>
 
 <style scoped>
