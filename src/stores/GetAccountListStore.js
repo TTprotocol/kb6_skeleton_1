@@ -62,6 +62,7 @@ export const getAccountListStore = defineStore("list", () => {
 		console.log(page, type, key, order);
 		const nowType = type === "전체" ? 0 : type === "지출" ? -1 : 1;
 		try {
+			await fetchAllList();
 			const startIndex = (page - 1) * 10;
 			const endIndex = startIndex + 10;
 			const list = [...state.allList]
