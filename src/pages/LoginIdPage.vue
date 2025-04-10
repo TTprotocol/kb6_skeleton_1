@@ -15,13 +15,22 @@
             />
           </article>
         </main>
+        <p class="error-msg" :class="{ hidden: !isWrong }">
+          {{
+            isWrong && userId.length > 0
+              ? '비밀번호가 일치하지 않거나 가입되지 않은 아이디입니다. '
+              : ' '
+          }}
+        </p>
         <section>
-          <input
-            type="submit"
+          <button
+            type="button"
             value="로그인"
             id="submit-btn"
             @click="submitLogin"
-          />
+          >
+            로그인
+          </button>
         </section>
       </form>
     </div>
@@ -30,10 +39,15 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 import LoginId from '@/component/LoginId.vue';
+import { loginStore } from '@/stores/LoginStore';
 
 const userId = ref('');
 const password = ref('');
+const store = loginStore();
+const router = useRouter();
+const isWrong = ref(false);
 
 const handleIdChange = (val) => {
   userId.value = val;
@@ -43,8 +57,18 @@ const handlePasswordChange = (val) => {
   password.value = val;
 };
 
-const submitLogin = () => {
+const submitLogin = async () => {
   console.log('로그인 시도:', userId.value, password.value);
+  const response = await store.getData({
+    id: userId.value,
+    password: password.value,
+  });
+  if (response) {
+    isWrong.value = false;
+    router.push('/main');
+  } else {
+    isWrong.value = true;
+  }
 };
 </script>
 
@@ -74,6 +98,11 @@ const submitLogin = () => {
 
 form {
   margin: auto;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 header h1 {
@@ -96,5 +125,20 @@ header h1 {
   color: white;
   font-weight: 700;
   text-decoration: none;
+}
+
+article {
+  /* width: 500px; */
+  align-items: center;
+}
+.error-msg {
+  text-align: center;
+  color: #ff738f;
+  margin-top: 16px;
+  font-size: 14px;
+  min-height: 20px;
+}
+.error-msg.hidden {
+  opacity: 0;
 }
 </style>

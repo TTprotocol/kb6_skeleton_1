@@ -1,31 +1,27 @@
 <template>
-  <div class="term_modal">
+  <div class="notice_modal">
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
-      <h1>약관1</h1>
-      <p>내용내용내용</p>
-      <button @click="agreeTerm">동의</button>
+      <ul>
+        <li>업데이트 안내 04.09</li>
+        <li>업데이트 안내 04.01</li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineEmits } from 'vue';
+import { defineEmits, ref } from 'vue';
 
-const emit = defineEmits(['close', 'agree-term']);
+const emit = defineEmits(['close']);
 
 const closeModal = () => {
-  emit('close');
-};
-
-const agreeTerm = () => {
-  emit('agree-term', true);
   emit('close');
 };
 </script>
 
 <style scoped>
-.term_modal {
+.notice_modal {
   display: block;
   position: fixed;
   z-index: 1;
@@ -67,7 +63,7 @@ i {
 button {
   border: none;
   border-radius: 10px;
-  background-color: rgba(128, 155, 255, 0.75);
+  background-color: #cdcdcd;
   color: white;
   padding: 4px;
   width: 100px;

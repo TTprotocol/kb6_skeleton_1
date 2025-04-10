@@ -1,31 +1,27 @@
 <template>
-  <div class="term_modal">
+  <div class="delete_account_modal">
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
-      <h1>약관1</h1>
-      <p>내용내용내용</p>
-      <button @click="agreeTerm">동의</button>
+      <h1>탈퇴하기</h1>
+      <p>삭제된 계정은 복구할 수 없습니다.</p>
+      <input type="password" placeholder="사용중인 비밀번호를 입력해주세요." />
+      <button @click="agreeTerm">탈퇴하기</button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineEmits } from 'vue';
+import { defineEmits, ref } from 'vue';
 
-const emit = defineEmits(['close', 'agree-term']);
+const emit = defineEmits(['close']);
 
 const closeModal = () => {
-  emit('close');
-};
-
-const agreeTerm = () => {
-  emit('agree-term', true);
   emit('close');
 };
 </script>
 
 <style scoped>
-.term_modal {
+.delete_account_modal {
   display: block;
   position: fixed;
   z-index: 1;
