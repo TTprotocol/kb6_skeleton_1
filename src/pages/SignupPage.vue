@@ -23,7 +23,7 @@
                 </p>
               </div>
               <input
-                type="text"
+                type="email"
                 v-model="id"
                 placeholder="아이디를 입력해주세요."
               />
@@ -84,7 +84,7 @@
                 <option>여성</option>
                 <option>남성</option>
               </select>
-              <p>예산 설정</p>
+              <p>예산 설정(변경 가능)</p>
               <input
                 type="text"
                 v-model.number="budget"

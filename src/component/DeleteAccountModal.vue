@@ -4,19 +4,40 @@
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
       <h1>탈퇴하기</h1>
       <p>삭제된 계정은 복구할 수 없습니다.</p>
-      <input type="password" placeholder="사용중인 비밀번호를 입력해주세요." />
-      <button @click="agreeTerm">탈퇴하기</button>
+      <input
+        type="password"
+        v-model="password"
+        placeholder="사용중인 비밀번호를 입력해주세요."
+      />
+      <button @click="deleteAccount">탈퇴하기</button>
     </div>
   </div>
 </template>
 
 <script setup>
 import { defineEmits, ref } from 'vue';
-
+import { loginStore } from '@/stores/LoginStore';
+import { useRouter } from 'vue-router';
 const emit = defineEmits(['close']);
+const store = loginStore();
+const password = ref('');
+const route = useRouter();
 
 const closeModal = () => {
   emit('close');
+};
+
+const deleteAccount = async () => {
+  try {
+    const response = await store.deleteData(password.value);
+    if (response) {
+      console.log('탈퇴 성공');
+      emit('close');
+      route.push('/');
+    }
+  } catch (e) {
+    console.log(e);
+  }
 };
 </script>
 

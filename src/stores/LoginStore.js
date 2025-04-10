@@ -223,6 +223,43 @@ export const loginStore = defineStore('login', () => {
     }
   };
 
+  const deleteData = async (pas) => {
+    try {
+      const response = await axios.get(BASEURI);
+      if (response.status === 200) {
+        const userList = response.data;
+        const matchUser = userList.find((user) => user.login === true);
+        console.log(matchUser);
+        if (matchUser) {
+          console.log('사용자 찾기 성공');
+          console.log(matchUser.name);
+          if (pas === matchUser.password) {
+            alert('탈퇴 되었습니다. 감사합니다.');
+            await axios.delete(`${BASEURI}/${matchUser.id}`);
+            console.log('회원 탈퇴 완료');
+            state.email = '';
+            state.name = '';
+            state.birth = '';
+            state.gender = '';
+            state.budget = 0;
+            state.login = false;
+            return true;
+          } else {
+            alert('비밀번호를 확인해주세요.');
+            return false;
+          }
+        } else {
+          console.log('사용자를 찾을 수 없습니다.');
+          return false;
+        }
+      } else {
+        console.log('데이터 조회 실패');
+      }
+    } catch (e) {
+      console.log('데이터 조회 에러 발생');
+    }
+  };
+
   const myEmail = computed(() => state.email);
   const myName = computed(() => state.name);
   const myBirth = computed(() => state.birth);
@@ -238,6 +275,7 @@ export const loginStore = defineStore('login', () => {
     createData,
     logoutData,
     settingBudget,
+    deleteData,
     myEmail,
     myName,
     myBirth,
