@@ -3,8 +3,9 @@
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
       <ul>
+        <li>업데이트 안내 04.10</li>
         <li>업데이트 안내 04.09</li>
-        <li>업데이트 안내 04.01</li>
+        <li>업데이트 안내 04.07</li>
       </ul>
     </div>
   </div>
