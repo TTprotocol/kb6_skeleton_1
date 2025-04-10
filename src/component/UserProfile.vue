@@ -20,7 +20,11 @@
       @click="changeModal"
     ></i>
     <teleport to="#modal">
-      <SettingModal v-if="isModal" @close="isModal = false" />
+      <SettingModal
+        v-if="isModal"
+        @close="isModal = false"
+        @update-user="updateHandler"
+      />
     </teleport>
   </div>
 </template>
@@ -66,6 +70,10 @@ const calAge = computed(() => {
   const agearea = nowyear - birthyear + 1;
   return Math.floor(agearea / 10) * 10;
 });
+
+const updateHandler = async () => {
+  await store.getMine();
+};
 </script>
 
 <style scoped>

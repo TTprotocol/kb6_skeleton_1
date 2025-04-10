@@ -127,7 +127,7 @@
 <script setup>
 import { defineEmits, ref, onMounted, reactive } from 'vue';
 import { loginStore } from '@/stores/LoginStore';
-const emit = defineEmits(['close']);
+const emit = defineEmits(['close', 'update-user']);
 const originalpassword = ref('');
 const newpassword = ref('');
 const year = ref('');
@@ -143,6 +143,17 @@ const my = reactive({ email: '', year: '', month: '', day: '' });
 
 onMounted(async () => {
   console.log('정보를 찾습니다.');
+  const nowYear = new Date().getFullYear();
+  for (let i = 0; i < 100; i++) {
+    let date = nowYear - i;
+    years.value.push(date);
+  }
+  for (let i = 1; i < 13; i++) {
+    months.value.push(i);
+  }
+  for (let i = 1; i < 32; i++) {
+    days.value.push(i);
+  }
   try {
     await store.getMine();
     console.log('내 정보 찾기 성공');
@@ -174,32 +185,23 @@ const submitEdit = async () => {
       day.value,
       gender.value
     );
-    if (set) console.log('정보 수정 성공');
-    await store.getMine();
-    const birthDate = new Date(store.myBirth);
-    year.value = birthDate.getFullYear();
-    month.value = birthDate.getMonth() + 1;
-    day.value = birthDate.getDate();
-    gender.value = store.myGender;
+    if (set) {
+      console.log('정보 수정 성공');
+      emit('update-user', {
+        password: newpassword,
+        year: year.value,
+        month: month.value,
+        day: day.value,
+        gender: gender.value,
+      });
+    }
+    emit('close');
   } catch (e) {
     console.log('수정 실패');
     console.log(e);
   }
 };
 
-onMounted(() => {
-  const nowYear = new Date().getFullYear();
-  for (let i = 0; i < 100; i++) {
-    let date = nowYear - i;
-    years.value.push(date);
-  }
-  for (let i = 1; i < 13; i++) {
-    months.value.push(i);
-  }
-  for (let i = 1; i < 32; i++) {
-    days.value.push(i);
-  }
-});
 </script>
 
 <style scoped>

@@ -28,6 +28,8 @@ onMounted(async () => {
     console.log(e);
   }
 });
+
+
 </script>
 
 <style scoped>
