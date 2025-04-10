@@ -12,11 +12,16 @@
 					<th scope="col">내용</th>
 					<th scope="col" class="text-end">금액</th>
 					<th scope="col">메모</th>
+					<th scope="col">삭제</th>
 				</tr>
 			</thead>
 
 			<tbody>
-				<tr v-for="(item, index) in pageData" :key="index">
+				<tr
+					v-for="(item, index) in pageData"
+					:key="index"
+					@click="router.push(`/account/${item.id}`)"
+				>
 					<td>
 						<input type="checkbox" :value="item" v-model="checkedItems" />
 					</td>
@@ -26,23 +31,23 @@
 					<td
 						:class="[
 							'text-end',
-							props.currentTab === '전체'
-								? item.type === 1
-									? 'text-primary'
-									: 'text-danger'
-								: '',
+							item.type === 1 ? 'text-primary' : 'text-danger',
 						]"
 					>
 						{{ item.amount.toLocaleString() }}
 					</td>
-
 					<td class="text-truncate" style="max-width: 150px">
 						{{ item.memo }}
+					</td>
+					<td>
+						<button class="btn btn-danger fw-bold" @click="deleteData(item.id)">
+							삭제
+						</button>
 					</td>
 				</tr>
 			</tbody>
 		</table>
-		<div class="d-flex justify-content-between align-items-center mt-3">
+		<div class="d-flex justify-content-around align-items-center mt-3">
 			<button
 				class="btn btn-outline-primary"
 				@click="prevPage"
@@ -59,8 +64,11 @@
 <script setup>
 import { getAccountListStore } from "@/stores/GetAccountListStore";
 import { computed, watch } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 const store = getAccountListStore();
-const { fetchAllList, fetchPageList, nextPage, prevPage } = store;
+const { fetchAllList, fetchPageList, nextPage, prevPage, deleteData } = store;
 
 fetchAllList();
 fetchPageList();
