@@ -7,8 +7,7 @@
       "birth": "1995-03-15",
       "gender": "여성",
       "budget": 840000,
-      "login": true,
-      "id": "e565"
+      "login": true
     },
     {
       "email": "user2@example.com",
@@ -17,8 +16,7 @@
       "birth": "1990-07-21",
       "gender": "남성",
       "budget": 560000,
-      "login": false,
-      "id": "4d28"
+      "login": false
     },
     {
       "email": "user3@example.com",
@@ -27,8 +25,7 @@
       "birth": "1988-12-09",
       "gender": "여성",
       "budget": 950000,
-      "login": false,
-      "id": "f34c"
+      "login": false
     },
     {
       "email": "user4@example.com",
@@ -37,8 +34,7 @@
       "birth": "1992-04-30",
       "gender": "남성",
       "budget": 700000,
-      "login": false,
-      "id": "f09f"
+      "login": false
     },
     {
       "email": "user5@example.com",
@@ -47,8 +43,7 @@
       "birth": "1997-01-18",
       "gender": "여성",
       "budget": 610000,
-      "login": false,
-      "id": "b55a"
+      "login": false
     },
     {
       "email": "user6@example.com",
@@ -57,8 +52,7 @@
       "birth": "1985-11-25",
       "gender": "남성",
       "budget": 750000,
-      "login": false,
-      "id": "0cef"
+      "login": false
     },
     {
       "email": "user7@example.com",
@@ -67,8 +61,7 @@
       "birth": "1993-06-11",
       "gender": "여성",
       "budget": 990000,
-      "login": false,
-      "id": "8b2a"
+      "login": false
     },
     {
       "email": "user8@example.com",
@@ -77,8 +70,7 @@
       "birth": "1989-02-05",
       "gender": "남성",
       "budget": 530000,
-      "login": false,
-      "id": "9880"
+      "login": false
     },
     {
       "email": "user9@example.com",
@@ -87,8 +79,7 @@
       "birth": "1996-09-27",
       "gender": "여성",
       "budget": 870000,
-      "login": false,
-      "id": "5760"
+      "login": false
     },
     {
       "email": "user10@example.com",
@@ -97,8 +88,7 @@
       "birth": "1991-08-13",
       "gender": "남성",
       "budget": 920000,
-      "login": false,
-      "id": "a08e"
+      "login": false
     }
   ],
 	"categories": {
@@ -115,6 +105,7 @@
 			"교육"
 		]
 	},
+
   "periodicData": [
     {
       "amount": 10400,
@@ -123,8 +114,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-01",
-      "id": "662a"
+      "date": "2025-03-01"
     },
     {
       "amount": 20500,
@@ -133,8 +123,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-03",
-      "id": "e0f6"
+      "date": "2025-02-03"
     },
     {
       "amount": 8400,
@@ -143,8 +132,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-24",
-      "id": "5966"
+      "date": "2025-03-24"
     },
     {
       "amount": 47000,
@@ -153,8 +141,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-01-31",
-      "id": "bf78"
+      "date": "2025-01-31"
     },
     {
       "amount": 39300,
@@ -163,8 +150,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-04-02",
-      "id": "795d"
+      "date": "2025-04-02"
     },
     {
       "amount": 23800,
@@ -173,8 +159,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-04-03",
-      "id": "411a"
+      "date": "2025-04-03"
     },
     {
       "amount": 10400,
@@ -183,8 +168,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-01-10",
-      "id": "3ed6"
+      "date": "2025-01-10"
     },
     {
       "amount": 32500,
@@ -193,8 +177,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-28",
-      "id": "2ae1"
+      "date": "2025-02-28"
     },
     {
       "amount": 37600,
@@ -203,8 +186,7 @@
       "description": "점심식사",
       "memo": "점심식사에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-22",
-      "id": "87e1"
+      "date": "2025-03-22"
     },
     {
       "amount": 24300,
@@ -213,8 +195,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-01-07",
-      "id": "8a64"
+      "date": "2025-01-07"
     },
     {
       "amount": 5900,
@@ -223,8 +204,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-28",
-      "id": "0e28"
+      "date": "2025-03-28"
     },
     {
       "amount": 45200,
@@ -233,8 +213,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-04-07",
-      "id": "469b"
+      "date": "2025-04-07"
     },
     {
       "amount": 15500,
@@ -243,8 +222,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-01-30",
-      "id": "b509"
+      "date": "2025-01-30"
     },
     {
       "amount": 3800,
@@ -253,8 +231,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-05",
-      "id": "fd13"
+      "date": "2025-02-05"
     },
     {
       "amount": 32900,
@@ -263,8 +240,7 @@
       "description": "점심식사",
       "memo": "점심식사에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-10",
-      "id": "7872"
+      "date": "2025-02-10"
     },
     {
       "amount": 14200,
@@ -273,8 +249,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-30",
-      "id": "019b"
+      "date": "2025-03-30"
     },
     {
       "amount": 46500,
@@ -283,8 +258,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-13",
-      "id": "89c0"
+      "date": "2025-03-13"
     },
     {
       "amount": 18100,
@@ -293,8 +267,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-15",
-      "id": "3137"
+      "date": "2025-02-15"
     },
     {
       "amount": 20000,
@@ -303,8 +276,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-02-11",
-      "id": "b0fa"
+      "date": "2025-02-11"
     },
     {
       "amount": 44900,
@@ -313,8 +285,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user1@example.com",
-      "date": "2025-03-03",
-      "id": "e570"
+      "date": "2025-03-03"
     },
     {
       "amount": 29000,
@@ -323,8 +294,7 @@
       "description": "저녁식사",
       "memo": "외식 비용",
       "user": "user1@example.com",
-      "date": "2025-01-05",
-      "id": "7c60"
+      "date": "2025-01-05"
     },
     {
       "amount": 33000,
@@ -333,8 +303,7 @@
       "description": "옷 구매",
       "memo": "겨울 코트",
       "user": "user1@example.com",
-      "date": "2025-01-14",
-      "id": "6a3e"
+      "date": "2025-01-14"
     },
     {
       "amount": 120000,
@@ -343,8 +312,7 @@
       "description": "1월 급여",
       "memo": "정기 급여",
       "user": "user1@example.com",
-      "date": "2025-01-25",
-      "id": "942d"
+      "date": "2025-01-25"
     },
     {
       "amount": 21000,
@@ -353,8 +321,7 @@
       "description": "영화관람",
       "memo": "친구들과 영화",
       "user": "user1@example.com",
-      "date": "2025-01-27",
-      "id": "e654"
+      "date": "2025-01-27"
     },
     {
       "amount": 9800,
@@ -363,8 +330,7 @@
       "description": "적금 이자 수익",
       "memo": "자동이체 이자",
       "user": "user1@example.com",
-      "date": "2025-02-02",
-      "id": "9d4c"
+      "date": "2025-02-02"
     },
     {
       "amount": 5800,
@@ -373,8 +339,7 @@
       "description": "아침 식사",
       "memo": "샌드위치",
       "user": "user1@example.com",
-      "date": "2025-02-03",
-      "id": "d827"
+      "date": "2025-02-03"
     },
     {
       "amount": 32000,
@@ -383,8 +348,7 @@
       "description": "비상금 저축",
       "memo": "매달 저축",
       "user": "user1@example.com",
-      "date": "2025-02-08",
-      "id": "ab32"
+      "date": "2025-02-08"
     },
     {
       "amount": 145000,
@@ -393,8 +357,7 @@
       "description": "2월 급여",
       "memo": "정기 급여",
       "user": "user1@example.com",
-      "date": "2025-02-28",
-      "id": "b2fb"
+      "date": "2025-02-28"
     },
     {
       "amount": 12000,
@@ -403,8 +366,7 @@
       "description": "버스비 충전",
       "memo": "교통카드 충전",
       "user": "user1@example.com",
-      "date": "2025-03-03",
-      "id": "9fb6"
+      "date": "2025-03-03"
     },
     {
       "amount": 6000,
@@ -413,8 +375,7 @@
       "description": "카페",
       "memo": "커피 한 잔",
       "user": "user1@example.com",
-      "date": "2025-03-05",
-      "id": "ec0f"
+      "date": "2025-03-05"
     },
     {
       "amount": 30000,
@@ -423,8 +384,7 @@
       "description": "공연 관람",
       "memo": "뮤지컬 티켓",
       "user": "user1@example.com",
-      "date": "2025-03-10",
-      "id": "00a9"
+      "date": "2025-03-10"
     },
     {
       "amount": 5000,
@@ -433,8 +393,7 @@
       "description": "간식",
       "memo": "편의점 간식",
       "user": "user1@example.com",
-      "date": "2025-03-12",
-      "id": "b7f4"
+      "date": "2025-03-12"
     },
     {
       "amount": 300000,
@@ -443,8 +402,7 @@
       "description": "프로젝트 완료 보너스",
       "memo": "1분기 성과급",
       "user": "user1@example.com",
-      "date": "2025-03-15",
-      "id": "50db"
+      "date": "2025-03-15"
     },
     {
       "amount": 18000,
@@ -453,8 +411,7 @@
       "description": "병원 진료비",
       "memo": "감기 진료",
       "user": "user1@example.com",
-      "date": "2025-03-17",
-      "id": "0461"
+      "date": "2025-03-17"
     },
     {
       "amount": 6500,
@@ -463,8 +420,7 @@
       "description": "헤어젤",
       "memo": "머리 손질용품",
       "user": "user1@example.com",
-      "date": "2025-03-20",
-      "id": "a1c4"
+      "date": "2025-03-20"
     },
     {
       "amount": 16000,
@@ -473,8 +429,7 @@
       "description": "예금 이자",
       "memo": "단기 예금 수익",
       "user": "user1@example.com",
-      "date": "2025-03-29",
-      "id": "ea3f"
+      "date": "2025-03-29"
     },
     {
       "amount": 77000,
@@ -483,8 +438,7 @@
       "description": "온라인 강의",
       "memo": "코딩 부트캠프",
       "user": "user1@example.com",
-      "date": "2025-03-30",
-      "id": "eda4"
+      "date": "2025-03-30"
     },
     {
       "amount": 13500,
@@ -493,8 +447,7 @@
       "description": "미술관 입장",
       "memo": "주말 전시 관람",
       "user": "user1@example.com",
-      "date": "2025-04-01",
-      "id": "fd9d"
+      "date": "2025-04-01"
     },
     {
       "amount": 60000,
@@ -503,8 +456,7 @@
       "description": "친구가 준 선물",
       "memo": "생일 축하금",
       "user": "user1@example.com",
-      "date": "2025-04-02",
-      "id": "4c64"
+      "date": "2025-04-02"
     },
     {
       "amount": 47000,
@@ -513,8 +465,7 @@
       "description": "운동화",
       "memo": "스니커즈 구매",
       "user": "user1@example.com",
-      "date": "2025-04-04",
-      "id": "5551"
+      "date": "2025-04-04"
     },
     {
       "amount": 152000,
@@ -523,8 +474,7 @@
       "description": "4월 급여",
       "memo": "정기 급여",
       "user": "user1@example.com",
-      "date": "2025-04-05",
-      "id": "e416"
+      "date": "2025-04-05"
     },
     {
       "amount": 22000,
@@ -533,8 +483,7 @@
       "description": "주말 외식",
       "memo": "레스토랑",
       "user": "user1@example.com",
-      "date": "2025-04-06",
-      "id": "ef83"
+      "date": "2025-04-06"
     },
     {
       "amount": 5000,
@@ -543,8 +492,7 @@
       "description": "지하철",
       "memo": "왕복 요금",
       "user": "user1@example.com",
-      "date": "2025-04-06",
-      "id": "a95c"
+      "date": "2025-04-06"
     },
     {
       "amount": 10500,
@@ -553,8 +501,7 @@
       "description": "네일 제품",
       "memo": "셀프 네일 키트",
       "user": "user1@example.com",
-      "date": "2025-04-08",
-      "id": "a6c7"
+      "date": "2025-04-08"
     },
     {
       "amount": 8800,
@@ -563,8 +510,7 @@
       "description": "아침 식사",
       "memo": "카페 샌드위치",
       "user": "user1@example.com",
-      "date": "2025-04-08",
-      "id": "5c5e"
+      "date": "2025-04-08"
     },
     {
       "amount": 7000,
@@ -573,8 +519,7 @@
       "description": "버스비",
       "memo": "출근 버스",
       "user": "user1@example.com",
-      "date": "2025-04-09",
-      "id": "fec2"
+      "date": "2025-04-09"
     },
     {
       "amount": 27000,
@@ -583,8 +528,7 @@
       "description": "게임 구매",
       "memo": "스팀 게임",
       "user": "user1@example.com",
-      "date": "2025-04-09",
-      "id": "5aeb"
+      "date": "2025-04-09"
     },
     {
       "amount": 18500,
@@ -593,8 +537,7 @@
       "description": "화장품",
       "memo": "기초 화장품 구매",
       "user": "user1@example.com",
-      "date": "2025-04-09",
-      "id": "6673"
+      "date": "2025-04-09"
     },
     {
       "amount": 45000,
@@ -603,8 +546,7 @@
       "description": "치과 진료",
       "memo": "스케일링",
       "user": "user1@example.com",
-      "date": "2025-04-09",
-      "id": "19ac"
+      "date": "2025-04-09"
     },
     {
       "amount": 4900,
@@ -613,8 +555,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-04-03",
-      "id": "b0e3"
+      "date": "2025-04-03"
     },
     {
       "amount": 16400,
@@ -623,8 +564,7 @@
       "description": "신발 구입",
       "memo": "신발 구입에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-02",
-      "id": "64bb"
+      "date": "2025-02-02"
     },
     {
       "amount": 10800,
@@ -633,8 +573,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-05",
-      "id": "5da2"
+      "date": "2025-02-05"
     },
     {
       "amount": 4500,
@@ -643,8 +582,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-04-02",
-      "id": "1c8e"
+      "date": "2025-04-02"
     },
     {
       "amount": 32300,
@@ -653,8 +591,7 @@
       "description": "상의 구입",
       "memo": "상의 구입에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-09",
-      "id": "3eec"
+      "date": "2025-02-09"
     },
     {
       "amount": 5200,
@@ -663,8 +600,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-02",
-      "id": "3a4e"
+      "date": "2025-03-02"
     },
     {
       "amount": 14400,
@@ -673,8 +609,7 @@
       "description": "예금 계좌 이체",
       "memo": "예금 계좌 이체에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-08",
-      "id": "7e32"
+      "date": "2025-02-08"
     },
     {
       "amount": 18300,
@@ -683,8 +618,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-26",
-      "id": "d5ff"
+      "date": "2025-03-26"
     },
     {
       "amount": 16200,
@@ -693,8 +627,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-22",
-      "id": "f8cd"
+      "date": "2025-02-22"
     },
     {
       "amount": 32500,
@@ -703,8 +636,7 @@
       "description": "외투 구매",
       "memo": "외투 구매에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-01-17",
-      "id": "dd53"
+      "date": "2025-01-17"
     },
     {
       "amount": 30700,
@@ -713,8 +645,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-28",
-      "id": "6791"
+      "date": "2025-03-28"
     },
     {
       "amount": 5200,
@@ -723,8 +654,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-25",
-      "id": "aacd"
+      "date": "2025-02-25"
     },
     {
       "amount": 9900,
@@ -733,8 +663,7 @@
       "description": "세제 구입",
       "memo": "세제 구입에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-01-15",
-      "id": "573b"
+      "date": "2025-01-15"
     },
     {
       "amount": 37100,
@@ -743,8 +672,7 @@
       "description": "버스 요금",
       "memo": "버스 요금에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-18",
-      "id": "bec0"
+      "date": "2025-03-18"
     },
     {
       "amount": 25200,
@@ -753,8 +681,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-18",
-      "id": "b3df"
+      "date": "2025-03-18"
     },
     {
       "amount": 11900,
@@ -763,8 +690,7 @@
       "description": "전기세",
       "memo": "전기세에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-01-20",
-      "id": "bf16"
+      "date": "2025-01-20"
     },
     {
       "amount": 8900,
@@ -773,8 +699,7 @@
       "description": "세제 구입",
       "memo": "세제 구입에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-01-11",
-      "id": "bec4"
+      "date": "2025-01-11"
     },
     {
       "amount": 500,
@@ -783,8 +708,7 @@
       "description": "배당금 수익",
       "memo": "배당금 수익에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-01-13",
-      "id": "2d6d"
+      "date": "2025-01-13"
     },
     {
       "amount": 15300,
@@ -793,8 +717,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-03-12",
-      "id": "a5c1"
+      "date": "2025-03-12"
     },
     {
       "amount": 23900,
@@ -803,8 +726,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user2@example.com",
-      "date": "2025-02-12",
-      "id": "6158"
+      "date": "2025-02-12"
     },
     {
       "amount": 3500,
@@ -813,8 +735,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-01-17",
-      "id": "dcb7"
+      "date": "2025-01-17"
     },
     {
       "amount": 18400,
@@ -823,8 +744,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-01-30",
-      "id": "4d79"
+      "date": "2025-01-30"
     },
     {
       "amount": 46500,
@@ -833,8 +753,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-18",
-      "id": "a5db"
+      "date": "2025-03-18"
     },
     {
       "amount": 55700,
@@ -843,8 +762,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-01",
-      "id": "6dae"
+      "date": "2025-02-01"
     },
     {
       "amount": 36200,
@@ -853,8 +771,7 @@
       "description": "저녁식사",
       "memo": "저녁식사에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-11",
-      "id": "49a4"
+      "date": "2025-03-11"
     },
     {
       "amount": 29800,
@@ -863,8 +780,7 @@
       "description": "지하철 요금",
       "memo": "지하철 요금에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-14",
-      "id": "0970"
+      "date": "2025-03-14"
     },
     {
       "amount": 20000,
@@ -873,8 +789,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-07",
-      "id": "3d71"
+      "date": "2025-02-07"
     },
     {
       "amount": 7300,
@@ -883,8 +798,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-27",
-      "id": "4651"
+      "date": "2025-03-27"
     },
     {
       "amount": 55300,
@@ -893,8 +807,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-01-22",
-      "id": "bf3f"
+      "date": "2025-01-22"
     },
     {
       "amount": 2800,
@@ -903,8 +816,7 @@
       "description": "지하철 요금",
       "memo": "지하철 요금에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-21",
-      "id": "ebc8"
+      "date": "2025-02-21"
     },
     {
       "amount": 8000,
@@ -913,8 +825,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-19",
-      "id": "b10b"
+      "date": "2025-03-19"
     },
     {
       "amount": 31200,
@@ -923,8 +834,7 @@
       "description": "점심식사",
       "memo": "점심식사에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-01-26",
-      "id": "0a31"
+      "date": "2025-01-26"
     },
     {
       "amount": 45900,
@@ -933,8 +843,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-16",
-      "id": "3a0e"
+      "date": "2025-03-16"
     },
     {
       "amount": 18900,
@@ -943,8 +852,7 @@
       "description": "배당금 수익",
       "memo": "배당금 수익에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-29",
-      "id": "1c63"
+      "date": "2025-03-29"
     },
     {
       "amount": 30800,
@@ -953,8 +861,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-17",
-      "id": "55b2"
+      "date": "2025-02-17"
     },
     {
       "amount": 49300,
@@ -963,8 +870,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-13",
-      "id": "7788"
+      "date": "2025-02-13"
     },
     {
       "amount": 23100,
@@ -973,8 +879,7 @@
       "description": "신발 구입",
       "memo": "신발 구입에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-01-21",
-      "id": "ffb9"
+      "date": "2025-01-21"
     },
     {
       "amount": 33000,
@@ -983,8 +888,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-12",
-      "id": "24a3"
+      "date": "2025-03-12"
     },
     {
       "amount": 5200,
@@ -993,8 +897,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-03-04",
-      "id": "44a2"
+      "date": "2025-03-04"
     },
     {
       "amount": 38600,
@@ -1003,8 +906,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user3@example.com",
-      "date": "2025-02-08",
-      "id": "8900"
+      "date": "2025-02-08"
     },
     {
       "amount": 15200,
@@ -1013,8 +915,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-07",
-      "id": "c1aa"
+      "date": "2025-01-07"
     },
     {
       "amount": 4800,
@@ -1023,8 +924,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-05",
-      "id": "d8ec"
+      "date": "2025-03-05"
     },
     {
       "amount": 18400,
@@ -1033,8 +933,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-07",
-      "id": "704d"
+      "date": "2025-03-07"
     },
     {
       "amount": 36400,
@@ -1043,8 +942,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-07",
-      "id": "0cbc"
+      "date": "2025-03-07"
     },
     {
       "amount": 10700,
@@ -1053,8 +951,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-23",
-      "id": "56b9"
+      "date": "2025-01-23"
     },
     {
       "amount": 22600,
@@ -1063,8 +960,7 @@
       "description": "예금 계좌 이체",
       "memo": "예금 계좌 이체에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-04-04",
-      "id": "e6d2"
+      "date": "2025-04-04"
     },
     {
       "amount": 39200,
@@ -1073,8 +969,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-14",
-      "id": "2c1f"
+      "date": "2025-01-14"
     },
     {
       "amount": 6400,
@@ -1083,8 +978,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-04-01",
-      "id": "2c9c"
+      "date": "2025-04-01"
     },
     {
       "amount": 5800,
@@ -1093,8 +987,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-08",
-      "id": "0c58"
+      "date": "2025-01-08"
     },
     {
       "amount": 2500,
@@ -1103,8 +996,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-03",
-      "id": "8563"
+      "date": "2025-03-03"
     },
     {
       "amount": 21300,
@@ -1113,8 +1005,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-21",
-      "id": "ae9c"
+      "date": "2025-03-21"
     },
     {
       "amount": 36500,
@@ -1123,8 +1014,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-02-28",
-      "id": "3210"
+      "date": "2025-02-28"
     },
     {
       "amount": 28200,
@@ -1133,8 +1023,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-17",
-      "id": "c9e3"
+      "date": "2025-01-17"
     },
     {
       "amount": 23600,
@@ -1143,8 +1032,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-06",
-      "id": "34ff"
+      "date": "2025-03-06"
     },
     {
       "amount": 3900,
@@ -1153,8 +1041,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-05",
-      "id": "bd9d"
+      "date": "2025-03-05"
     },
     {
       "amount": 1200,
@@ -1163,8 +1050,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-02-04",
-      "id": "868f"
+      "date": "2025-02-04"
     },
     {
       "amount": 39300,
@@ -1173,8 +1059,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-03-09",
-      "id": "a086"
+      "date": "2025-03-09"
     },
     {
       "amount": 31500,
@@ -1183,8 +1068,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-01-18",
-      "id": "b56d"
+      "date": "2025-01-18"
     },
     {
       "amount": 2800,
@@ -1193,8 +1077,7 @@
       "description": "세제 구입",
       "memo": "세제 구입에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-02-14",
-      "id": "b278"
+      "date": "2025-02-14"
     },
     {
       "amount": 37100,
@@ -1203,8 +1086,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user4@example.com",
-      "date": "2025-02-28",
-      "id": "5cf0"
+      "date": "2025-02-28"
     },
     {
       "amount": 18000,
@@ -1213,8 +1095,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-04-02",
-      "id": "348d"
+      "date": "2025-04-02"
     },
     {
       "amount": 32800,
@@ -1223,8 +1104,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-30",
-      "id": "0ae7"
+      "date": "2025-03-30"
     },
     {
       "amount": 27600,
@@ -1233,8 +1113,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-20",
-      "id": "541a"
+      "date": "2025-02-20"
     },
     {
       "amount": 28400,
@@ -1243,8 +1122,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-14",
-      "id": "0234"
+      "date": "2025-03-14"
     },
     {
       "amount": 9000,
@@ -1253,8 +1131,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-20",
-      "id": "97ef"
+      "date": "2025-01-20"
     },
     {
       "amount": 25400,
@@ -1263,8 +1140,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-19",
-      "id": "4e50"
+      "date": "2025-02-19"
     },
     {
       "amount": 26000,
@@ -1273,8 +1149,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-04-04",
-      "id": "3b37"
+      "date": "2025-04-04"
     },
     {
       "amount": 25900,
@@ -1283,8 +1158,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-06",
-      "id": "be82"
+      "date": "2025-02-06"
     },
     {
       "amount": 13600,
@@ -1293,8 +1167,7 @@
       "description": "외투 구매",
       "memo": "외투 구매에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-30",
-      "id": "a702"
+      "date": "2025-01-30"
     },
     {
       "amount": 20600,
@@ -1303,8 +1176,7 @@
       "description": "배당금 수익",
       "memo": "배당금 수익에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-18",
-      "id": "58fa"
+      "date": "2025-03-18"
     },
     {
       "amount": 7200,
@@ -1313,8 +1185,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-15",
-      "id": "ed8d"
+      "date": "2025-03-15"
     },
     {
       "amount": 29700,
@@ -1323,8 +1194,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-06",
-      "id": "07c4"
+      "date": "2025-02-06"
     },
     {
       "amount": 8300,
@@ -1333,8 +1203,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-03",
-      "id": "d6fb"
+      "date": "2025-02-03"
     },
     {
       "amount": 40400,
@@ -1343,8 +1212,7 @@
       "description": "외투 구매",
       "memo": "외투 구매에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-06",
-      "id": "40a7"
+      "date": "2025-03-06"
     },
     {
       "amount": 18700,
@@ -1353,8 +1221,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-02-23",
-      "id": "5478"
+      "date": "2025-02-23"
     },
     {
       "amount": 28100,
@@ -1363,8 +1230,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-13",
-      "id": "c293"
+      "date": "2025-01-13"
     },
     {
       "amount": 32900,
@@ -1373,8 +1239,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-03-26",
-      "id": "b16d"
+      "date": "2025-03-26"
     },
     {
       "amount": 3900,
@@ -1383,8 +1248,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-17",
-      "id": "d570"
+      "date": "2025-01-17"
     },
     {
       "amount": 29200,
@@ -1393,8 +1257,7 @@
       "description": "버스 요금",
       "memo": "버스 요금에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-11",
-      "id": "1be8"
+      "date": "2025-01-11"
     },
     {
       "amount": 4400,
@@ -1403,8 +1266,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user5@example.com",
-      "date": "2025-01-18",
-      "id": "b47e"
+      "date": "2025-01-18"
     },
     {
       "amount": 13300,
@@ -1413,8 +1275,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-28",
-      "id": "63a6"
+      "date": "2025-01-28"
     },
     {
       "amount": 31100,
@@ -1423,8 +1284,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-14",
-      "id": "54a4"
+      "date": "2025-02-14"
     },
     {
       "amount": 47400,
@@ -1433,8 +1293,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-17",
-      "id": "b1a6"
+      "date": "2025-01-17"
     },
     {
       "amount": 46100,
@@ -1443,8 +1302,7 @@
       "description": "신발 구입",
       "memo": "신발 구입에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-03-13",
-      "id": "fd86"
+      "date": "2025-03-13"
     },
     {
       "amount": 39600,
@@ -1453,8 +1311,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-22",
-      "id": "3931"
+      "date": "2025-02-22"
     },
     {
       "amount": 12400,
@@ -1463,8 +1320,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-03-15",
-      "id": "44f5"
+      "date": "2025-03-15"
     },
     {
       "amount": 38800,
@@ -1473,8 +1329,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-09",
-      "id": "0956"
+      "date": "2025-02-09"
     },
     {
       "amount": 25800,
@@ -1483,8 +1338,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-25",
-      "id": "200b"
+      "date": "2025-01-25"
     },
     {
       "amount": 19700,
@@ -1493,8 +1347,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-11",
-      "id": "a6fc"
+      "date": "2025-02-11"
     },
     {
       "amount": 9800,
@@ -1503,8 +1356,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-01",
-      "id": "adb4"
+      "date": "2025-02-01"
     },
     {
       "amount": 16700,
@@ -1513,8 +1365,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-16",
-      "id": "9ffc"
+      "date": "2025-02-16"
     },
     {
       "amount": 32000,
@@ -1523,8 +1374,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-02",
-      "id": "8290"
+      "date": "2025-02-02"
     },
     {
       "amount": 43800,
@@ -1533,8 +1383,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-27",
-      "id": "1621"
+      "date": "2025-01-27"
     },
     {
       "amount": 3400,
@@ -1543,8 +1392,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-04-02",
-      "id": "d227"
+      "date": "2025-04-02"
     },
     {
       "amount": 2000,
@@ -1553,8 +1401,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-03-15",
-      "id": "3329"
+      "date": "2025-03-15"
     },
     {
       "amount": 36000,
@@ -1563,8 +1410,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-12",
-      "id": "8e40"
+      "date": "2025-02-12"
     },
     {
       "amount": 29800,
@@ -1573,8 +1419,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-03-15",
-      "id": "39f3"
+      "date": "2025-03-15"
     },
     {
       "amount": 47300,
@@ -1583,8 +1428,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-02-01",
-      "id": "4c85"
+      "date": "2025-02-01"
     },
     {
       "amount": 43200,
@@ -1593,8 +1437,7 @@
       "description": "신발 구입",
       "memo": "신발 구입에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-08",
-      "id": "e2f9"
+      "date": "2025-01-08"
     },
     {
       "amount": 43900,
@@ -1603,8 +1446,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user6@example.com",
-      "date": "2025-01-10",
-      "id": "620e"
+      "date": "2025-01-10"
     },
     {
       "amount": 16000,
@@ -1613,8 +1455,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-01-13",
-      "id": "fbb9"
+      "date": "2025-01-13"
     },
     {
       "amount": 50600,
@@ -1623,8 +1464,7 @@
       "description": "전기세",
       "memo": "전기세에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-12",
-      "id": "f2f3"
+      "date": "2025-03-12"
     },
     {
       "amount": 43400,
@@ -1633,8 +1473,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-02-05",
-      "id": "aaf3"
+      "date": "2025-02-05"
     },
     {
       "amount": 45100,
@@ -1643,8 +1482,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-01-24",
-      "id": "ac14"
+      "date": "2025-01-24"
     },
     {
       "amount": 27300,
@@ -1653,8 +1491,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-01-12",
-      "id": "0866"
+      "date": "2025-01-12"
     },
     {
       "amount": 11500,
@@ -1663,8 +1500,7 @@
       "description": "배당금 수익",
       "memo": "배당금 수익에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-01",
-      "id": "9663"
+      "date": "2025-03-01"
     },
     {
       "amount": 34600,
@@ -1673,8 +1509,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-01-08",
-      "id": "74ec"
+      "date": "2025-01-08"
     },
     {
       "amount": 24900,
@@ -1683,8 +1518,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-02-05",
-      "id": "50a1"
+      "date": "2025-02-05"
     },
     {
       "amount": 14000,
@@ -1693,8 +1527,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-14",
-      "id": "4353"
+      "date": "2025-03-14"
     },
     {
       "amount": 28500,
@@ -1703,8 +1536,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-08",
-      "id": "7288"
+      "date": "2025-03-08"
     },
     {
       "amount": 11400,
@@ -1713,8 +1545,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-07",
-      "id": "c16c"
+      "date": "2025-03-07"
     },
     {
       "amount": 17000,
@@ -1723,8 +1554,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-02-05",
-      "id": "38b2"
+      "date": "2025-02-05"
     },
     {
       "amount": 29000,
@@ -1733,8 +1563,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-30",
-      "id": "6b42"
+      "date": "2025-03-30"
     },
     {
       "amount": 16900,
@@ -1743,8 +1572,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-28",
-      "id": "d0c1"
+      "date": "2025-03-28"
     },
     {
       "amount": 3800,
@@ -1753,8 +1581,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-18",
-      "id": "58e9"
+      "date": "2025-03-18"
     },
     {
       "amount": 4800,
@@ -1763,8 +1590,7 @@
       "description": "상의 구입",
       "memo": "상의 구입에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-04",
-      "id": "60b1"
+      "date": "2025-03-04"
     },
     {
       "amount": 45700,
@@ -1773,8 +1599,7 @@
       "description": "휴지 구매",
       "memo": "휴지 구매에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-06",
-      "id": "5af9"
+      "date": "2025-03-06"
     },
     {
       "amount": 45700,
@@ -1783,8 +1608,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-02-04",
-      "id": "5e22"
+      "date": "2025-02-04"
     },
     {
       "amount": 14600,
@@ -1793,8 +1617,7 @@
       "description": "지하철 요금",
       "memo": "지하철 요금에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-03",
-      "id": "648d"
+      "date": "2025-03-03"
     },
     {
       "amount": 14100,
@@ -1803,8 +1626,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user7@example.com",
-      "date": "2025-03-07",
-      "id": "7265"
+      "date": "2025-03-07"
     },
     {
       "amount": 6700,
@@ -1813,8 +1635,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-23",
-      "id": "c5a6"
+      "date": "2025-02-23"
     },
     {
       "amount": 19000,
@@ -1823,8 +1644,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-23",
-      "id": "346e"
+      "date": "2025-02-23"
     },
     {
       "amount": 8700,
@@ -1833,8 +1653,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-01",
-      "id": "7773"
+      "date": "2025-02-01"
     },
     {
       "amount": 3800,
@@ -1843,8 +1662,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-09",
-      "id": "df76"
+      "date": "2025-02-09"
     },
     {
       "amount": 15900,
@@ -1853,8 +1671,7 @@
       "description": "버스 요금",
       "memo": "버스 요금에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-12",
-      "id": "89c0"
+      "date": "2025-02-12"
     },
     {
       "amount": 3400,
@@ -1863,8 +1680,7 @@
       "description": "휴지 구매",
       "memo": "휴지 구매에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-29",
-      "id": "931b"
+      "date": "2025-01-29"
     },
     {
       "amount": 32800,
@@ -1873,8 +1689,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-05",
-      "id": "4ff9"
+      "date": "2025-03-05"
     },
     {
       "amount": 27100,
@@ -1883,8 +1698,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-27",
-      "id": "3cfb"
+      "date": "2025-02-27"
     },
     {
       "amount": 24900,
@@ -1893,8 +1707,7 @@
       "description": "상의 구입",
       "memo": "상의 구입에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-12",
-      "id": "8b93"
+      "date": "2025-03-12"
     },
     {
       "amount": 25700,
@@ -1903,8 +1716,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-03",
-      "id": "3d18"
+      "date": "2025-03-03"
     },
     {
       "amount": 30000,
@@ -1913,8 +1725,7 @@
       "description": "점심식사",
       "memo": "점심식사에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-26",
-      "id": "a0a0"
+      "date": "2025-03-26"
     },
     {
       "amount": 25600,
@@ -1923,8 +1734,7 @@
       "description": "주식 매도 차익",
       "memo": "주식 매도 차익에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-08",
-      "id": "3e4f"
+      "date": "2025-01-08"
     },
     {
       "amount": 21700,
@@ -1933,8 +1743,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-18",
-      "id": "208b"
+      "date": "2025-01-18"
     },
     {
       "amount": 17800,
@@ -1943,8 +1752,7 @@
       "description": "저녁식사",
       "memo": "저녁식사에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-30",
-      "id": "9f37"
+      "date": "2025-01-30"
     },
     {
       "amount": 30000,
@@ -1953,8 +1761,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-27",
-      "id": "faff"
+      "date": "2025-02-27"
     },
     {
       "amount": 12000,
@@ -1963,8 +1770,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-19",
-      "id": "c472"
+      "date": "2025-03-19"
     },
     {
       "amount": 26600,
@@ -1973,8 +1779,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-02-24",
-      "id": "df4f"
+      "date": "2025-02-24"
     },
     {
       "amount": 18700,
@@ -1983,8 +1788,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-12",
-      "id": "549f"
+      "date": "2025-01-12"
     },
     {
       "amount": 11000,
@@ -1993,8 +1797,7 @@
       "description": "부모님 용돈",
       "memo": "부모님 용돈에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-01-25",
-      "id": "3e25"
+      "date": "2025-01-25"
     },
     {
       "amount": 14500,
@@ -2003,8 +1806,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user8@example.com",
-      "date": "2025-03-12",
-      "id": "e5d0"
+      "date": "2025-03-12"
     },
     {
       "amount": 18600,
@@ -2013,8 +1815,7 @@
       "description": "학원비",
       "memo": "학원비에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-26",
-      "id": "39e3"
+      "date": "2025-01-26"
     },
     {
       "amount": 45700,
@@ -2023,8 +1824,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-18",
-      "id": "672e"
+      "date": "2025-01-18"
     },
     {
       "amount": 18300,
@@ -2033,8 +1833,7 @@
       "description": "프리랜서 월급",
       "memo": "프리랜서 월급에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-02-16",
-      "id": "bab2"
+      "date": "2025-02-16"
     },
     {
       "amount": 47800,
@@ -2043,8 +1842,7 @@
       "description": "지하철 요금",
       "memo": "지하철 요금에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-02-16",
-      "id": "0942"
+      "date": "2025-02-16"
     },
     {
       "amount": 44100,
@@ -2053,8 +1851,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-13",
-      "id": "f21b"
+      "date": "2025-03-13"
     },
     {
       "amount": 50500,
@@ -2063,8 +1860,7 @@
       "description": "약값",
       "memo": "약값에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-02-22",
-      "id": "9ca8"
+      "date": "2025-02-22"
     },
     {
       "amount": 43100,
@@ -2073,8 +1869,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-22",
-      "id": "659c"
+      "date": "2025-03-22"
     },
     {
       "amount": 43400,
@@ -2083,8 +1878,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-28",
-      "id": "060b"
+      "date": "2025-03-28"
     },
     {
       "amount": 16600,
@@ -2093,8 +1887,7 @@
       "description": "배당금 수익",
       "memo": "배당금 수익에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-02-14",
-      "id": "a802"
+      "date": "2025-02-14"
     },
     {
       "amount": 900,
@@ -2103,8 +1896,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-22",
-      "id": "91ba"
+      "date": "2025-03-22"
     },
     {
       "amount": 45800,
@@ -2113,8 +1905,7 @@
       "description": "적금 이자",
       "memo": "적금 이자에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-31",
-      "id": "7f27"
+      "date": "2025-03-31"
     },
     {
       "amount": 31900,
@@ -2123,8 +1914,7 @@
       "description": "외투 구매",
       "memo": "외투 구매에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-15",
-      "id": "c63e"
+      "date": "2025-03-15"
     },
     {
       "amount": 47500,
@@ -2133,8 +1923,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-22",
-      "id": "a3bd"
+      "date": "2025-03-22"
     },
     {
       "amount": 43700,
@@ -2143,8 +1932,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-23",
-      "id": "3142"
+      "date": "2025-01-23"
     },
     {
       "amount": 52900,
@@ -2153,8 +1941,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-24",
-      "id": "5ff1"
+      "date": "2025-01-24"
     },
     {
       "amount": 24600,
@@ -2163,8 +1950,7 @@
       "description": "지인에게 받은 현금",
       "memo": "지인에게 받은 현금에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-01",
-      "id": "3ea8"
+      "date": "2025-03-01"
     },
     {
       "amount": 28000,
@@ -2173,8 +1959,7 @@
       "description": "전기세",
       "memo": "전기세에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-14",
-      "id": "1a0b"
+      "date": "2025-01-14"
     },
     {
       "amount": 41700,
@@ -2183,8 +1968,7 @@
       "description": "버스 요금",
       "memo": "버스 요금에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-24",
-      "id": "bb7d"
+      "date": "2025-01-24"
     },
     {
       "amount": 19000,
@@ -2193,8 +1977,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-01-09",
-      "id": "3847"
+      "date": "2025-01-09"
     },
     {
       "amount": 40200,
@@ -2203,8 +1986,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user9@example.com",
-      "date": "2025-03-22",
-      "id": "8b0b"
+      "date": "2025-03-22"
     },
     {
       "amount": 15100,
@@ -2213,8 +1995,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-13",
-      "id": "0e26"
+      "date": "2025-03-13"
     },
     {
       "amount": 53600,
@@ -2223,8 +2004,7 @@
       "description": "전기세",
       "memo": "전기세에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-01-15",
-      "id": "0509"
+      "date": "2025-01-15"
     },
     {
       "amount": 41200,
@@ -2233,8 +2013,7 @@
       "description": "택시비",
       "memo": "택시비에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-01-29",
-      "id": "ea94"
+      "date": "2025-01-29"
     },
     {
       "amount": 30000,
@@ -2243,8 +2022,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-13",
-      "id": "1b8c"
+      "date": "2025-02-13"
     },
     {
       "amount": 35100,
@@ -2253,8 +2031,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-08",
-      "id": "f936"
+      "date": "2025-02-08"
     },
     {
       "amount": 2500,
@@ -2263,8 +2040,7 @@
       "description": "전기세",
       "memo": "전기세에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-04-01",
-      "id": "be3c"
+      "date": "2025-04-01"
     },
     {
       "amount": 46600,
@@ -2273,8 +2049,7 @@
       "description": "병원 진료비",
       "memo": "병원 진료비에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-24",
-      "id": "8585"
+      "date": "2025-03-24"
     },
     {
       "amount": 16900,
@@ -2283,8 +2058,7 @@
       "description": "온라인 강의",
       "memo": "온라인 강의에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-01-24",
-      "id": "3bf8"
+      "date": "2025-01-24"
     },
     {
       "amount": 9100,
@@ -2293,8 +2067,7 @@
       "description": "예금 이자",
       "memo": "예금 이자에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-01-11",
-      "id": "6f13"
+      "date": "2025-01-11"
     },
     {
       "amount": 18300,
@@ -2303,8 +2076,7 @@
       "description": "지하철 요금",
       "memo": "지하철 요금에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-04",
-      "id": "9853"
+      "date": "2025-03-04"
     },
     {
       "amount": 46400,
@@ -2313,8 +2085,7 @@
       "description": "회사 급여",
       "memo": "회사 급여에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-12",
-      "id": "b417"
+      "date": "2025-03-12"
     },
     {
       "amount": 53300,
@@ -2323,8 +2094,7 @@
       "description": "저녁식사",
       "memo": "저녁식사에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-16",
-      "id": "fcd3"
+      "date": "2025-02-16"
     },
     {
       "amount": 22000,
@@ -2333,8 +2103,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-17",
-      "id": "8a32"
+      "date": "2025-02-17"
     },
     {
       "amount": 43800,
@@ -2343,8 +2112,7 @@
       "description": "카페",
       "memo": "카페에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-09",
-      "id": "2aa8"
+      "date": "2025-02-09"
     },
     {
       "amount": 9400,
@@ -2353,8 +2121,7 @@
       "description": "넷플릭스",
       "memo": "넷플릭스에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-29",
-      "id": "16f2"
+      "date": "2025-03-29"
     },
     {
       "amount": 41000,
@@ -2363,8 +2130,7 @@
       "description": "헤어컷",
       "memo": "헤어컷에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-01-10",
-      "id": "22cb"
+      "date": "2025-01-10"
     },
     {
       "amount": 10600,
@@ -2373,8 +2139,7 @@
       "description": "네일샵",
       "memo": "네일샵에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-12",
-      "id": "efe0"
+      "date": "2025-02-12"
     },
     {
       "amount": 34000,
@@ -2383,8 +2148,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-02-25",
-      "id": "ad21"
+      "date": "2025-02-25"
     },
     {
       "amount": 13900,
@@ -2393,8 +2157,7 @@
       "description": "적금 이체",
       "memo": "적금 이체에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-06",
-      "id": "39c3"
+      "date": "2025-03-06"
     },
     {
       "amount": 39800,
@@ -2403,38 +2166,7 @@
       "description": "유튜브 프리미엄",
       "memo": "유튜브 프리미엄에 대한 메모입니다.",
       "user": "user10@example.com",
-      "date": "2025-03-17",
-      "id": "3cd1"
-    },
-    {
-      "id": "29a6",
-      "amount": 8000,
-      "type": -1,
-      "category": "교통비",
-      "description": "택시",
-      "memo": "택시탐",
-      "user": "user1@example.com",
-      "date": "2025-04-09"
-    },
-    {
-      "id": "f7d0",
-      "amount": 11111,
-      "type": -1,
-      "category": "ㅂㅈㅂㅂ",
-      "description": "ㅈㄷㅈㄷ",
-      "memo": "ㅈㅂㅂ",
-      "user": "user1@example.com",
-      "date": "2025-04-30"
-    },
-    {
-      "id": "ea71",
-      "amount": 12323,
-      "type": -1,
-      "category": "ㄴㅇ",
-      "description": "ㅂㅈㄷ",
-      "memo": "ㅁㅇㅀㅁㄴㅇ",
-      "user": "user1@example.com",
-      "date": "2025-04-23"
+      "date": "2025-03-17"
     }
   ]
 }

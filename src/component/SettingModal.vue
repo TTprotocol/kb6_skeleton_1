@@ -116,31 +116,33 @@
           </select>
         </div>
 
-        <button class="btn btn-secondary w-100">수정</button>
+        <button class="btn btn-secondary w-100" @click="submitEdit">
+          수정
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineEmits, ref, onMounted } from 'vue';
-
-const emit = defineEmits(['close']);
+import { defineEmits, ref, onMounted, reactive } from 'vue';
+import { loginStore } from '@/stores/LoginStore';
+const emit = defineEmits(['close', 'update-user']);
 const originalpassword = ref('');
 const newpassword = ref('');
-const year = ref('년');
-const month = ref('월');
-const day = ref('일');
-const gender = ref('여성');
+const year = ref('');
+const month = ref('');
+const day = ref('');
+const gender = ref('');
 const years = ref([]);
 const months = ref([]);
 const days = ref([]);
+const store = loginStore();
 
-const closeModal = () => {
-  emit('close');
-};
+const my = reactive({ email: '', year: '', month: '', day: '' });
 
-onMounted(() => {
+onMounted(async () => {
+  console.log('정보를 찾습니다.');
   const nowYear = new Date().getFullYear();
   for (let i = 0; i < 100; i++) {
     let date = nowYear - i;
@@ -152,7 +154,54 @@ onMounted(() => {
   for (let i = 1; i < 32; i++) {
     days.value.push(i);
   }
+  try {
+    await store.getMine();
+    console.log('내 정보 찾기 성공');
+    my.email = store.myEmail;
+    my.year = new Date(store.myBirth).getFullYear();
+    my.month = new Date(store.myBirth).getMonth() + 1;
+    my.day = new Date(store.myBirth).getDate();
+    my.gender = store.myGender;
+    year.value = my.year;
+    month.value = my.month;
+    day.value = my.day;
+    gender.value = my.gender;
+  } catch (e) {
+    console.log(e);
+  }
 });
+
+const closeModal = () => {
+  emit('close');
+};
+
+const submitEdit = async () => {
+  try {
+    const set = await store.settingUser(
+      originalpassword.value,
+      newpassword.value,
+      year.value,
+      month.value,
+      day.value,
+      gender.value
+    );
+    if (set) {
+      console.log('정보 수정 성공');
+      emit('update-user', {
+        password: newpassword,
+        year: year.value,
+        month: month.value,
+        day: day.value,
+        gender: gender.value,
+      });
+    }
+    emit('close');
+  } catch (e) {
+    console.log('수정 실패');
+    console.log(e);
+  }
+};
+
 </script>
 
 <style scoped>

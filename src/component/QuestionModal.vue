@@ -3,6 +3,9 @@
     <div class="box">
       <i class="fa-solid fa-x" @click="closeModal" style="cursor: pointer"></i>
       <ul>
+        <li>Github @mizzomi</li>
+        <li>Github @ketiHSW</li>
+        <li>Github @TTprotocol</li>
         <li>Github @Cho2eunseo</li>
       </ul>
     </div>
