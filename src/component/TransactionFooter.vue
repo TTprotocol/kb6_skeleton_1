@@ -9,7 +9,7 @@
 			</span>
 		</div>
 		<div class="ms-auto">
-			<button class="btn btn-danger fw-bold" @click="$emit('add')">
+			<button class="btn btn-success fw-bold" @click="$emit('add')">
 				내역 추가
 			</button>
 		</div>

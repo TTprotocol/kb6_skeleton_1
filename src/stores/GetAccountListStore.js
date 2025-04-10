@@ -79,7 +79,7 @@ export const getAccountListStore = defineStore("list", () => {
 	};
 
 	const createData = async (
-		{ amount, type, category, description, memo, user, date },
+		{ amount, type, category, description, memo, date },
 		successCallback
 	) => {
 		try {
@@ -89,9 +89,10 @@ export const getAccountListStore = defineStore("list", () => {
 				category,
 				description,
 				memo,
-				user,
+				user: state.userEmail,
 				date,
 			};
+			console.log("payload : ", payload);
 			const response = await axios.post(BASEURI, payload);
 
 			if (response.status === 201) {
@@ -106,7 +107,7 @@ export const getAccountListStore = defineStore("list", () => {
 	};
 
 	const updateData = async (
-		{ amount, type, category, description, memo, user, date, id },
+		{ amount, type, category, description, memo, date, id },
 		successCallback
 	) => {
 		try {
@@ -117,7 +118,7 @@ export const getAccountListStore = defineStore("list", () => {
 				category,
 				description,
 				memo,
-				user,
+				user: state.userEmail,
 				date,
 			};
 			const response = await axios.put(BASEURI + `/${id}`, payload);

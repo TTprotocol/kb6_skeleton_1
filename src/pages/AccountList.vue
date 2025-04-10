@@ -121,7 +121,7 @@ watch([currentTab, startDate, endDate], () => {
 
 const router = useRouter();
 const goToAddTransaction = () => {
-	router.push("/account/:id"); // 이 경로는 내가 설정한 페이지로 수정 가능
+	router.push("/account/0000"); // 이 경로는 내가 설정한 페이지로 수정 가능
 };
 
 console.log("allData:", allData);
@@ -130,7 +130,7 @@ console.log("allData:", allData);
 <style scoped>
 #app {
 	height: 100%;
-	margin-top: 50px;
+	margin-top: 100px;
 	padding-bottom: 50px;
 	/* border: 1px solid red; */
 }
