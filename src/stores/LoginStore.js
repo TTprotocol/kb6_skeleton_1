@@ -130,13 +130,14 @@ export const loginStore = defineStore('login', () => {
   };
 
   const createData = async (
-    { email, password, birth, gender },
+    { email, password, birth, name, gender, budget, login },
     successCallback
   ) => {
     try {
-      const payload = { email, password, birth, gender };
+      const payload = { email, password, birth, name, gender, budget, login };
+      console.log(payload);
       const response = await axios.post(BASEURI, payload);
-      if (response.status === 200) {
+      if (response.status === 200 || response.status === 201) {
         successCallback();
       } else {
         alert('회원가입 실패!');
@@ -166,4 +167,3 @@ export const loginStore = defineStore('login', () => {
     myGender,
   };
 });
-

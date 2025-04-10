@@ -73,11 +73,23 @@
           <article>
             <div style="height: 64px"></div>
             <div id="signup__form">
+              <p>이름</p>
+              <input
+                type="text"
+                v-model="name"
+                placeholder="이름을 입력해주세요."
+              />
               <p>성별</p>
               <select v-model="gender">
                 <option>여성</option>
                 <option>남성</option>
               </select>
+              <p>예산 설정</p>
+              <input
+                type="text"
+                v-model.number="budget"
+                placeholder="예산을 입력해주세요."
+              />
             </div>
             <div id="terms">
               <input type="checkbox" value="term1" v-model="terms" />
@@ -103,7 +115,12 @@
           </article>
         </main>
         <section>
-          <button type="submit" id="submit-btn" :disabled="!isValid">
+          <button
+            type="submit"
+            id="submit-btn"
+            :disabled="!isValid"
+            @click="signupHandler"
+          >
             회원가입
           </button>
         </section>
@@ -114,17 +131,20 @@
 
 <script setup>
 import { ref, onMounted, computed } from 'vue';
+import { useRouter } from 'vue-router';
 // import axios from 'axios';
 import Term1Modal from '@/component/Term1Modal.vue';
 import Term2Modal from '@/component/Term2Modal.vue';
 import { loginStore } from '@/stores/LoginStore';
 
 const store = loginStore();
+const router = useRouter();
 const password = ref('');
 const checkpassword = ref('');
 const year = ref('년');
 const month = ref('월');
 const day = ref('일');
+const name = ref('');
 const gender = ref('여성');
 const years = ref([]);
 const months = ref([]);
@@ -134,6 +154,7 @@ const terms = ref([]);
 const isModal = ref(false);
 const isModal2 = ref(false);
 const message = ref('');
+const budget = ref('');
 
 onMounted(() => {
   const nowYear = new Date().getFullYear();
@@ -195,10 +216,27 @@ const checkIdHandler = async (id) => {
   }
 };
 
-const signupHandler = async (email, password, birth, gender) => {
+const signupHandler = async () => {
   try {
-    const response = await store.addData({ email, password, birth, gender });
-  } catch (e) {}
+    const birthStr = `${year.value}-${month.value}-${day.value}`;
+    await store.createData(
+      {
+        email: id.value,
+        password: password.value,
+        birth: birthStr,
+        name: name.value,
+        budget: budget.value,
+        gender: gender.value,
+        login: false,
+      },
+      () => {
+        alert('회원가입 성공!');
+        router.push('/loginid');
+      }
+    );
+  } catch (e) {
+    console.log(e);
+  }
 };
 </script>
 
