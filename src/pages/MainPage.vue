@@ -23,10 +23,11 @@
               :userEmail="loginUser.email"
               :userName="loginUser.name"
               :transactions="state.periodicData"
+              @refresh="fetchDataAgain"
             />
           </div>
           <div class="card half-width">
-            <!-- <h2>ㅇㅇㅇ님의 소비 트렌드</h2> -->
+            <!-- <h2>ㅇㅇfgㅇ님의 소비 트렌드</h2> -->
             <ExpenseTrend
               v-if="loginUser && state.periodicData.length > 0"
               :userName="loginUser.name"
@@ -64,16 +65,15 @@ watchEffect(() => {
   }
 });
 
-// const totalExpense = computed(() => {
-//   if (!loginUser.value) return 0;
-//   return state.periodicData
-//     .filter(
-//       (item) => item.user === loginUser.value.email && item.type === -1 // 지출
-//     )
-//     .reduce((sum, item) => sum + item.amount, 0);
-// });
-
-// console.log(`전체 소비 금액 : ${totalExpense.value}`);
+const fetchDataAgain = async () => {
+  try {
+    const periodicRes = await axios.get('http://localhost:3000/periodicData');
+    state.periodicData = periodicRes.data;
+    console.log('📦 최신 거래 내역 갱신됨!');
+  } catch (err) {
+    console.error('❌ 거래 데이터 재조회 실패:', err);
+  }
+};
 
 onMounted(async () => {
   try {
@@ -105,25 +105,23 @@ onMounted(async () => {
 
 <style scoped>
 #app {
-  margin: 10px;
+  margin-top: 50px;
   padding: 10px;
   box-sizing: border-box;
 }
 #main {
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid blue; */
-  height: 70vh;
   margin: 10px;
   padding: 10px;
   box-sizing: border-box;
 }
 .section {
   width: 80%;
+  height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 10px;
-  /* border: 1px solid red; */
   box-sizing: border-box;
 }
 .card {

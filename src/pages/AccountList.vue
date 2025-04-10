@@ -1,15 +1,32 @@
 <template>
-	<div class="transaction-page p-4">
-		<TransactionTabs v-model="currentTab" />
-		<DateRangePicker v-model:start="startDate" v-model:end="endDate" />
+	<div id="app" class="transaction-page container">
+		<div
+			class="d-flex align-items-center justify-content-between gap-2 flex-wrap"
+		>
+			<TransactionTabs v-model="currentTab" class="mb-3" />
+			<DateRangePicker
+				v-model:start="startDate"
+				v-model:end="endDate"
+				class="mb-4"
+			/>
+		</div>
 
-		<TransactionChart :data="filteredData" :tab="currentTab" />
+		<div class="card mb-4">
+			<div class="card-body">
+				<TotalChart :data="chartData" :tab="currentTab" class="mb-4" />
+			</div>
+		</div>
 
-		<TransactionTable
-			:data="filteredData"
-			v-model:checkedItems="checkedItems"
-			:currentTab="currentTab"
-		/>
+		<div class="card mb-4">
+			<div class="card-body p-0">
+				<TransactionTable
+					:data="filteredData"
+					v-model:checkedItems="checkedItems"
+					:currentTab="currentTab"
+					class="mb-4"
+				/>
+			</div>
+		</div>
 
 		<TransactionFooter
 			:total="totalAmount"
@@ -21,31 +38,41 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from "vue";
+import { ref, computed, watch, onMounted } from "vue";
 import { useRouter } from "vue-router";
+import axios from "axios";
 import dayjs from "@/utils/dayjs";
 import TransactionTabs from "@/component/TransactionTabs.vue";
 import DateRangePicker from "@/component/DateRangePicker.vue";
 import TransactionTable from "@/component/TransactionTable.vue";
-import rawData from "/db.json"; // 예시 데이터
 import TransactionFooter from "@/component/TransactionFooter.vue";
-import TransactionChart from "@/component/TransactionChart.vue";
+import TotalChart from "@/component/TotalChart.vue";
+import { getAccountListStore } from "@/stores/GetAccountListStore.js";
 
+const store = getAccountListStore();
 const currentTab = ref("지출");
-const startDate = ref("2025-04-01");
-const endDate = ref("2025-04-30");
+const startDate = ref(dayjs().startOf("month").format("YYYY-MM-DD"));
+const endDate = ref(dayjs().endOf("month").format("YYYY-MM-DD"));
 const checkedItems = ref([]);
+//데이터
+const allData = ref([]);
 
-// 거래내역 데이터
-const allData = rawData.periodicData || rawData; // 상황에 따라 key 확인
+onMounted(async () => {
+	try {
+		const res = await axios.get("/api/periodicData");
+		allData.value = res.data;
+	} catch (err) {
+		console.error("데이터 불러오기 실패:", err);
+	}
+});
 
 const filteredData = computed(() => {
-	return allData.filter((item) => {
+	return allData.value.filter((item) => {
 		const date = dayjs(item.date);
 		const typeMatch =
 			currentTab.value === "전체"
 				? true
-				: currentTab.value === "수입"
+				: currentTab.value === "수익"
 				? item.type === 1
 				: item.type === -1;
 
@@ -77,6 +104,17 @@ const checkedTotalAmount = computed(() =>
 	}, 0)
 );
 
+const chartData = computed(() => {
+	if (currentTab.value === "전체") {
+		const sixMonthsAgo = dayjs().subtract(5, "month").startOf("month");
+		return allData.value.filter((item) =>
+			dayjs(item.date).isSameOrAfter(sixMonthsAgo)
+		);
+	} else {
+		return filteredData.value;
+	}
+});
+
 watch([currentTab, startDate, endDate], () => {
 	checkedItems.value = [];
 });
@@ -85,28 +123,15 @@ const router = useRouter();
 const goToAddTransaction = () => {
 	router.push("/account/:id"); // 이 경로는 내가 설정한 페이지로 수정 가능
 };
+
+console.log("allData:", allData);
 </script>
 
 <style scoped>
 #app {
-	margin: 10px;
-	padding: 10px;
-	box-sizing: border-box;
-}
-#main {
-	display: flex;
-	justify-content: space-between;
-	border: 1px solid blue;
-	height: 70vh;
-	margin: 10px;
-	padding: 10px;
-	box-sizing: border-box;
-}
-.section {
-	width: 80%;
-	border: 1px solid red;
-}
-.transction-page {
-	padding-bottom: 80px;
+	height: 100%;
+	margin-top: 50px;
+	padding-bottom: 50px;
+	/* border: 1px solid red; */
 }
 </style>
