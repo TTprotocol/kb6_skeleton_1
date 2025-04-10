@@ -93,7 +93,7 @@
             </div>
             <div id="terms">
               <input type="checkbox" value="term1" v-model="terms" />
-              <button id="text__button1" @click="changeModal">약관 1</button>
+              <button id="text__button1" @click="changeModal">이용약관</button>
               <teleport to="#term_modal">
                 <Term1Modal
                   v-if="isModal"
@@ -103,7 +103,7 @@
               </teleport>
               <br /><br />
               <input type="checkbox" value="term2" v-model="terms" />
-              <button id="text__button2" @click="changeModal2">약관 2</button>
+              <button id="text__button2" @click="changeModal2">개인정보처리방침</button>
               <teleport to="#term_modal">
                 <Term2Modal
                   v-if="isModal2"

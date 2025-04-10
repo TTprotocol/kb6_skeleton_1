@@ -1,7 +1,7 @@
 <template>
   <div id="my">
     <div id="profile">
-      <img src="@/assets/images/kakaotalk.png" alt="" />
+      <img src="@/assets/images/character.png" alt="" />
       &nbsp;&nbsp;&nbsp;&nbsp;
       <div id="users">
         <p id="user__name">{{ my.name }}</p>
