@@ -7,6 +7,7 @@ export const getAccountListStore = defineStore("list", () => {
 	const CATEGORYURI = "/api/categories";
 	const state = reactive({
 		allList: [],
+		allPageList: [],
 		pageList: [],
 		pageCount: [],
 		categoryList: {},
@@ -51,24 +52,44 @@ export const getAccountListStore = defineStore("list", () => {
 		}
 	};
 
-	const fetchPageList = async (page = 1) => {
+	// 페이지 리스트 조회
+	const fetchPageList = async ({
+		page = 1,
+		type = "지출",
+		key = "date",
+		order = "desc",
+	} = {}) => {
+		console.log(page, type, key, order);
+		const nowType = type === "전체" ? 0 : type === "지출" ? -1 : 1;
 		try {
-			const response = await axios.get(BASEURI, {
-				params: {
-					user: state.userEmail,
-					_page: page,
-					_limit: 10,
-					_sort: "date", // 정렬 필드
-					_order: "desc", // 정렬 순서
-				},
-			});
+			const startIndex = (page - 1) * 10;
+			const endIndex = startIndex + 10;
+			const list = [...state.allList]
+				.filter((item) => item.user === state.userEmail)
+				.filter((item) => {
+					if (nowType === 0) {
+						return true;
+					} else if (nowType === 1) {
+						return item.type === 1;
+					} else {
+						return item.type === -1;
+					}
+				})
+				.sort((a, b) => {
+					const valA = a[key];
+					const valB = b[key];
 
-			console.log("response.data : ", response.data);
-			if (response.status === 200) {
-				state.pageList = response.data;
-			} else {
-				console.log("페이지 조회 실패");
-			}
+					if (typeof valA === "number" && typeof valB === "number") {
+						return order === "asc" ? valA - valB : valB - valA;
+					} else {
+						return order === "asc"
+							? String(valA).localeCompare(String(valB))
+							: String(valB).localeCompare(String(valA));
+					}
+				});
+			console.log("list : ", list);
+			state.allPageList = list;
+			state.pageList = list.slice(startIndex, endIndex);
 		} catch (e) {
 			console.log("페이지 조회 에러 : ", e);
 		}
@@ -97,6 +118,7 @@ export const getAccountListStore = defineStore("list", () => {
 
 			if (response.status === 201) {
 				await fetchAllList();
+				await fetchPageList();
 				successCallback();
 			} else {
 				alert("추가 실패!");
@@ -126,6 +148,7 @@ export const getAccountListStore = defineStore("list", () => {
 			if (response.status === 200) {
 				let index = state.allList.findIndex((item) => item.id === id);
 				state.allList[index] = payload;
+				await fetchPageList();
 				successCallback();
 			} else {
 				alert("수정 실패!");
@@ -140,8 +163,11 @@ export const getAccountListStore = defineStore("list", () => {
 			const response = await axios.delete(BASEURI + `/${id}`);
 
 			if (response.status === 200) {
-				let index = state.allList.findIndex((item) => item.id === id);
-				state.allList.splice(index, 1);
+				let allListIndex = state.allList.findIndex((item) => item.id === id);
+				state.allList.splice(allListIndex, 1);
+				let pageListIndex = state.pageList.findIndex((item) => item.id === id);
+				state.pageList.splice(pageListIndex, 1);
+				// await fetchPageList();
 			} else {
 				alert("삭제 실패!");
 			}
@@ -150,17 +176,21 @@ export const getAccountListStore = defineStore("list", () => {
 		}
 	};
 
-	const nextPage = async () => {
-		if (state.currentPage * 10 < state.allList.length) {
+	const nextPage = async (type) => {
+		if ((state.currentPage + 1) * 10 < state.allPageList.length) {
 			state.currentPage += 1;
-			await fetchPageList(state.currentPage);
+			await fetchPageList({ page: state.currentPage, type });
+		} else {
+			return state.pageList;
 		}
 	};
 
-	const prevPage = async () => {
+	const prevPage = async (type) => {
 		if (state.currentPage > 1) {
 			state.currentPage -= 1;
-			await fetchPageList(state.currentPage);
+			await fetchPageList({ page: state.currentPage, type });
+		} else {
+			return state.pageList;
 		}
 	};
 

@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="padding: 10px; box-sizing: border-box">
 		<Header v-if="isRootPage"></Header>
 		<router-view></router-view>
 		<!-- <Footer v-if="currentRoute === '/'" /> -->
