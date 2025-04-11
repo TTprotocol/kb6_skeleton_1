@@ -186,7 +186,7 @@ let item = reactive({
 	selectedCategory: "",
 	description: "",
 	memo: "",
-	date: `${new Date().getFullYear}-${
+	date: `${new Date().getFullYear()}-${
 		new Date().getMonth() + 1
 	}-${new Date().getDate()}`,
 });
@@ -261,7 +261,7 @@ const save = () => {
 			{
 				amount: item.amount,
 				type: item.type,
-				category: item.selectedCategory, 
+				category: item.selectedCategory,
 				description: item.description,
 				memo: item.memo,
 				date: item.date,

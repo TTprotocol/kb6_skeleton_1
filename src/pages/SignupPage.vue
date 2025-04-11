@@ -22,33 +22,39 @@
 									&nbsp; &nbsp;&nbsp;{{ message }}
 								</p>
 							</div>
-							<input
-								type="email"
-								v-model="id"
-								placeholder="아이디를 입력해주세요."
-							/>
-							<div id="idbox"></div>
-							<button id="checkid" @click="checkIdHandler(id)">
-								중복 확인
-							</button>
+							<div style="display: flex; justify-content: space-between">
+								<input
+									type="email"
+									v-model="id"
+									placeholder="아이디를 입력해주세요."
+									class="form-control border border-secondary"
+									style="width: 65%"
+								/>
+								<div id="idbox"></div>
+								<button id="checkid" @click="checkIdHandler(id)">
+									중복 확인
+								</button>
+							</div>
 							<!-- @click="findIdHandler" -->
 							<p>비밀번호</p>
 							<input
 								type="password"
 								v-model="password"
 								placeholder="비밀번호를 입력해주세요."
+								class="form-control border border-secondary"
 							/>
 							<p>비밀번호 확인</p>
 							<input
 								type="password"
 								v-model="checkpassword"
 								placeholder="비밀번호를 확인해주세요."
+								class="form-control border border-secondary"
 							/>
 							<p v-if="password !== checkpassword" style="color: #ff738f">
 								비밀번호가 다릅니다.
 							</p>
 							<p>생년월일</p>
-							<select v-model="year">
+							<!-- <select v-model="year">
 								<option disabled>년</option>
 								<option v-for="item in years" :key="item" :value="item">
 									{{ item }}
@@ -67,7 +73,16 @@
 								<option v-for="item in days" :key="item" :value="item">
 									{{ item }}
 								</option>
-							</select>
+							</select> -->
+
+							<VueDatePicker
+								v-model="date"
+								locale="ko"
+								model-type="yyyy-MM-dd"
+								auto-apply
+								:format="format"
+								:enable-time-picker="false"
+							/>
 						</div>
 					</article>
 					<article>
@@ -78,9 +93,10 @@
 								type="text"
 								v-model="name"
 								placeholder="이름을 입력해주세요."
+								class="form-control border border-secondary"
 							/>
 							<p>성별</p>
-							<select v-model="gender">
+							<select v-model="gender" class="form-control select">
 								<option>여성</option>
 								<option>남성</option>
 							</select>
@@ -89,30 +105,40 @@
 								type="text"
 								v-model.number="budget"
 								placeholder="예산을 입력해주세요."
+								class="form-control border border-secondary"
 							/>
 						</div>
-						<div id="terms">
-							<input type="checkbox" value="term1" v-model="terms" />
-							<button id="text__button1" @click="changeModal">이용약관</button>
-							<teleport to="#term_modal">
-								<Term1Modal
-									v-if="isModal"
-									@close="isModal = false"
-									@agree-term="agreeTerm1"
-								/>
-							</teleport>
-							<br /><br />
-							<input type="checkbox" value="term2" v-model="terms" />
-							<button id="text__button2" @click="changeModal2">
-								개인정보처리방침
-							</button>
-							<teleport to="#term_modal">
-								<Term2Modal
-									v-if="isModal2"
-									@close="isModal2 = false"
-									@agree-term="agreeTerm2"
-								/>
-							</teleport>
+						<div
+							id="terms"
+							class="mt-5"
+							style="display: flex; justify-content: space-between"
+						>
+							<div>
+								<input type="checkbox" value="term1" v-model="terms" />
+								<button id="text__button1" @click="changeModal">
+									이용약관
+								</button>
+								<teleport to="#term_modal">
+									<Term1Modal
+										v-if="isModal"
+										@close="isModal = false"
+										@agree-term="agreeTerm1"
+									/>
+								</teleport>
+							</div>
+							<div>
+								<input type="checkbox" value="term2" v-model="terms" />
+								<button id="text__button2" @click="changeModal2">
+									개인정보처리방침
+								</button>
+								<teleport to="#term_modal">
+									<Term2Modal
+										v-if="isModal2"
+										@close="isModal2 = false"
+										@agree-term="agreeTerm2"
+									/>
+								</teleport>
+							</div>
 						</div>
 					</article>
 				</main>
@@ -134,6 +160,8 @@
 <script setup>
 import { ref, onMounted, computed } from "vue";
 import { useRouter } from "vue-router";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 // import axios from 'axios';
 import Term1Modal from "@/component/Term1Modal.vue";
 import Term2Modal from "@/component/Term2Modal.vue";
@@ -143,14 +171,16 @@ const store = loginStore();
 const router = useRouter();
 const password = ref("");
 const checkpassword = ref("");
-const year = ref("년");
-const month = ref("월");
-const day = ref("일");
+const date = ref(
+	`${new Date().getFullYear()}-${
+		new Date().getMonth() + 1
+	}-${new Date().getDate()}`
+);
 const name = ref("");
 const gender = ref("여성");
-const years = ref([]);
-const months = ref([]);
-const days = ref([]);
+// const years = ref([]);
+// const months = ref([]);
+// const days = ref([]);
 const id = ref("");
 const terms = ref([]);
 const isModal = ref(false);
@@ -158,19 +188,19 @@ const isModal2 = ref(false);
 const message = ref("");
 const budget = ref("");
 
-onMounted(() => {
-	const nowYear = new Date().getFullYear();
-	for (let i = 0; i < 100; i++) {
-		let date = nowYear - i;
-		years.value.push(date);
-	}
-	for (let i = 1; i < 13; i++) {
-		months.value.push(i);
-	}
-	for (let i = 1; i < 32; i++) {
-		days.value.push(i);
-	}
-});
+// onMounted(() => {
+// 	const nowYear = new Date().getFullYear();
+// 	for (let i = 0; i < 100; i++) {
+// 		let date = nowYear - i;
+// 		years.value.push(date);
+// 	}
+// 	for (let i = 1; i < 13; i++) {
+// 		months.value.push(i);
+// 	}
+// 	for (let i = 1; i < 32; i++) {
+// 		days.value.push(i);
+// 	}
+// });
 
 const changeModal = () => {
 	isModal.value = true;
@@ -193,9 +223,10 @@ const isValid = computed(() => {
 		password.value.trim() != "" &&
 		checkpassword.value.trim() != "" &&
 		password.value === checkpassword.value &&
-		year.value !== "년" &&
-		month.value !== "월" &&
-		day.value !== "일" &&
+		// year.value !== "년" &&
+		// month.value !== "월" &&
+		// day.value !== "일" &&
+		date.value !== "" &&
 		gender.value !== "" &&
 		terms.value.length === 2 &&
 		message.value === "가입 가능한 아이디입니다."
@@ -222,12 +253,12 @@ const checkIdHandler = async (id) => {
 
 const signupHandler = async () => {
 	try {
-		const birthStr = `${year.value}-${month.value}-${day.value}`;
+		// const birthStr = `${year.value}-${month.value}-${day.value}`;
 		await store.createData(
 			{
 				email: id.value,
 				password: password.value,
-				birth: birthStr,
+				birth: date.value,
 				name: name.value,
 				budget: budget.value,
 				gender: gender.value,
@@ -242,12 +273,20 @@ const signupHandler = async () => {
 		console.log(e);
 	}
 };
+
+const format = (date) => {
+	const day = date.getDate().toString().padStart(2, "0");
+	const month = (date.getMonth() + 1).toString().padStart(2, "0");
+	const year = date.getFullYear();
+
+	return `${year}-${month}-${day}`;
+};
 </script>
 
 <style scoped>
 #app {
 	width: 100%;
-	height: 100vh;
+	height: 95vh;
 	position: relative;
 	font-family: "Noto Sans KR", sans-serif;
 }

@@ -80,7 +80,7 @@ const submitLogin = async () => {
 <style>
 #app {
 	width: 100%;
-	height: 100vh;
+	height: 95vh;
 	position: relative;
 	font-family: "Noto Sans KR", sans-serif;
 }

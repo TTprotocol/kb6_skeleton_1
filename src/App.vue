@@ -16,7 +16,12 @@ import { getAccountListStore } from "./stores/GetAccountListStore";
 
 const currentRoute = useRoute();
 
-const isRootPage = computed(() => currentRoute.path !== "/");
+const isRootPage = computed(
+	() =>
+		currentRoute.path !== "/" &&
+		currentRoute.path !== "/loginid" &&
+		currentRoute.path !== "/signup"
+);
 
 const listStore = getAccountListStore();
 const { fetchAllList } = listStore;
