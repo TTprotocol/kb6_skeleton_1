@@ -61,6 +61,7 @@ header h1 {
 main {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
   gap: 32px;
   align-items: center;
 }
