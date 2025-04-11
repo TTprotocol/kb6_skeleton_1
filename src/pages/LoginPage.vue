@@ -22,9 +22,9 @@
 			</div>
 			<div style="height: 48px"></div>
 			<div id="login__body">
-				<router-link to="/loginid" id="id__login"
-					>아이디로 로그인하기</router-link
-				>
+				<router-link to="/loginid" id="id__login">
+					아이디로 로그인하기
+				</router-link>
 				<br /><br />
 				<div id="text__button">
 					<p>아직 회원이 아닌가요?&nbsp;&nbsp;</p>
