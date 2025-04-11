@@ -7,7 +7,7 @@
       <input
         type="password"
         v-model="password"
-        placeholder="사용중인 비밀번호를 입력해주세요."
+        placeholder="비밀번호를 입력해주세요."
       />
       <button @click="deleteAccount">탈퇴하기</button>
     </div>
@@ -52,6 +52,7 @@ const deleteAccount = async () => {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
 }
 
 .box {
@@ -86,8 +87,8 @@ button {
   border-radius: 10px;
   background-color: rgba(128, 155, 255, 0.75);
   color: white;
-  padding: 4px;
-  width: 100px;
+  padding: 8px;
+  width: auto;
   margin: 8px;
 }
 

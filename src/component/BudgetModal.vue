@@ -40,6 +40,7 @@ const changeBudget = () => {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  padding: 8px;
 }
 
 .box {
@@ -74,8 +75,8 @@ button {
   border-radius: 10px;
   background-color: rgba(128, 155, 255, 0.75);
   color: white;
-  padding: 4px;
-  width: 100px;
+  padding: 8px;
+  width: auto;
   margin: 8px;
 }
 
