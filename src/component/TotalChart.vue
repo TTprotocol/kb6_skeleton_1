@@ -29,6 +29,7 @@ import {
 	LegendComponent,
 	GridComponent,
 } from "echarts/components";
+import { getAccountListStore } from "@/stores/GetAccountListStore";
 import dayjs from "dayjs";
 
 use([
@@ -62,6 +63,7 @@ const expenseCategories = [
 	"교통비",
 	"저축",
 	"의료비",
+	"문화생활",
 	"정기결제",
 	"미용",
 	"교육",
