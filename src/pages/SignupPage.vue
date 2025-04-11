@@ -103,7 +103,9 @@
               </teleport>
               <br /><br />
               <input type="checkbox" value="term2" v-model="terms" />
-              <button id="text__button2" @click="changeModal2">개인정보처리방침</button>
+              <button id="text__button2" @click="changeModal2">
+                개인정보처리방침
+              </button>
               <teleport to="#term_modal">
                 <Term2Modal
                   v-if="isModal2"
@@ -202,14 +204,16 @@ const isValid = computed(() => {
 
 const checkIdHandler = async (id) => {
   try {
-    const response = await store.checkId(id);
-    console.log(response);
-    if (response) {
-      console.log('가입 가능!');
-      message.value = '가입 가능한 아이디입니다.';
-    } else {
-      console.log('가입 불가능!');
-      message.value = '이미 존재하는 아이디입니다.';
+    if (id.length > 0) {
+      const response = await store.checkId(id);
+      console.log(response);
+      if (response) {
+        console.log('가입 가능!');
+        message.value = '가입 가능한 아이디입니다.';
+      } else {
+        console.log('가입 불가능!');
+        message.value = '이미 존재하는 아이디입니다.';
+      }
     }
   } catch (e) {
     console.log(e);
@@ -251,7 +255,7 @@ const signupHandler = async () => {
 #signup {
   position: absolute;
   width: 80%;
-  height: 80%;
+  height: auto;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -312,6 +316,7 @@ select {
 main {
   display: flex;
   flex-direction: row;
+  /* flex-wrap: wrap; */
   gap: 32px;
   justify-content: space-between;
 }
@@ -326,7 +331,8 @@ article {
 } */
 
 #submit-btn {
-  position: absolute;
+  /* position: absolute; */
+  margin: 0 auto;
   bottom: 64px;
   left: 50%;
   transform: translateX(-50%);
