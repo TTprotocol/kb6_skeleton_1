@@ -11,7 +11,7 @@ export const getAccountListStore = defineStore("list", () => {
 		pageList: [],
 		pageCount: [],
 		categoryList: {},
-		userEmail: "user1@example.com",
+		userEmail: "admin@naver.com",
 		currentPage: 1,
 	});
 	const listState = reactive({});

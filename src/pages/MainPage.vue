@@ -33,6 +33,7 @@
 							:userName="loginUser.name"
 							:userEmail="loginUser.email"
 							:transactions="state.periodicData"
+							@refresh="fetchDataAgain"
 						/>
 						<!-- <p>오른쪽 카드입니다.</p> -->
 					</div>

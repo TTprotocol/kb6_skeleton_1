@@ -151,10 +151,15 @@ const toggleAll = (event) => {
 					<td>
 						<input type="checkbox" :value="item" v-model="checkedItems" />
 					</td>
-					<td>{{ item.date }}</td>
-					<td>{{ item.category }}</td>
-					<td>{{ item.description }}</td>
+					<td @click="router.push(`/account/${item.id}`)">{{ item.date }}</td>
+					<td @click="router.push(`/account/${item.id}`)">
+						{{ item.category }}
+					</td>
+					<td @click="router.push(`/account/${item.id}`)">
+						{{ item.description }}
+					</td>
 					<td
+						@click="router.push(`/account/${item.id}`)"
 						:class="[
 							'text-end',
 							item.type === 1 ? 'text-primary' : 'text-danger',
@@ -162,7 +167,7 @@ const toggleAll = (event) => {
 					>
 						{{ item.amount.toLocaleString() }}
 					</td>
-					<td>{{ item.memo }}</td>
+					<td @click="router.push(`/account/${item.id}`)">{{ item.memo }}</td>
 					<td>
 						<button
 							class="btn btn-danger fw-bold"
